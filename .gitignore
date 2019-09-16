@@ -69,5 +69,8 @@ crashlytics-build.properties
 # End of https://www.gitignore.io/api/unity
 
 .vscode/
-Temp/
-Assembly-CSharp.csproj
+/Temp/
+/Assembly-CSharp.csproj
+/MeetBall.sln
+/Library/**
+/obj/**
