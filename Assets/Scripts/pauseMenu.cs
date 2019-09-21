@@ -18,7 +18,7 @@ public class pauseMenu : MonoBehaviour
     {
         if(Input.GetButtonDown("Resume"))
         {
-            Debug.Log("asdfasdfasdf");
+            Debug.Log("Resume Buttton Pressed");
             hide();
             Pause.isPaused = false;
         }
