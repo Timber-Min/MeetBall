@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class LaunchBall : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject Piston;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         
     }
