@@ -5,11 +5,12 @@ using UnityEngine;
 public class pauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform myTransform;
+   
     public GameObject me;
+    public Transform myTransform;
     void Start()
     {
-        myTransform = me.transform;
+        myTransform = me.GetComponent<Transform>();
         hide();
     }
 
