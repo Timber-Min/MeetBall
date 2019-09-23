@@ -8,7 +8,7 @@ public class MainCamera : MonoBehaviour
     public GameObject Pause;
     void Start()
     {
-        Pause = GameObject.Find("")
+        Pause = GameObject.Find("");
         Pause.SendMessage("pause");
     }
 
