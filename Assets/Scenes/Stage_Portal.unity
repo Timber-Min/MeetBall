@@ -10484,6 +10484,7 @@ GameObject:
   - component: {fileID: 1417182540}
   - component: {fileID: 1417182542}
   - component: {fileID: 1417182541}
+  - component: {fileID: 1417182543}
   m_Layer: 0
   m_Name: Piston
   m_TagString: Untagged
@@ -10499,7 +10500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417182539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.22, y: -1.18, z: 8.89592}
+  m_LocalPosition: {x: -6.59, y: -1.87, z: 8.89592}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2132877427}
@@ -10515,7 +10516,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -10580,6 +10581,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1417182543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417182539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe40b9de94b58741ae83cdc5532a236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1433417566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3140245429175739393, guid: 0b86cbebc60ce2b40b7aef49fb9cbf8e,
@@ -15509,6 +15522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132877427}
   - component: {fileID: 2132877426}
+  - component: {fileID: 2132877428}
   m_Layer: 0
   m_Name: Piston
   m_TagString: Untagged
@@ -15580,6 +15594,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2132877428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132877425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe40b9de94b58741ae83cdc5532a236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2135072198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3140245429175739393, guid: 0b86cbebc60ce2b40b7aef49fb9cbf8e,
