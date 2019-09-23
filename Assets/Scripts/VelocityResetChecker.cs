@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VelocityResetChecker : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
         
     }
