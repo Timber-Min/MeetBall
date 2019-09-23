@@ -51,6 +51,8 @@ public class PortalManager : MonoBehaviour
                 break;
         }
         PortalBlue = Instantiate(Template_PortalBlue, newPos, Quaternion.Euler(0f, 0f, rotation + 180f), Parent.transform);
+
+        Parent.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     void FixedUpdate()
