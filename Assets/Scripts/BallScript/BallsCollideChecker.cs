@@ -12,7 +12,7 @@ public class BallsCollideChecker : MonoBehaviour
     {
         if (collision.gameObject.Equals(OtherBall))
         {
-            WinText.text = "LOL";
+            WinText.text = "You Win!";
         }
     }
 }

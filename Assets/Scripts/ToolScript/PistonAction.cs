@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PistonAction : MonoBehaviour
 {
-    public Rigidbody2D body;
+    public GameObject body;
     public Rigidbody2D plate;
     void FixedUpdate()
     {
