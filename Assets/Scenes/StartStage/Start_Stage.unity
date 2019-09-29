@@ -7534,6 +7534,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!224 &1561335499 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2380052886757546716, guid: 4b2456d80e7a95743bde1f0f6fab53be,
+    type: 3}
+  m_PrefabInstance: {fileID: 2380052887286560108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568902480 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3140245429175739393, guid: 0b86cbebc60ce2b40b7aef49fb9cbf8e,
@@ -10530,16 +10536,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2380052887176089923, guid: 4b2456d80e7a95743bde1f0f6fab53be,
+    - target: {fileID: 2380052886757546719, guid: 4b2456d80e7a95743bde1f0f6fab53be,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -347
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380052887176089923, guid: 4b2456d80e7a95743bde1f0f6fab53be,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 154
-      objectReference: {fileID: 0}
+      propertyPath: myTransform
+      value: 
+      objectReference: {fileID: 1561335499}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b2456d80e7a95743bde1f0f6fab53be, type: 3}
 --- !u!1001 &3140245430022074002
