@@ -10620,11 +10620,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 628064088179355373, guid: 3cf27813852ec154386de7b03286872a,
-        type: 3}
-      propertyPath: m_Name
       value: Piston
-      objectReference: {fileID: 0}
     - target: {fileID: 628064088179355379, guid: 3cf27813852ec154386de7b03286872a,
         type: 3}
       propertyPath: m_LocalPosition.x
