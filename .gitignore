@@ -75,3 +75,4 @@ crashlytics-build.properties
 /MeetBall.sln
 /Library/**
 /obj/**
+/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
