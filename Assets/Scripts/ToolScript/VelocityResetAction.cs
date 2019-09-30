@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VelocityResetterAction : MonoBehaviour
+public class VelocityResetAction : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
