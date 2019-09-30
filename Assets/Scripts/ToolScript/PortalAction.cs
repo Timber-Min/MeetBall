@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalManager : MonoBehaviour
+public class PortalAction : MonoBehaviour
 {
     // "Walls" gameobject could be changed into "SolidBlocks" gameobject.
     public GameObject Template_PortalOrange, Template_PortalBlue, Template_PortalPath;

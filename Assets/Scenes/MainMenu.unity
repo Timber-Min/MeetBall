@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 749453007}
   - component: {fileID: 749453006}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: SceneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,6 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da2face7c9a5204e8d456a53e04af8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!4 &749453007
 Transform:
   m_ObjectHideFlags: 0
@@ -593,6 +594,7 @@ GameObject:
   - component: {fileID: 1203223923}
   - component: {fileID: 1203223922}
   - component: {fileID: 1203223921}
+  - component: {fileID: 1203223924}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -703,6 +705,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203223919}
   m_CullTransparentMesh: 0
+--- !u!114 &1203223924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203223919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26bf6911952e1f449b0add1d4d1bc75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Stage1
 --- !u!1 &1256770312
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +730,7 @@ GameObject:
   - component: {fileID: 1256770316}
   - component: {fileID: 1256770315}
   - component: {fileID: 1256770314}
+  - component: {fileID: 1256770317}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -836,6 +852,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256770312}
   m_CullTransparentMesh: 0
+--- !u!114 &1256770317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256770312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26bf6911952e1f449b0add1d4d1bc75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Stage_Portal
 --- !u!1 &1304905636
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalManagerOrange : MonoBehaviour
+public class PortalOrangeAction : MonoBehaviour
 {
-    PortalManager manager;
+    PortalAction manager;
 
-    void setManager(PortalManager man)
+    void setManager(PortalAction man)
     {
         manager = man;
     }
