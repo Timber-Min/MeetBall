@@ -47,7 +47,6 @@ public class MainCamera : MonoBehaviour
             {
                 isGameStart = false;
                 cnt = 0;
-                Pause.SendMessage("resume");
             }
         }
     }
@@ -57,5 +56,6 @@ public class MainCamera : MonoBehaviour
         startBtn.SendMessage("hide");
         Debug.Log("game start");
         isGameStart = true;
+        Pause.SendMessage("resume");
     }
 }
