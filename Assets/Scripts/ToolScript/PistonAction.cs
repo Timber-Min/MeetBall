@@ -13,7 +13,7 @@ public class PistonAction : MonoBehaviour
             MovePlate();
             // else Debug.Log("NO");
     }
-    bool inside(Vector3 vec)
+    /*bool inside(Vector3 vec)
     {
         var renderer = body.GetComponent<Renderer>();
         float width = renderer.bounds.size.x;
@@ -24,6 +24,7 @@ public class PistonAction : MonoBehaviour
             return true;
         return false;
     }
+    */
     void MovePlate()
     {
         plate.AddForce(Vector2.left*100000000);
