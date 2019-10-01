@@ -9,20 +9,24 @@ public class PistonAction : MonoBehaviour
     public Rigidbody2D temp;
     void FixedUpdate()
     {
-        
+        float dist = Mathf.Abs(Vector2.Distance(body.GetComponent<Renderer>().transform.position, plate.GetComponent<Renderer>().transform.position)) / 32.0f;
         if (Input.GetMouseButtonDown(0))
-            if (Inside(Input.mousePosition))
+            if (Inside(Input.mousePosition) && dist < 0.02f && plate.velocity.x <= 0)
             MovePlate();
-            // else Debug.Log("NO");
+        if (dist > 0.05f)
+            UndoPlate();
     }
 
     private bool Inside(Vector3 vec)
     {
+        vec = new Vector2(vec.x / Screen.width, vec.y / Screen.height);
         Renderer renderer = body.GetComponent<Renderer>();
-        float width = renderer.bounds.size.x;
-        float height = renderer.bounds.size.y;
-        float cenx = renderer.transform.position.x;
-        float ceny = renderer.transform.position.y;
+        float width = renderer.bounds.size.x / 32.0f;
+        float height = renderer.bounds.size.y / 18.0f;
+        float cenx = renderer.transform.position.x / 32.0f;
+        float ceny = renderer.transform.position.y / 18.0f;
+        cenx += 0.5f;
+        ceny += 0.5f;
         return vec.x > cenx - (width / 2) && vec.x < cenx + (width / 2) && vec.y > ceny - (height / 2) && vec.y < ceny + (height / 2)
             ? true
             : false;
@@ -31,5 +35,10 @@ public class PistonAction : MonoBehaviour
     private void MovePlate()
     {
         plate.AddForce(Vector2.left*100000000);
+    }
+
+    private void UndoPlate()
+    {
+        plate.AddForce(Vector2.right * 100000000);
     }
 }
