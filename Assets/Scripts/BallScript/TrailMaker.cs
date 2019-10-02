@@ -14,12 +14,12 @@ public class TrailMaker : MonoBehaviour
 
     void Update()
     {
-        foreach(TrailClass tr in trails)
+        foreach (TrailClass tr in trails)
         {
             tr.update();
         }
 
-        if(Time.time > nextTrail)
+        if (Time.time > nextTrail)
         {
             nextTrail += TrailingRate;
             GameObject clone = Instantiate(Trail, transform.position, Quaternion.identity, Parent.transform);

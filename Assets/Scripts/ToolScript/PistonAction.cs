@@ -11,13 +11,13 @@ public class PistonAction : MonoBehaviour
     {
         float dist = Mathf.Abs(Vector2.Distance(body.GetComponent<Renderer>().transform.position, plate.GetComponent<Renderer>().transform.position)) / 32.0f;
         if (Input.GetMouseButtonDown(0))
-            if (Inside(Input.mousePosition) && dist < 0.02f && plate.velocity.x <= 0)
-            MovePlate();
+            if (isInside(Input.mousePosition) && dist < 0.02f && plate.velocity.x <= 0)
+                movePlate();
         if (dist > 0.05f)
-            UndoPlate();
+            undoPlate();
     }
 
-    private bool Inside(Vector3 vec)
+    private bool isInside(Vector3 vec)
     {
         vec = new Vector2(vec.x / Screen.width, vec.y / Screen.height);
         Renderer renderer = body.GetComponent<Renderer>();
@@ -32,12 +32,12 @@ public class PistonAction : MonoBehaviour
             : false;
     }
 
-    private void MovePlate()
+    private void movePlate()
     {
-        plate.AddForce(Vector2.left*100000000);
+        plate.AddForce(Vector2.left * 100000000);
     }
 
-    private void UndoPlate()
+    private void undoPlate()
     {
         plate.AddForce(Vector2.right * 100000000);
     }

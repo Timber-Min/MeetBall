@@ -12,7 +12,7 @@ public class ArrowNavigator : MonoBehaviour
 
     void Start()
     {
-        if(Balls.Length == Arrows.Length)
+        if (Balls.Length == Arrows.Length)
         {
             cnt = Balls.Length;
             rbs = new Rigidbody2D[cnt];

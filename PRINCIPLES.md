@@ -1,12 +1,16 @@
 ## Unity Hierarchy List 순서
 새 Scene을 만들 때는 다음과 같이 해 주세요.
- 1. 맨 위부터 순서대로 Main Camera, Directional Light, Canvas, Cats, Walls
- 1. 그 아래엔 EventSystem
- 1. 다시 그 아래엔 Piston, Portal 등 상호작용 객체. 여러 개가 존재하면 알파벳순으로 배열해주세요.
+ 1. 맨 위부터 순서대로 Main Camera, Directional Light, Canvas
+ 1. 그 아래엔 Cats, Walls
+ 1. 다시 그 아래엔 EventSystem
+ 1. 이후 Piston, Portal 등 상호작용 객체. (여러 개가 존재하면 알파벳순으로 배열해주세요.)
+   * 단 같은 객체가 여러 개 존재할 경우 Create Empty를 통해 빈 게임 오브젝트를 생성한 후 묶어 주세요.
  
 ## Script 관련 안내
  * 디렉토리와 파일명, 클래스명은 파스칼 표기법을 따라주세요. (첫 글자를 포함해서, 각 단어의 시작을 대문자로)
- * 변수 이름은 카멜식 표기법을 따라주세요. (첫 글자는 소문자, 이후 단어 시작 시 대문자로)
+ * 변수와 함수(메서드)의 이름은 카멜식 표기법을 따라주세요. (첫 글자는 소문자, 이후 단어 시작 시 대문자로)
+   * 단, 예약어는 예외입니다.
+   * 직접 정의한 함수의 매개변수는 앞에 언더바(_)를 붙여 구분합니다.
 
 ## Git 관련 안내
  * 우선 **Pull**하고 시작합시다. (Fetch Origin)

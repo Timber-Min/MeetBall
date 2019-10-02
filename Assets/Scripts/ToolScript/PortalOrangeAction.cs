@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalOrangeAction : MonoBehaviour
+public class PortalOrangeAction : AbstractToolAction
 {
-    PortalAction manager;
+    private PortalAction manager;
 
-    void setManager(PortalAction man)
+    void setManager(PortalAction _manager)
     {
-        manager = man;
+        manager = _manager;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

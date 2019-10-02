@@ -5,7 +5,7 @@ using UnityEngine;
 public class pauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-   
+
     public GameObject me;
     public Transform myTransform;
     void Start()
@@ -17,7 +17,7 @@ public class pauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Resume"))
+        if (Input.GetButtonDown("Resume"))
         {
             Debug.Log("Resume Buttton Pressed");
             hide();
