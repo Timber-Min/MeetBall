@@ -9,36 +9,38 @@ public class PistonAction : MonoBehaviour
     public Rigidbody2D temp;
     void FixedUpdate()
     {
-        float dist = Mathf.Abs(Vector2.Distance(body.GetComponent<Renderer>().transform.position, plate.GetComponent<Renderer>().transform.position)) / 32.0f;
+        float dist = Mathf.Abs(
+            Vector2.Distance(body.GetComponent<Renderer>().transform.position,
+            plate.GetComponent<Renderer>().transform.position)) / 32;
         if (Input.GetMouseButtonDown(0))
-            if (isInside(Input.mousePosition) && dist < 0.02f && plate.velocity.x <= 0)
+            if (isInside(Utility.asVector2(Input.mousePosition)) && dist < 0.02f && plate.velocity.x <= 0)
                 movePlate();
-        if (dist > 0.05f)
+        if (dist > 0.03f)
             undoPlate();
     }
 
-    private bool isInside(Vector3 vec)
+    private bool isInside(Vector2 _vec)
     {
-        vec = new Vector2(vec.x / Screen.width, vec.y / Screen.height);
+        _vec.x /= Screen.width; _vec.y /= Screen.height;
         Renderer renderer = body.GetComponent<Renderer>();
         float width = renderer.bounds.size.x / 32.0f;
         float height = renderer.bounds.size.y / 18.0f;
-        float cenx = renderer.transform.position.x / 32.0f;
-        float ceny = renderer.transform.position.y / 18.0f;
-        cenx += 0.5f;
-        ceny += 0.5f;
-        return vec.x > cenx - (width / 2) && vec.x < cenx + (width / 2) && vec.y > ceny - (height / 2) && vec.y < ceny + (height / 2)
-            ? true
-            : false;
+        float cenx = renderer.transform.position.x / 32.0f + 0.5f;
+        float ceny = renderer.transform.position.y / 18.0f + 0.5f;
+        return (_vec.x > cenx - (width / 2)
+            && _vec.x < cenx + (width / 2)
+            && _vec.y > ceny - (height / 2)
+            && _vec.y < ceny + (height / 2))
+            ? true : false;
     }
 
     private void movePlate()
     {
-        plate.AddForce(Vector2.left * 100000000);
+        plate.AddForce(Vector2.left * (int)3e8);
     }
 
     private void undoPlate()
     {
-        plate.AddForce(Vector2.right * 100000000);
+        plate.AddForce(Vector2.right * (int)3e8);
     }
 }

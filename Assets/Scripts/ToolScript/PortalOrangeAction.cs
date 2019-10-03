@@ -11,8 +11,8 @@ public class PortalOrangeAction : AbstractToolAction
         manager = _manager;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    protected override void triggerEnterAction(Collider2D _other)
     {
-        manager.teleport(collision);
+        manager.teleport(_other);
     }
 }

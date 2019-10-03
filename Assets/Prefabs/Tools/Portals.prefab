@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7619778266603793254}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -5.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7619778266818077456}
@@ -213,9 +213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f4c9fd3101de74ea5ee2fdf75a1311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Template_PortalOrange: {fileID: 7619778266502956818}
-  Template_PortalBlue: {fileID: 7619778266947104338}
-  Template_PortalPath: {fileID: 7619778267005642717}
+  templatePortalOrange: {fileID: 7619778266502956818}
+  templatePortalBlue: {fileID: 7619778266947104338}
+  templatePortalPath: {fileID: 7619778267005642717}
   Walls: {fileID: 0}
   Parent: {fileID: 7619778266603793254}
 --- !u!1 &7619778266818077457
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 7619778266818077456}
   m_Layer: 0
   m_Name: Portals
-  m_TagString: Untagged
+  m_TagString: Portals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,7 +429,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 54662f3cb42ac514bb2efa28b7215413, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

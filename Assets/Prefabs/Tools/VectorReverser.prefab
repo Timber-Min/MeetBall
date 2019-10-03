@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 578341722857329452}
   m_Layer: 0
   m_Name: VectorReverser
-  m_TagString: Untagged
+  m_TagString: VectorReverser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,34 +16,34 @@ public class PortalAction : AbstractToolAction
         float rotation = transform.rotation.eulerAngles.z;
         PortalOrange = Instantiate(
             templatePortalOrange, transform.position, Quaternion.Euler(0f, 0f, rotation), Parent.transform);
-        int pathDirection = (int)(rotation / 90f) % 4; // pathDirection: 0(left), 1(down), 2(right), 3(up)
+        int pathDirection = Mathf.FloorToInt(rotation / 90) % 4; // pathDirection: 0(left), 1(down), 2(right), 3(up)
         BoxCollider2D[] walls = Walls.GetComponentsInChildren<BoxCollider2D>();
         Vector2 newPos = transform.position;
+        bool flag;
 
         while (true)
         {
+            flag = false;
             switch (pathDirection)
             {
                 case 0:
                     newPos.x -= 1;
                     break;
                 case 1:
-                    newPos.y += 1;
+                    newPos.y -= 1;
                     break;
                 case 2:
                     newPos.x += 1;
                     break;
                 case 3:
-                    newPos.y -= 1;
+                    newPos.y += 1;
                     break;
             }
-
-            bool flag = false;
 
             foreach (BoxCollider2D i in walls)
             {
                 Vector2 wallPos = i.transform.position;
-                if (newPos.Equals(wallPos))
+                if (Utility.isVector2Equal(newPos, wallPos))
                 {
                     flag = true;
                     break;
