@@ -6,6 +6,6 @@ public class ResetVelocityAction : AbstractToolAction
 {
     protected override void triggerEnterAction(Collider2D _other)
     {
-        _other.attachedRigidbody.velocity *= 0;
+        _other.attachedRigidbody.velocity = Vector2.zero;
     }
 }

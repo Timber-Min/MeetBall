@@ -6,7 +6,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other) // Trigger Start
     {
-        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Trigger Entered: " + this.name + " with " + other);
+        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Trigger Entered: " + other + " to " + this.name);
         triggerEnterAction(other);
     }
 
@@ -17,13 +17,13 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other) // Trigger end
     {
-        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Trigger Exited: " + this.name + " with " + other);
+        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Trigger Exited: " + other + " from " + this.name);
         triggerExitAction(other);
     }
 
     void OnCollisionEnter2D(Collision2D other) // Collision Start
     {
-        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Collision Entered: " + this.name + " with " + other);
+        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Collision Entered: " + other + " to " + this.name);
         collisionEnterAction(other);
     }
 
@@ -34,7 +34,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D other) // Collision end
     {
-        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Collision Exited: " + this.name + " with " + other);
+        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Collision Exited: " + other + " from " + this.name);
         collisionExitAction(other);
     }
 

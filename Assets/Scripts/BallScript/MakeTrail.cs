@@ -6,8 +6,8 @@ public class MakeTrail : MonoBehaviour
 {
     public GameObject Trail;
     public GameObject Parent;
-    public float TrailingRate = 0.5f;
-    public float TrailFadingTime = 4f;
+    private float trailRate = 0.5f;
+    private float trailFadeTime = 4f;
 
     List<TrailClass> trails = new List<TrailClass>();
     float nextTrail = 0f;
@@ -21,9 +21,9 @@ public class MakeTrail : MonoBehaviour
 
         if (Time.time > nextTrail)
         {
-            nextTrail += TrailingRate;
+            nextTrail += trailRate;
             GameObject clone = Instantiate(Trail, transform.position, Quaternion.identity, Parent.transform);
-            trails.Add(new TrailClass(clone, Time.time, TrailFadingTime));
+            trails.Add(new TrailClass(clone, Time.time, trailFadeTime));
         }
     }
 }
@@ -31,8 +31,8 @@ public class MakeTrail : MonoBehaviour
 class TrailClass
 {
     GameObject obj;
-    float t;
-    float fadingT;
+    private float t;
+    private float fadingT;
 
     public TrailClass(GameObject gameObject, float time, float fadingTime)
     {
@@ -43,15 +43,15 @@ class TrailClass
 
     public void update()
     {
-        float temp = 1 - (Time.time - t) / fadingT;
-        if (temp <= 0f)
+        float alpha = 1 - (Time.time - t) / fadingT;
+        if (alpha <= 0f)
         {
             GameObject.Destroy(obj);
         }
         else
         {
             Color c = obj.GetComponent<SpriteRenderer>().color;
-            obj.GetComponent<SpriteRenderer>().color = new Vector4(c.r, c.g, c.b, temp);
+            obj.GetComponent<SpriteRenderer>().color = new Vector4(c.r, c.g, c.b, alpha);
         }
     }
 }

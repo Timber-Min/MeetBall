@@ -5,41 +5,41 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public static bool isPaused = false;
-    public GameObject pauseMenu;
-    // Update is called once per frame
+    private static bool isPaused = false;
+    private GameObject pauseMenu;
 
     void Start()
     {
         gameObject.SetActive(true);
+        pauseMenu = GameObject.Find("MenuPanel");
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isPaused)
-            {
-                pause();
-            }
-            else
-            {
-                resume();
-            }
+            if (!isPaused) pause();
+            else resume();
         }
     }
 
-    public void pause()
+    private void pause()
     {
         Time.timeScale = 0f;
+        Debug.Log("Paused " + System.DateTime.Now.ToString("HHmmss"));
         pauseMenu.SendMessage("display");
-        isPaused = !isPaused;
+        triggerPause();
     }
 
-    public void resume()
+    private void resume()
     {
         Time.timeScale = 1f;
+        Debug.Log("Resumed " + System.DateTime.Now.ToString("HHmmss"));
         pauseMenu.SendMessage("hide");
+        triggerPause();
+    }
+
+    public static void triggerPause()
+    {
         isPaused = !isPaused;
     }
 }

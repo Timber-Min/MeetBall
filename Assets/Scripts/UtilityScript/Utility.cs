@@ -9,33 +9,33 @@ public static class Utility
 
     public static Vector2 asVector2(Vector3 _v)
     {
+        // convert Vector3 to Vector2.
         return new Vector2(_v.x, _v.y);
     }
 
     public static int intABS(int _num)
     {
+        // absolute value of an integer.
         return (_num >= 0 ? _num : -_num);
     }
 
-    public static bool isFloatEqual(float _a, float _b)
+    public static Vector2 vector2ABS(Vector2 _v)
     {
+        // make components of Vector2 positive.
+        _v.x = Mathf.Abs(_v.x);
+        _v.y = Mathf.Abs(_v.y);
+        return _v;
+    }
+
+    public static bool floatEqual(float _a, float _b)
+    {
+        // determine two float object is same; round off error is considered.
         return (Mathf.Abs(_a - _b) < EPSILON);
     }
 
-    public static bool isVector2Equal(Vector2 _a, Vector2 _b)
+    public static bool vector2Equal(Vector2 _a, Vector2 _b)
     {
-        return (Mathf.Abs(_a.x - _b.x) < EPSILON && Mathf.Abs(_a.y - _b.y) < EPSILON);
-    }
-
-    public static bool isBetween(GameObject _a, GameObject _b, GameObject _x)
-    {
-        return isVector2Equal(
-            asVector2(_a.transform.position - _x.transform.position).normalized,
-            asVector2(_b.transform.position - _x.transform.position).normalized);
-    }
-
-    public static bool isInside(GameObject _out, GameObject _in)
-    {
-        return false;
+        // determine two Vector2 object is same.
+        return (floatEqual(_a.x, _b.x) && floatEqual(_a.y, _b.y));
     }
 }

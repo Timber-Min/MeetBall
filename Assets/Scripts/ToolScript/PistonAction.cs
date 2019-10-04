@@ -6,13 +6,13 @@ public class PistonAction : MonoBehaviour
 {
     public GameObject body;
     public Rigidbody2D plate;
-    public Rigidbody2D temp;
+    
     void FixedUpdate()
     {
         float dist = Mathf.Abs(
             Vector2.Distance(body.GetComponent<Renderer>().transform.position,
             plate.GetComponent<Renderer>().transform.position)) / 32;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // when clicked
             if (isInside(Utility.asVector2(Input.mousePosition)) && dist < 0.02f && plate.velocity.x <= 0)
                 movePlate();
         if (dist > 0.03f)

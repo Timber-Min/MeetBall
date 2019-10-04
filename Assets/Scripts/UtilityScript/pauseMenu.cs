@@ -2,26 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pauseMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    public GameObject me;
-    public Transform myTransform;
+    private Transform myTransform;
+    
     void Start()
     {
-        myTransform = me.GetComponent<Transform>();
+        myTransform = gameObject.GetComponent<Transform>();
         hide();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Resume"))
         {
-            Debug.Log("Resume Buttton Pressed");
+            Pause.triggerPause();
             hide();
-            Pause.isPaused = false;
         }
     }
 

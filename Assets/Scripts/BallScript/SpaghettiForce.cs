@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class SpaghettiForce : MonoBehaviour
 {
-    public float GravitationalConstant = 200;
+    private float gravitationalConstant = 200;
     public GameObject[] Objects;
-
-    public static Vector2[] BallsNetGravitationalForce;
+    public static Vector2[] ballsNetGravitationalForce;
 
     void Start()
     {
-        BallsNetGravitationalForce = new Vector2[Objects.Length];
+        ballsNetGravitationalForce = new Vector2[Objects.Length];
     }
 
     void FixedUpdate()
@@ -29,11 +28,11 @@ public class SpaghettiForce : MonoBehaviour
                 float sqmag = offset.sqrMagnitude;
                 Vector2 newForce = offset;
                 newForce.Normalize();
-                newForce *= -GravitationalConstant * orb.mass * rb.mass / sqmag;
+                newForce *= -gravitationalConstant * orb.mass * rb.mass / sqmag;
                 force += newForce;
             }
             rb.AddForce(force);
-            BallsNetGravitationalForce[i] = force;
+            ballsNetGravitationalForce[i] = force;
         }
     }
 }
