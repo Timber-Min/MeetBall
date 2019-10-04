@@ -57,6 +57,10 @@ public class PortalAction : AbstractToolAction
         PortalBlue = Instantiate(templatePortalBlue, newPos, Quaternion.Euler(0f, 0f, rotation + 180f), Parent.transform);
 
         Parent.GetComponent<SpriteRenderer>().sprite = null;
+
+        templatePortalOrange.SetActive(false);
+        templatePortalBlue.SetActive(false);
+        templatePortalPath.SetActive(false);
     }
 
     void FixedUpdate()

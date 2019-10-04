@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrailMaker : MonoBehaviour
+public class MakeTrail : MonoBehaviour
 {
     public GameObject Trail;
     public GameObject Parent;
