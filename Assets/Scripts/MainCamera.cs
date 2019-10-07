@@ -22,6 +22,7 @@ public class MainCamera : MonoBehaviour
         Pause = GameObject.Find("MenuPanel");
         Pause.SendMessage("pause");
         myTransform = MainCam.transform;
+        startBtn = GameObject.Find("GameStart").GetComponent<Button>();
 
         startBtn.onClick.AddListener(gameStart);
     }

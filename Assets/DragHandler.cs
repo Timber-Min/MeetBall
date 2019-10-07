@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static GameObject itemBeingDragged;
-    Vector3 
+    // Vector3 
     // Start is called before the first frame update
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -24,12 +24,12 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
