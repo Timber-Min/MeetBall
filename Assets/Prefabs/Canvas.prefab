@@ -79,6 +79,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Place for Layout
+--- !u!114 &6513485381027324465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380052886757546691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0186169ad9ada948a8466f3178c470a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2380052887176089922
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,11 +505,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2380052888108174435}
     m_Modifications:
-    - target: {fileID: 9159542147626520195, guid: e6ac03a4694c9f74d88829589c6ceecf,
-        type: 3}
-      propertyPath: m_Name
-      value: MenuPanel
-      objectReference: {fileID: 0}
     - target: {fileID: 9159542147626520220, guid: e6ac03a4694c9f74d88829589c6ceecf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -603,8 +610,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9159542147626520195, guid: e6ac03a4694c9f74d88829589c6ceecf,
+        type: 3}
+      propertyPath: m_Name
+      value: MenuPanel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9159542147626520223, guid: e6ac03a4694c9f74d88829589c6ceecf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6ac03a4694c9f74d88829589c6ceecf, type: 3}
+--- !u!1 &2380052886757546691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9159542147626520195, guid: e6ac03a4694c9f74d88829589c6ceecf,
+    type: 3}
+  m_PrefabInstance: {fileID: 6780906393968628800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2380052886757546716 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9159542147626520220, guid: e6ac03a4694c9f74d88829589c6ceecf,
