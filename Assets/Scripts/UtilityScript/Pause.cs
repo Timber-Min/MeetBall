@@ -6,36 +6,39 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     private static bool isPaused = false;
-    private GameObject pauseMenu;
+    public GameObject pauseMenu;
 
     void Start()
     {
-        gameObject.SetActive(true);
         pauseMenu = GameObject.Find("MenuPanel");
+        gameObject.SetActive(true);
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isPaused) pause();
-            else resume();
+            if (isPaused) resume();
+            else pause();
         }
     }
 
     private void pause()
     {
         Time.timeScale = 0f;
-        Debug.Log("Paused " + System.DateTime.Now.ToString("HHmmss"));
-        pauseMenu.SendMessage("display");
+        if(MainCamera.isGameStart)
+            pauseMenu.SendMessage("display");
         triggerPause();
+        Debug.Log("Paused " + System.DateTime.Now.ToString("HHmmss"));
+        Debug.Log(isPaused);
     }
 
     private void resume()
     {
         Time.timeScale = 1f;
-        Debug.Log("Resumed " + System.DateTime.Now.ToString("HHmmss"));
         pauseMenu.SendMessage("hide");
         triggerPause();
+        Debug.Log("Resumed " + System.DateTime.Now.ToString("HHmmss"));
+        Debug.Log(isPaused);
     }
 
     public static void triggerPause()
