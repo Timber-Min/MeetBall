@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1403923680175087274}
   - component: {fileID: 1683867013373629688}
   - component: {fileID: 4899383093209162028}
+  - component: {fileID: -6156165446758709582}
   m_Layer: 5
   m_Name: WallForInventoryTestDontTouch
   m_TagString: Untagged
@@ -88,3 +89,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &-6156165446758709582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590112614718065018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946dbf64de5295440a91b12f3e92cc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
