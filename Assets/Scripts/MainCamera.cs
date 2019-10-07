@@ -12,12 +12,13 @@ public class MainCamera : MonoBehaviour
     public Camera myCamera;
     public Transform myTransform;
     public Button startBtn;
-    private static bool isGameStart = false;
+    public static bool isGameStart = false;
     private int cnt = 0;
 
     private float interval = 20;
     void Start()
     {
+        // Debug.Log(1);
         Pause = GameObject.Find("MenuPanel");
         Pause.SendMessage("pause");
         myTransform = MainCam.transform;
@@ -28,13 +29,13 @@ public class MainCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float targetY = 0, startY = (float)-1.51;
+        float targetSize = 7, startSize = 9;
+        float Yinterval, SizeInterval;
+        Yinterval = (targetY - startY) / interval;
+        SizeInterval = (targetSize - startSize) / interval;
         if (isGameStart)
         {
-            float targetY = 0, startY = (float)-1.51;
-            float targetSize = 7, startSize = 9;
-            float Yinterval, SizeInterval;
-            Yinterval = (targetY - startY) / interval;
-            SizeInterval = (targetSize - startSize) / interval;
             if (cnt < interval)
             {
                 Vector3 newPos = new Vector3(0, startY + Yinterval * cnt, -10);
@@ -43,11 +44,11 @@ public class MainCamera : MonoBehaviour
                 myCamera.orthographicSize = startSize + SizeInterval * cnt;
                 cnt++;
             }
-            else
-            {
-                isGameStart = false;
-                cnt = 0;
-            }
+            // else
+            // {
+            //     isGameStart = false;
+            //     cnt = 0;
+            // }
         }
     }
 

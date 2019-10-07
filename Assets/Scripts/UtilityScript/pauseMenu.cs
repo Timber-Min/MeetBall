@@ -5,8 +5,8 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     private Transform myTransform;
-    
-    void Start()
+
+    void Awake()
     {
         myTransform = gameObject.GetComponent<Transform>();
         hide();
