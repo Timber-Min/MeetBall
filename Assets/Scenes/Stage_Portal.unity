@@ -234,11 +234,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1930377487}
     m_Modifications:
-    - target: {fileID: 9159542147626520195, guid: e6ac03a4694c9f74d88829589c6ceecf,
-        type: 3}
-      propertyPath: m_Name
-      value: MenuPanel
-      objectReference: {fileID: 0}
     - target: {fileID: 9159542147626520220, guid: e6ac03a4694c9f74d88829589c6ceecf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -343,6 +338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159542147626520195, guid: e6ac03a4694c9f74d88829589c6ceecf,
+        type: 3}
+      propertyPath: m_Name
+      value: MenuPanel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6ac03a4694c9f74d88829589c6ceecf, type: 3}
@@ -9246,6 +9246,26 @@ PrefabInstance:
       propertyPath: WinText
       value: 
       objectReference: {fileID: 1926809437}
+    - target: {fileID: 2209977368219208103, guid: 0f0839ad492f0d5409701814de255558,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.703
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209977368219208103, guid: 0f0839ad492f0d5409701814de255558,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209977369455255555, guid: 0f0839ad492f0d5409701814de255558,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.905
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209977369455255555, guid: 0f0839ad492f0d5409701814de255558,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.649
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f0839ad492f0d5409701814de255558, type: 3}
 --- !u!1001 &1172368866
