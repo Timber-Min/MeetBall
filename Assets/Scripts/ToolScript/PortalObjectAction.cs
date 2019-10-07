@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalOrangeAction : AbstractToolAction
+public class PortalObjectAction : AbstractToolAction
 {
     private PortalAction manager;
 
@@ -11,8 +11,8 @@ public class PortalOrangeAction : AbstractToolAction
         manager = _manager;
     }
 
-    protected override void triggerEnterAction(Collider2D _other)
+    protected override void collisionEnterAction(Collision2D _collsion)
     {
-        manager.teleport(_other);
+        manager.teleport(_collsion.collider, _collsion.otherCollider);
     }
 }

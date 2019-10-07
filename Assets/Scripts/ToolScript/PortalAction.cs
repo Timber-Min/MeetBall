@@ -9,12 +9,14 @@ public class PortalAction : AbstractToolAction
     public GameObject Parent;
     GameObject portalOrange, portalBlue;
 
+    private int pathDirection;
+
     void Start()
     {
         float rotation = transform.rotation.eulerAngles.z;
         portalOrange = Instantiate(
             templatePortalOrange, transform.position, Quaternion.Euler(0f, 0f, rotation), Parent.transform);
-        int pathDirection = (Mathf.FloorToInt(rotation / 90) + 4) % 4;
+        pathDirection = (Mathf.FloorToInt(rotation / 90) + 4) % 4;
         // pathDirection: 0(left), 1(down), 2(right), 3(up)
 
         Vector2 tempPos = gameObject.transform.position;
@@ -63,10 +65,25 @@ public class PortalAction : AbstractToolAction
         templatePortalPath.SetActive(false);
 
         portalOrange.SendMessage("setManager", this);
+        portalBlue.SendMessage("setManager", this);
     }
 
-    public void teleport(Collider2D collider)
+    public void teleport(Collider2D ball, Collider2D portal)
     {
-        collider.GetComponent<Transform>().position = portalBlue.transform.position;
+        int[] xMov = { -1, 0, 1, 0 }, yMov = { 0, -1, 0, 1 };
+        int dx = xMov[pathDirection], dy = yMov[pathDirection];
+
+        Vector2 teleportPos;
+
+        if (portal.Equals(portalOrange.GetComponent<Collider2D>()))
+        {
+            teleportPos = Utility.asVector2(portalBlue.transform.position) + new Vector2(dx, dy) * 0.5f;
+            ball.GetComponent<Transform>().position = teleportPos;
+        }
+        else
+        {
+            teleportPos = Utility.asVector2(portalOrange.transform.position) + new Vector2(-dx, -dy) * 0.5f;
+            ball.GetComponent<Transform>().position = teleportPos;
+        }
     }
 }
