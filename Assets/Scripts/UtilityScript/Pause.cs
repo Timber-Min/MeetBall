@@ -45,4 +45,9 @@ public class Pause : MonoBehaviour
     {
         isPaused = !isPaused;
     }
+
+    public static bool isPausing()
+    {
+        return isPaused;
+    }
 }
