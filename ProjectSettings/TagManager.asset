@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Accelerator
-  - Piston
-  - Portals
   - VectorReverser
-  - VelocityResetter
+  - Portals
+  - Piston
+  - Accelerator
   layers:
   - Default
   - TransparentFX

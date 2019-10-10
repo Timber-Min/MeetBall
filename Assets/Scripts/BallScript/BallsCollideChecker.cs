@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class BallsCollideChecker : MonoBehaviour
 {
     public GameObject OtherBall;
-    public Text WinText;
+    private Text WinText;
+
+    void Start() {
+        WinText=GameObject.Find("WinText").GetComponent<Text>();
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {

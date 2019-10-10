@@ -15,6 +15,7 @@ public class SliderHandler : MonoBehaviour
 
     void timeScaleSet(float _value)
     {
+        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Slider value changed: " + _value);
         if(Pause.isPausing()) return;
         Time.timeScale=_value;
     }

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class StartButton : MonoBehaviour
 {
-    public GameObject startBtn;
-    public Button myButton;
-    public Transform myTransform;
+    private GameObject startBtn;
+    private Button myButton;
+    private Transform myTransform;
 
     void Start()
     {
