@@ -22,10 +22,14 @@ public class SpaghettiForce : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (forceType == 0)
-            return;
         for (int i = 0; i < Objects.Length; i++)
         {
+            if (forceType == 0)
+            {
+                ballsNetGravitationalForce[i] = Vector2.zero;
+                continue;
+            }
+
             Rigidbody2D rb = Objects[i].GetComponent<Rigidbody2D>();
             Vector2 force = Vector2.zero;
 
@@ -52,18 +56,19 @@ public class SpaghettiForce : MonoBehaviour
 
         if (forceType == 0)
         {
-            btnForceManager.GetComponent<Image>().color = new Color(128, 128, 128);
+            btnForceManager.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
             btnForceManager.GetComponentInChildren<Text>().text = "Nothing";
         }
         else if (forceType == 1)
         {
-            btnForceManager.GetComponent<Image>().color = new Color(255, 255, 255);
+            btnForceManager.GetComponent<Image>().color = new Color(1f, 1f, 1f);
             btnForceManager.GetComponentInChildren<Text>().text = "Attract";
         }
         else if (forceType == 2)
         {
-            btnForceManager.GetComponent<Image>().color = new Color(255, 128, 128);
+            btnForceManager.GetComponent<Image>().color = new Color(1f, 0.4f, 0.2f);
             btnForceManager.GetComponentInChildren<Text>().text = "Repel";
         }
+        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Current Force Status: " + forceType.ToString());
     }
 }
