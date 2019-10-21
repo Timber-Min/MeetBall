@@ -13,6 +13,7 @@ public class PanelController : MonoBehaviour
     private GridLayoutGroup grid;
     private Vector3 autoLocalScale;
     private SlotController slotCode;
+    public Sprite demoSprite;
 
 
     void Start()
@@ -26,6 +27,8 @@ public class PanelController : MonoBehaviour
 
         autoLocalScale = new Vector3(1.0f, 1.0f, 1.0f);
 
+        // demoSprite = Resources.Load("piston", typeof(Sprite)) as Sprite;
+
         slotList[0] = slot;
         slotList[0].name = "Slot1";
 
@@ -37,6 +40,14 @@ public class PanelController : MonoBehaviour
             slotList[i].transform.localScale = autoLocalScale;
             slotList[i].transform.localPosition = Vector3.zero;
             slotList[i].name = "Slot" + (i + 1);
+        }
+
+        for (int i = 0; i < itemCount; i++)
+        {
+            Debug.Log(i);
+            GameObject image = slotList[i].transform.GetChild(0).gameObject;
+            Debug.Log(image.transform.localScale);
+            image.GetComponent<Image>().sprite = demoSprite;
         }
 
         // for (int i = 0; i < itemCount; i++)
