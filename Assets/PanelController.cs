@@ -48,6 +48,7 @@ public class PanelController : MonoBehaviour
             GameObject image = slotList[i].transform.GetChild(0).gameObject;
             Debug.Log(image.transform.localScale);
             image.GetComponent<Image>().sprite = demoSprite;
+            image.GetComponent<DragHandler>().itemNum = i;
         }
 
         // for (int i = 0; i < itemCount; i++)

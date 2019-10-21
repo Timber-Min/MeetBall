@@ -10,11 +10,12 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     Transform startParent;
     private static GameObject currentItem;
     private Transform currentTransform;
-    private int itemNum;
+    public int itemNum;
+    public static GameObject myItem;
 
     void Start()
     {
-        itemNum = 0;
+        // itemNum = 0;
     }
     
     public void OnBeginDrag(PointerEventData eventData)
