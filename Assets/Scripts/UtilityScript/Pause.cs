@@ -18,7 +18,7 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(MainCamera.isGameStarted()) return;
+            if(!MainCamera.isGameStarted()) return;
             if (isPaused) resume();
             else pause();
         }
