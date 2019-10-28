@@ -8,6 +8,7 @@ public class MainCamera : MonoBehaviour
 {
     private GameObject Pause;
     public GameObject MainCam;
+    public GameObject PanelControl;
     public Camera myCamera;
     public Transform myTransform;
     public Button startBtn;
@@ -21,7 +22,7 @@ public class MainCamera : MonoBehaviour
         Pause.SendMessage("pause");
         myTransform = MainCam.transform;
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
-
+        PanelControl = GameObject.Find("Panel");
         startBtn.onClick.AddListener(gameStart);
     }
 
@@ -38,15 +39,9 @@ public class MainCamera : MonoBehaviour
             {
                 Vector3 newPos = new Vector3(0, startY + Yinterval * cnt, -10);
                 myTransform.position = newPos;
-                // Debug.Log(myTransform.position[1]);
                 myCamera.orthographicSize = startSize + SizeInterval * cnt;
                 cnt++;
             }
-            // else
-            // {
-            //     isGameStart = false;
-            //     cnt = 0;
-            // }
         }
     }
 
@@ -56,6 +51,12 @@ public class MainCamera : MonoBehaviour
         Debug.Log("game start");
         isGameStart = true;
         Pause.SendMessage("resume");
+        PanelControl.SendMessage("hide");
+    }
+
+    public static bool isGameStarted()
+    {
+        return isGameStart;
     }
 
     public static bool isGameStarted()

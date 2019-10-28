@@ -6775,6 +6775,7 @@ GameObject:
   - component: {fileID: 1295518904}
   - component: {fileID: 1295518903}
   m_Layer: 5
+
   m_Name: Btn_Nothing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7934,6 +7935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b86cbebc60ce2b40b7aef49fb9cbf8e, type: 3}
+
 --- !u!1 &1543629744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2209977369497378071, guid: 0f0839ad492f0d5409701814de255558,

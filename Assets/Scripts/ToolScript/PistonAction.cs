@@ -6,7 +6,7 @@ public class PistonAction : MonoBehaviour
 {
     public GameObject body;
     public Rigidbody2D plate;
-    
+
     void FixedUpdate()
     {
         float dist = Mathf.Abs(
@@ -14,7 +14,11 @@ public class PistonAction : MonoBehaviour
             plate.GetComponent<Renderer>().transform.position)) / 32;
         if (Input.GetMouseButtonDown(0)) // when clicked
             if (isInside(Utility.asVector2(Input.mousePosition)) && dist < 0.02f && Utility.floatEqual(plate.velocity.x, 0.0f) && Utility.floatEqual(plate.velocity.y, 0.0f))
+            {
+                Debug.Log("asdfasgdsd");
                 movePlate();
+            }
+
         if (dist > 0.03f)
             undoPlate();
     }
@@ -37,7 +41,7 @@ public class PistonAction : MonoBehaviour
     private void movePlate()
     {
         float rot = plate.transform.rotation.eulerAngles.z * Mathf.PI / 180;
-        Vector2 dir = new Vector2(- Mathf.Cos(rot),- Mathf.Sin(rot));
+        Vector2 dir = new Vector2(-Mathf.Cos(rot), -Mathf.Sin(rot));
         plate.AddForce(dir * (int)3e8);
     }
 
@@ -45,6 +49,6 @@ public class PistonAction : MonoBehaviour
     {
         float rot = plate.transform.rotation.eulerAngles.z * Mathf.PI / 180;
         Vector2 dir = new Vector2(-Mathf.Cos(rot), -Mathf.Sin(rot));
-        plate.AddForce(- dir * (int)3e8);
+        plate.AddForce(-dir * (int)3e8);
     }
 }
