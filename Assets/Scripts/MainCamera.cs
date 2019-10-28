@@ -58,4 +58,9 @@ public class MainCamera : MonoBehaviour
     {
         return isGameStart;
     }
+
+    public static bool isGameStarted()
+    {
+        return isGameStart;
+    }
 }
