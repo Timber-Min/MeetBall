@@ -10,11 +10,12 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     Transform startParent;
     private static GameObject currentItem;
     private Transform currentTransform;
-    private int itemNum;
+    public int itemNum;
+    public static GameObject myItem;
 
     void Start()
     {
-        itemNum = 0;
+        // itemNum = 0;
     }
     
     public void OnBeginDrag(PointerEventData eventData)
@@ -43,13 +44,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         transform.position = startPosition;
     }
 
-    private void hide()
-    {
-        transform.localScale = new Vector3(0, 0, 0);
-    }
+    private void hide() => transform.localScale = new Vector3(0, 0, 0);
 
-    private void show()
-    {
-        transform.localScale = new Vector3(1, 1, 1);
-    }
+    private void show() => transform.localScale = new Vector3(1, 1, 1);
 }
