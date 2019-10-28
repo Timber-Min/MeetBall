@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2209977367880263987}
-  - component: {fileID: 2209977367880263985}
+  - component: {fileID: 846141083980472093}
   m_Layer: 0
   m_Name: Arrows
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 2209977369677492196}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2209977367880263985
+--- !u!114 &846141083980472093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2209977367880263988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da0ab24b6bb8d5429d4a1218d60fd78, type: 3}
+  m_Script: {fileID: 11500000, guid: 92fe22c69e1524e4ca02dc7fa12fd1a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Balls:
@@ -215,8 +215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Trail: {fileID: 2209977369455255556}
   Parent: {fileID: 2209977367935467197}
-  TrailingRate: 0.5
-  TrailFadingTime: 4
 --- !u!1 &2209977368219208152
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,8 +464,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Trail: {fileID: 2209977368219208152}
   Parent: {fileID: 2209977369691884839}
-  TrailingRate: 0.5
-  TrailFadingTime: 4
 --- !u!114 &2209977368801839452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OtherBall: {fileID: 2209977368095371451}
-  WinText: {fileID: 0}
 --- !u!1 &2209977369066940657
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2209977369677492196}
   - component: {fileID: 2209977369677492197}
+  - component: {fileID: 7517964150006506667}
   m_Layer: 0
   m_Name: MeatBalls
   m_TagString: Untagged
@@ -764,7 +760,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209977369677492198}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bff9b1620a491664aabb3e57e2db0f73, type: 3}
   m_Name: 
@@ -773,6 +769,26 @@ MonoBehaviour:
   Objects:
   - {fileID: 2209977368801839440}
   - {fileID: 2209977368095371451}
+--- !u!114 &7517964150006506667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209977369677492198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f74a78de55e704b9ad1105d823bbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravitationalConstant: 200
+  Objects:
+  - {fileID: 2209977368801839440}
+  - {fileID: 2209977368095371451}
+  ForceManagers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2209977369691884839
 GameObject:
   m_ObjectHideFlags: 0
