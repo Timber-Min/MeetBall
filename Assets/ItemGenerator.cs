@@ -10,10 +10,9 @@ public class ItemGenerator : MonoBehaviour
     void Start()
     {
         itemList[0] = GameObject.Find("Piston");
-        itemList[1] = GameObject.Find("Portals");
-        itemList[2] = GameObject.Find("Accelerator");
-        itemList[3] = GameObject.Find("VectorReverser");
-        itemList[4] = GameObject.Find("VelocityResetter");
+        itemList[1] = GameObject.Find("Accelerator");
+        itemList[2] = GameObject.Find("VectorReverser");
+        itemList[3] = GameObject.Find("VelocityResetter");
     }
     // => itemList[0] = GameObject.Find("Cube");
     public static GameObject itemFactory(int itemNum, Vector3 startPos)

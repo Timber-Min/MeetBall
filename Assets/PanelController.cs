@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PanelController : MonoBehaviour
 {
-    public static int itemCount = 5;
+    public static int itemCount = 4;
     public GameObject panel;
     public GameObject slot;
     public static GameObject[] slotList;
