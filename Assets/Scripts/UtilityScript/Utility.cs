@@ -38,4 +38,9 @@ public static class Utility
         // determine two Vector2 object is same.
         return (floatEqual(_a.x, _b.x) && floatEqual(_a.y, _b.y));
     }
+
+    public static void LogWithTime(string s)
+    {
+        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + s);
+    }
 }

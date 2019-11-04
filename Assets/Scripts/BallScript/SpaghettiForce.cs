@@ -79,7 +79,7 @@ public class SpaghettiForce : MonoBehaviour
         }
         ForceManagers[forceType].GetComponent<Button>().interactable = false;
 
-        Debug.Log(System.DateTime.Now.ToString("HHmmss ") + "Current Force Status: " + forceType.ToString());
+        Utility.LogWithTime("Current Force Status: " + forceType.ToString());
     }
 
     void changeForceType()
