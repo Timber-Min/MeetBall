@@ -18,6 +18,11 @@ public class SpaghettiForce : MonoBehaviour
         ballsNetGravitationalForce = new Vector2[Objects.Length];
         forceType = 0;
         changeForceType();
+
+        
+        ForceManagers[0].GetComponent<Button>().onClick.AddListener(changeForceTypeToNothing);
+        ForceManagers[1].GetComponent<Button>().onClick.AddListener(changeForceTypeToAttract);
+        ForceManagers[2].GetComponent<Button>().onClick.AddListener(changeForceTypeToRepel);
     }
 
     void FixedUpdate()
