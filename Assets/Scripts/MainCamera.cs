@@ -12,12 +12,14 @@ public class MainCamera : MonoBehaviour
     public Camera myCamera;
     public Transform myTransform;
     public Button startBtn;
+    private GameObject forceMan;
     private static bool isGameStart = false;
     private int cnt = 0;
 
     private float interval = 20;
     void Start()
     {
+        forceMan = GameObject.Find("ForceManager");
         Pause = GameObject.Find("MenuPanel");
         Pause.SendMessage("pause");
         myTransform = MainCam.transform;
@@ -52,6 +54,7 @@ public class MainCamera : MonoBehaviour
         isGameStart = true;
         Pause.SendMessage("resume");
         PanelControl.SendMessage("hide");
+        forceMan.SendMessage("show");
     }
 
     public static bool isGameStarted()
