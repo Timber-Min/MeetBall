@@ -20,7 +20,8 @@ public class PistonAction : MonoBehaviour
     {
         float rot = plate.transform.rotation.eulerAngles.z * Mathf.PI / 180;
         Vector2 dir = new Vector2(-Mathf.Cos(rot), -Mathf.Sin(rot));
-        plate.AddForce(dir * (int)3e8);
+        if (Utility.vector2Equal(plate.velocity, Vector2.zero))
+            plate.AddForce(dir * (int)3e8);
     }
 
     private void undoPlate()

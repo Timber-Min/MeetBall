@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8757969016942889406}
   - component: {fileID: 5687203365356408172}
   - component: {fileID: 5784456179436588909}
+  - component: {fileID: -536910248200076174}
   m_Layer: 0
   m_Name: Launcher
   m_TagString: Untagged
@@ -94,6 +95,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9bf1dcc025cb6c4a84a4328d940f549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &-536910248200076174
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829872998568022531}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7788286263057427955
 GameObject:
   m_ObjectHideFlags: 0
