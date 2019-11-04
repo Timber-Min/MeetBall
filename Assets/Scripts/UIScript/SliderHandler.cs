@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class SliderHandler : MonoBehaviour
 {
@@ -17,6 +18,6 @@ public class SliderHandler : MonoBehaviour
     {
         Utility.LogWithTime("Slider value changed: " + _value);
         if (Pause.isPausing()) return;
-        Time.timeScale = _value;
+        Time.timeScale = (float)System.Math.Pow(4,_value);
     }
 }
