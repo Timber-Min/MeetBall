@@ -16,25 +16,6 @@ public class PistonAction : MonoBehaviour
             undoPlate();
     }
 
-
-    // private bool isInside(Vector2 _vec)
-    // {
-    //     _vec.x /= Screen.width; _vec.y /= Screen.height;
-    //     Debug.Log(_vec);
-    //     Renderer renderer = body.GetComponent<Renderer>();
-    //     float width = renderer.bounds.size.x / 32.0f;
-    //     float height = renderer.bounds.size.y / 18.0f;
-    //     float cenx = renderer.transform.position.x / 32.0f + 0.5f;
-    //     float ceny = renderer.transform.position.y / 18.0f + 0.5f;
-    //     Debug.Log(new Vector2(cenx, ceny));
-    //     Debug.Log(new Vector2(width, height));
-    //     return (_vec.x > cenx - (width / 2)
-    //         && _vec.x < cenx + (width / 2)
-    //         && _vec.y > ceny - (height / 2)
-    //         && _vec.y < ceny + (height / 2));
-    //     // ? true : false;
-    // }
-
     private void movePlate()
     {
         float rot = plate.transform.rotation.eulerAngles.z * Mathf.PI / 180;
