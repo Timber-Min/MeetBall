@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static GameObject itemBeingDragged;
     Vector3 startPosition;
@@ -17,7 +17,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         // itemNum = 0;
     }
-    
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         itemBeingDragged = gameObject;

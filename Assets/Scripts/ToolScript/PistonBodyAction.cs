@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistonBody : MonoBehaviour
+public class PistonBodyAction : AbstractToolAction
 {
     // Start is called before the first frame update
     private GameObject pistonM;
@@ -11,6 +11,7 @@ public class PistonBody : MonoBehaviour
     {
         pistonM = gameObject.transform.parent.gameObject;
     }
+
     void OnMouseDown()
     {
         pistonM.SendMessage("movePlate");

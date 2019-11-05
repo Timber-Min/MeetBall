@@ -9,7 +9,7 @@ public class SceneControllerForBtn : SceneController
     {
         gameObject.GetComponent<Button>().onClick.AddListener(RequestScene);
     }
-    
+
     void RequestScene()
     {
         SwitchScene(sceneName);
