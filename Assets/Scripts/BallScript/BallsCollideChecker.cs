@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class BallsCollideChecker : MonoBehaviour
 {
-    public GameObject OtherBall; // other ball
-    private Text WinText; // Text that notifies player won
+    public GameObject otherBall; // other ball
+    private Text winText; // Text that notifies player won
 
     void Start()
     {
-        WinText = GameObject.Find("WinText").GetComponent<Text>();
+        winText = GameObject.Find("WinText").GetComponent<Text>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.Equals(OtherBall))
+        if (collision.gameObject.Equals(otherBall))
         {
-            WinText.text = "You Win!"; // Shows message
+            winText.text = "You Win!"; // Shows message
         }
     }
 }

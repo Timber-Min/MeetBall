@@ -16,7 +16,7 @@ public class SliderHandler : AbstractUIHandler
 
     void timeScaleSet(float _value)
     {
-        Utility.LogWithTime("Slider value changed: " + _value);
+        print("Slider value changed: " + _value);
         if (Pause.isPausing()) return;
         Time.timeScale = (float)System.Math.Pow(4, _value);
     }

@@ -3,39 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpaghettiForce : MonoBehaviour
+public class SpaghettiForce : AbstractForceCalculator
 {
-    public float gravitationalConstant = 200;
-    public GameObject[] Objects;
-    public Button[] ForceManagers;
-
+    public GameObject[] objects;
+    private Button[] forceManagers=new Button[3];
     public static Vector2[] ballsNetGravitationalForce;
-
-    private int forceType;  // forceType: 0 for nothing, 1 for attraction, 2 for repulsion
-
+    private int forceType = 0;  // forceType: 0 for nothing, 1 for attraction, 2 for repulsion
     private GameObject forceManager;
 
     void Start()
     {
-        ballsNetGravitationalForce = new Vector2[Objects.Length];
-        forceType = 0;
-
+        ballsNetGravitationalForce = new Vector2[objects.Length];
         forceManager = GameObject.Find("ForceManager");
 
-        ForceManagers[0] = forceManager.transform.GetChild(0).gameObject.GetComponent<Button>();
-        ForceManagers[1] = forceManager.transform.GetChild(1).gameObject.GetComponent<Button>();
-        ForceManagers[2] = forceManager.transform.GetChild(2).gameObject.GetComponent<Button>();
+        forceManagers[0] = forceManager.transform.GetChild(0).gameObject.GetComponent<Button>();
+        forceManagers[1] = forceManager.transform.GetChild(1).gameObject.GetComponent<Button>();
+        forceManagers[2] = forceManager.transform.GetChild(2).gameObject.GetComponent<Button>();
+
+        forceManagers[0].onClick.AddListener(changeForceTypeToNothing);
+        forceManagers[1].onClick.AddListener(changeForceTypeToAttract);
+        forceManagers[2].onClick.AddListener(changeForceTypeToRepel);
+
         changeForceType();
-
-
-        ForceManagers[0].onClick.AddListener(changeForceTypeToNothing);
-        ForceManagers[1].onClick.AddListener(changeForceTypeToAttract);
-        ForceManagers[2].onClick.AddListener(changeForceTypeToRepel);
     }
 
     void FixedUpdate()
     {
-        for (int i = 0; i < Objects.Length; i++)
+        for (int i = 0; i < objects.Length; i++)
         {
             if (forceType == 0)
             {
@@ -43,12 +37,12 @@ public class SpaghettiForce : MonoBehaviour
                 continue;
             }
 
-            Rigidbody2D rb = Objects[i].GetComponent<Rigidbody2D>();
+            Rigidbody2D rb = objects[i].GetComponent<Rigidbody2D>();
             Vector2 force = Vector2.zero;
 
-            foreach (GameObject obj in Objects)
+            foreach (GameObject obj in objects)
             {
-                if (obj.Equals(Objects[i])) continue;
+                if (obj.Equals(objects[i])) continue;
                 Rigidbody2D orb = obj.GetComponent<Rigidbody2D>();
                 Vector2 offset = rb.transform.position - obj.transform.position;
                 float sqmag = offset.sqrMagnitude;
@@ -73,13 +67,13 @@ public class SpaghettiForce : MonoBehaviour
         btnForceManager.GetComponent<Image>().color = forceTypeColor[forceType];
         btnForceManager.GetComponentInChildren<Text>().text = forceTypeText[forceType];
         */
-        for (int i = 0; i < ForceManagers.Length; i++)
+        for (int i = 0; i < forceManagers.Length; i++)
         {
-            ForceManagers[i].GetComponent<Button>().interactable = true;
+            forceManagers[i].GetComponent<Button>().interactable = true;
         }
-        ForceManagers[forceType].GetComponent<Button>().interactable = false;
+        forceManagers[forceType].GetComponent<Button>().interactable = false;
 
-        Utility.LogWithTime("Current Force Status: " + forceType.ToString());
+        print("Current Force Status: " + forceType.ToString());
     }
 
     void changeForceType()

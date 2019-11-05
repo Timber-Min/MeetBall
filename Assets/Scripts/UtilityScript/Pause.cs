@@ -31,7 +31,7 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0f;
         if (MainCamera.isGameStarted())
             pauseMenu.SendMessage("display");
-        Utility.LogWithTime("Paused");
+        print("Paused");
     }
 
     private void resume()
@@ -40,7 +40,7 @@ public class Pause : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1f;
         pauseMenu.SendMessage("hide");
-        Utility.LogWithTime("Resumed");
+        print("Resumed");
     }
 
     public static void triggerPause()

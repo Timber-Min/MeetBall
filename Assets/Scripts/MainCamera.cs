@@ -52,7 +52,7 @@ public class MainCamera : MonoBehaviour
     public void gameStart()
     {
         startBtn.SendMessage("hide");
-        Utility.LogWithTime("Game Start");
+        print("Game Start");
         isGameStart = true;
         Pause.SendMessage("resume");
         PanelControl.SendMessage("hide");

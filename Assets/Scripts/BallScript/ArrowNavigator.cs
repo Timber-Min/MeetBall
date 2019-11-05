@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class ArrowNavigator : MonoBehaviour
 {
-    public GameObject[] Balls, Arrows;
-
+    private GameObject[] balls;
+    public GameObject[] arrows;
     int cnt;
     Vector2[] postVelocities;
     Rigidbody2D[] rbs;
 
     void Start()
     {
-        if (Balls.Length == Arrows.Length)
+        balls=GameObject.FindGameObjectsWithTag("Ball");
+        if (balls.Length != arrows.Length)
+            throw new System.ArgumentException("Length of two arrays, 'balls' and 'arrows' must be same.");
+        cnt = balls.Length;
+        rbs = new Rigidbody2D[cnt];
+        postVelocities = new Vector2[cnt];
+        for (int i = 0; i < cnt; i++)
         {
-            cnt = Balls.Length;
-            rbs = new Rigidbody2D[cnt];
-            postVelocities = new Vector2[cnt];
-            for (int i = 0; i < cnt; i++)
-            {
-                rbs[i] = Balls[i].GetComponent<Rigidbody2D>();
-                postVelocities[i] = rbs[i].velocity;
-            }
-        }
-        else
-        {
-            throw new System.ArgumentException("Length of two arrays, 'Balls' and 'Arrows' must be same.");
+            rbs[i] = balls[i].GetComponent<Rigidbody2D>();
+            postVelocities[i] = rbs[i].velocity;
         }
     }
 
@@ -33,14 +29,14 @@ public class ArrowNavigator : MonoBehaviour
     {
         for (int i = 0; i < cnt; i++)
         {
-            GameObject a = Arrows[i];
+            GameObject a = arrows[i];
             Vector2 force = SpaghettiForce.ballsNetGravitationalForce[i];
-            Vector2 velocity = Balls[i].GetComponent<Rigidbody2D>().velocity;
+            Vector2 velocity = balls[i].GetComponent<Rigidbody2D>().velocity;
 
             if (force.magnitude > 1e-4)
             {
                 a.SetActive(true);
-                a.transform.SetPositionAndRotation(Balls[i].transform.position, Quaternion.FromToRotation(Vector2.up, force));
+                a.transform.SetPositionAndRotation(balls[i].transform.position, Quaternion.FromToRotation(Vector2.up, force));
             }
             else
             {
@@ -55,14 +51,14 @@ public class ArrowNavigator : MonoBehaviour
         /*
         for(int i = 0; i < cnt; i++)
         {
-            GameObject a = Arrows[i];
+            GameObject a = arrows[i];
             Vector3 velocity = rbs[i].velocity;
             Vector3 acceleration = (velocity - postVelocities[i]) / Time.fixedDeltaTime;
 
             if (acceleration.magnitude > 1e-4)
             {
                 a.SetActive(true);
-                a.transform.SetPositionAndRotation(Balls[i].transform.position, Quaternion.FromToRotation(Vector3.up, acceleration));
+                a.transform.SetPositionAndRotation(balls[i].transform.position, Quaternion.FromToRotation(Vector3.up, acceleration));
             }
             else
             {

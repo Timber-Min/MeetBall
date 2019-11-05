@@ -11,7 +11,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) // Trigger Start
     {
-        Utility.LogWithTime("Trigger Entered: " + other + " to " + this.name);
+        print("Trigger Entered: " + other + " to " + this.name);
         triggerEnterAction(other);
     }
 
@@ -22,13 +22,13 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other) // Trigger end
     {
-        Utility.LogWithTime("Trigger Exited: " + other + " from " + this.name);
+        print("Trigger Exited: " + other + " from " + this.name);
         triggerExitAction(other);
     }
 
     void OnCollisionEnter2D(Collision2D other) // Collision Start
     {
-        Utility.LogWithTime("Collision Entered: " + other + " to " + this.name);
+        print("Collision Entered: " + other + " to " + this.name);
         collisionEnterAction(other);
     }
 
@@ -39,7 +39,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D other) // Collision end
     {
-        Utility.LogWithTime("Collision Exited: " + other + " from " + this.name);
+        print("Collision Exited: " + other + " from " + this.name);
         collisionExitAction(other);
     }
 
