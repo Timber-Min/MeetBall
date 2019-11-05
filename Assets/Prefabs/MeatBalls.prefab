@@ -45,10 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fe22c69e1524e4ca02dc7fa12fd1a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Balls:
-  - {fileID: 2209977368801839440}
-  - {fileID: 2209977368095371451}
-  Arrows:
+  arrows:
   - {fileID: 2209977369066940657}
   - {fileID: 2209977369497378071}
 --- !u!1 &2209977367935467197
@@ -96,7 +93,7 @@ GameObject:
   - component: {fileID: 2209977368095371398}
   m_Layer: 0
   m_Name: Black Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +342,7 @@ GameObject:
   - component: {fileID: 2209977368801839452}
   m_Layer: 0
   m_Name: White Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -476,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6a9b76841229f4fbafa1c47a3990f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OtherBall: {fileID: 2209977368095371451}
+  otherBall: {fileID: 2209977368095371451}
 --- !u!1 &2209977369066940657
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,8 +762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff9b1620a491664aabb3e57e2db0f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravitationalConstant: 200
-  Objects:
+  objects:
   - {fileID: 2209977368801839440}
   - {fileID: 2209977368095371451}
 --- !u!114 &7517964150006506667
@@ -781,14 +777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f74a78de55e704b9ad1105d823bbd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravitationalConstant: 200
-  Objects:
+  objects:
   - {fileID: 2209977368801839440}
   - {fileID: 2209977368095371451}
-  ForceManagers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &2209977369691884839
 GameObject:
   m_ObjectHideFlags: 0
