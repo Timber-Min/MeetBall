@@ -7,9 +7,7 @@
 1. 맨 위부터 순서대로 Main Camera, Directional Light, Canvas
 1. 그 아래엔 MeatBalls, Walls
 1. 다시 그 아래엔 EventSystem
-1. 이후 Piston, Portal 등 상호작용 객체. (여러 개가 존재하면 알파벳순으로 배열해주세요.)
-    * 단 같은 객체가 여러 개 존재할 경우 Create Empty를 통해 빈 게임 오브젝트를 생성한 후 묶어 주세요.
-1. Prefab에 대한 이름 제한은 딱히 없습니다만, Prefab을 따서 만든 오브젝트는 이름을 그대로 둬 주세요.
+1. 이후 Piston, Portal 등 _맵에 배치된_ 상호작용 객체. (여러 개가 존재하면 알파벳순으로 배열해주세요.)
 
 ## Script 관련 안내
 
