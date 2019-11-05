@@ -15,5 +15,9 @@ public class StartButton : MonoBehaviour
         myButton = startBtn.GetComponent<Button>();
         myTransform = startBtn.GetComponent<Transform>();
     }
-    public void hide() => myTransform.localScale = new Vector3(0, 0, 0);
+
+    public void hide()
+    {
+        myTransform.localScale = new Vector3(0, 0, 0);
+    }
 }

@@ -14,9 +14,10 @@ public class ItemGenerator : MonoBehaviour
         itemList[2] = GameObject.Find("VectorReverser");
         itemList[3] = GameObject.Find("VelocityResetter");
     }
-    // => itemList[0] = GameObject.Find("Cube");
+
     public static GameObject itemFactory(int itemNum, Vector3 startPos)
     {
+        // returns instantiated GameObject.
         GameObject retObject;
         retObject = Instantiate(itemList[itemNum], startPos, Quaternion.identity);
         return retObject;

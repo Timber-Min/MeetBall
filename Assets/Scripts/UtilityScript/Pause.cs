@@ -18,7 +18,7 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!MainCamera.isGameStarted()) return;
+            if (!MainCamera.isGameStarted()) return;
             if (isPaused) resume();
             else pause();
         }
@@ -26,20 +26,20 @@ public class Pause : MonoBehaviour
 
     private void pause()
     {
-        if(isPaused) return; // already pausing
-        isPaused=true;
+        if (isPaused) return; // already pausing
+        isPaused = true;
         Time.timeScale = 0f;
-        if(MainCamera.isGameStarted())
+        if (MainCamera.isGameStarted())
             pauseMenu.SendMessage("display");
         Utility.LogWithTime("Paused");
     }
 
     private void resume()
     {
-        if(!isPaused) return; // already resumed(playing)
-        isPaused=false;
+        if (!isPaused) return; // already resumed(playing)
+        isPaused = false;
         Time.timeScale = 1f;
-        pauseMenu.SendMessage("hide");        
+        pauseMenu.SendMessage("hide");
         Utility.LogWithTime("Resumed");
     }
 

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading;
 
 public class MainCamera : MonoBehaviour
 {
     private GameObject Pause;
-    public GameObject MainCam;
+    private GameObject MainCam;
     public GameObject PanelControl;
     public Camera myCamera;
-    public Transform myTransform;
+    private Transform myTransform;
     public Button startBtn;
+    public SliderHandler slider;
     private GameObject forceMan;
     private static bool isGameStart = false;
     private int cnt = 0;
@@ -19,12 +19,14 @@ public class MainCamera : MonoBehaviour
     private float interval = 20;
     void Start()
     {
-        forceMan = GameObject.Find("ForceManager");
-        Pause = GameObject.Find("MenuPanel");
-        Pause.SendMessage("pause");
+        MainCam = gameObject;
         myTransform = MainCam.transform;
+        forceMan = GameObject.Find("ForceManager");
+        slider = GameObject.Find("Slider").GetComponent<SliderHandler>();
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
         PanelControl = GameObject.Find("Panel");
+        Pause = GameObject.Find("MenuPanel");
+        Pause.SendMessage("pause");
         startBtn.onClick.AddListener(gameStart);
     }
 
@@ -55,6 +57,7 @@ public class MainCamera : MonoBehaviour
         Pause.SendMessage("resume");
         PanelControl.SendMessage("hide");
         forceMan.SendMessage("show");
+        slider.SendMessage("show");
     }
 
     public static bool isGameStarted()

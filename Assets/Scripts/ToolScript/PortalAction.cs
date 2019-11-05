@@ -13,7 +13,7 @@ public class PortalAction : AbstractToolAction
 
     void Start()
     {
-        Walls=GameObject.Find("Walls");
+        Walls = GameObject.Find("Walls");
 
         float rotation = transform.rotation.eulerAngles.z;
         portalOrange = Instantiate(

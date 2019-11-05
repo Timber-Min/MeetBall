@@ -13,7 +13,7 @@ public class GameQuitScript : MonoBehaviour
     private void Quit()
     {
         #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying=false;
+            UnityEditor.EditorApplication.isPlaying = false;
         #elif UNITY_WEBPLAYER
             Application.OpenURL("https://google.com");
         #else
