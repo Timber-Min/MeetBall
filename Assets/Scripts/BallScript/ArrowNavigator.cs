@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowNavigator2 : MonoBehaviour
+public class ArrowNavigator : MonoBehaviour
 {
     public GameObject[] Balls, Arrows;
 
