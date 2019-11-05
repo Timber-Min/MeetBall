@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistonAction : MonoBehaviour
+public class PistonAction : AbstractToolAction
 {
     public GameObject body;
     public Rigidbody2D plate;

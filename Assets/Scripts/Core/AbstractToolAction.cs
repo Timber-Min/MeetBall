@@ -4,6 +4,11 @@ using UnityEngine;
 
 public abstract class AbstractToolAction : MonoBehaviour
 {
+    void Awake()
+    {
+        gameObject.tag = "Tool";
+    }
+
     void OnTriggerEnter2D(Collider2D other) // Trigger Start
     {
         Utility.LogWithTime("Trigger Entered: " + other + " to " + this.name);
