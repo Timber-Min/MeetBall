@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Scene의 이름을 매개변수로 받아 Scene을 변경.
 public class SceneController : MonoBehaviour
 {
-    public string sceneName;
-
     public static void SwitchScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);

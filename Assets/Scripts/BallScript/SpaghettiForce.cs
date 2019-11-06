@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class SpaghettiForce : AbstractForceCalculator
 {
+    // objects: 미트볼 Gameobject.
+    // forcemanagers: 힘을 제어하는 버튼들.
+    // ballsNetGravitationalForce: 미트볼에 작용하는 힘을 저장하는 public static 변수. ArrowNavigator에 힘을 전해주기 위함.
+    // forceType: 미트볼에 작용할 힘의 종류. 0 for nothing, 1 for attraction, 2 for repulsion
+    // forceManager: Canvas 안의 ForceManager GameObject.
     public GameObject[] objects;
-    private Button[] forceManagers=new Button[3];
+    private Button[] forceManagers = new Button[3];
     public static Vector2[] ballsNetGravitationalForce;
-    private int forceType = 0;  // forceType: 0 for nothing, 1 for attraction, 2 for repulsion
+    private int forceType = 0;
     private GameObject forceManager;
 
     void Start()
@@ -20,17 +25,19 @@ public class SpaghettiForce : AbstractForceCalculator
         forceManagers[1] = forceManager.transform.GetChild(1).gameObject.GetComponent<Button>();
         forceManagers[2] = forceManager.transform.GetChild(2).gameObject.GetComponent<Button>();
 
+        // 버튼들이 눌리면 실행될 함수 지정.
         forceManagers[0].onClick.AddListener(changeForceTypeToNothing);
         forceManagers[1].onClick.AddListener(changeForceTypeToAttract);
         forceManagers[2].onClick.AddListener(changeForceTypeToRepel);
 
-        changeForceType();
+        changeForceTypeToNothing();
     }
 
     void FixedUpdate()
     {
         for (int i = 0; i < objects.Length; i++)
         {
+            // forceType이 0이면 힘이 작용하지 않음.
             if (forceType == 0)
             {
                 ballsNetGravitationalForce[i] = Vector2.zero;
@@ -40,6 +47,7 @@ public class SpaghettiForce : AbstractForceCalculator
             Rigidbody2D rb = objects[i].GetComponent<Rigidbody2D>();
             Vector2 force = Vector2.zero;
 
+            // 거리의 역제곱에 비례하게 힘 작용.
             foreach (GameObject obj in objects)
             {
                 if (obj.Equals(objects[i])) continue;
@@ -57,16 +65,10 @@ public class SpaghettiForce : AbstractForceCalculator
         }
     }
 
+    // 힘의 종류가 매개변수로 들어오면 지정.
     void changeForceType(int type)
     {
         forceType = type;
-        /*
-        Color[] forceTypeColor = { new Color(0.5f, 0.5f, 0.5f), new Color(1f, 1f, 1f), new Color(1f, 0.4f, 0.2f) };
-        string[] forceTypeText = { "Nothing", "Attract", "Repel" };
-
-        btnForceManager.GetComponent<Image>().color = forceTypeColor[forceType];
-        btnForceManager.GetComponentInChildren<Text>().text = forceTypeText[forceType];
-        */
         for (int i = 0; i < forceManagers.Length; i++)
         {
             forceManagers[i].GetComponent<Button>().interactable = true;

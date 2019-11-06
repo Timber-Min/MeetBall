@@ -70,6 +70,7 @@ public class PortalAction : AbstractToolAction
         portalBlue.SendMessage("setManager", this);
     }
 
+    // 미트볼의 Collider2D와 미트볼과 충돌한 포탈의 Collider2D를 받아 미트볼을 반대쪽 포탈로 이동시킨다.
     public void teleport(Collider2D ball, Collider2D portal)
     {
         int[] xMov = { -1, 0, 1, 0 }, yMov = { 0, -1, 0, 1 };
