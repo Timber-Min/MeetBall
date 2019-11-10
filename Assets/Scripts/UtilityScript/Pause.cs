@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// 게임 일시정지/재생
 public class Pause : MonoBehaviour
 {
     private static bool isPaused = false;
@@ -16,9 +16,12 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
+        // esc를 눌렀을 시
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            // 게임 시작 전이면 리턴
             if (!MainCamera.isGameStarted()) return;
+            // 아닐 시 일시정지/재생
             if (isPaused) resume();
             else pause();
         }
@@ -30,7 +33,7 @@ public class Pause : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
         if (MainCamera.isGameStarted())
-            pauseMenu.SendMessage("display");
+            pauseMenu.SendMessage("display"); // 메뉴 표시
         print("Paused");
     }
 
@@ -39,7 +42,7 @@ public class Pause : MonoBehaviour
         if (!isPaused) return; // already resumed(playing)
         isPaused = false;
         Time.timeScale = 1f;
-        pauseMenu.SendMessage("hide");
+        pauseMenu.SendMessage("hide"); // 메뉴 숨기기
         print("Resumed");
     }
 

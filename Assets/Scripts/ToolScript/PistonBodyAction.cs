@@ -9,11 +9,14 @@ public class PistonBodyAction : AbstractToolAction
 
     void Start()
     {
+        // Mother Object 설정
         pistonM = gameObject.transform.parent.gameObject;
     }
 
+    // 마우스 클릭 감지
     void OnMouseDown()
     {
+        // 피스톤 작동
         pistonM.SendMessage("movePlate");
     }
 }
