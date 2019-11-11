@@ -10,7 +10,7 @@ public class GameQuitScript : MonoBehaviour
         gameObject.GetComponent<Button>().onClick.AddListener(Quit);
     }
 
-    private void Quit()
+    public static void Quit()
     {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
