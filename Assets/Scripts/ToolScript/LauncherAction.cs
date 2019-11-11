@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LauncherAction : AbstractToolAction
 {
+    // 발사 장치
     protected override void triggerEnterAction(Collider2D _other)
     {
-        _other.attachedRigidbody.velocity = 10000 * Vector2.up;
+        Destroy(this.gameObject);
+        _other.attachedRigidbody.velocity = 5 * Vector2.up;
     }
 }
