@@ -30,7 +30,7 @@ public class SpaghettiForce : AbstractForceCalculator
         forceManagers[1].onClick.AddListener(changeForceTypeToAttract);
         forceManagers[2].onClick.AddListener(changeForceTypeToRepel);
 
-        changeForceTypeToNothing();
+        changeForceTypeToAttract();
     }
 
     void FixedUpdate()

@@ -318,10 +318,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 600150259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c26bf6911952e1f449b0add1d4d1bc75, type: 3}
+  m_Script: {fileID: 11500000, guid: 229d25f0b67986044bac0571b93f6dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MainMenu
 --- !u!114 &600150262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26bf6911952e1f449b0add1d4d1bc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MainMenu
+  sceneName: Settings
 --- !u!114 &706019689
 MonoBehaviour:
   m_ObjectHideFlags: 0
