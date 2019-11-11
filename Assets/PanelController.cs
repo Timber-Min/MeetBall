@@ -25,7 +25,7 @@ public class PanelController : MonoBehaviour
 
         // GridLayoutGroup 사용으로 자동 크기 조정
         grid = panel.GetComponent<GridLayoutGroup>();
-        grid.spacing = new Vector2(30, 30);
+        grid.spacing = new Vector2(60, 60);
         autoLocalScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         slotList[0] = slot;
