@@ -15,7 +15,7 @@ public class MainCamera : MonoBehaviour
     public Button startBtn;
     public SliderHandler slider;
     private GameObject forceMan;
-    private static bool isGameStart = false;
+    public static bool isGameStart = false;
     private int cnt = 0;
 
     private float interval = 20;

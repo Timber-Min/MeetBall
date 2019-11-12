@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonPanel : MonoBehaviour
 {
@@ -21,12 +22,13 @@ public class ButtonPanel : MonoBehaviour
 
     private void gotoMenu()
     {
-        
+
     }
 
     private void restart()
     {
-
+        MainCamera.isGameStart = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void gotoNext()
