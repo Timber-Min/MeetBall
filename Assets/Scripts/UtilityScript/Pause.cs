@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // 게임 일시정지/재생
 public class Pause : MonoBehaviour
 {
     private static bool isPaused = false;
     private GameObject pauseMenu;
+    private Button restartBtn;
 
     void Start()
     {
         pauseMenu = GameObject.Find("MenuPanel");
         gameObject.SetActive(true);
+        restartBtn = GameObject.Find("Restart").GetComponent<Button>();
+        restartBtn.onClick.AddListener(restart);
     }
 
     void Update()
@@ -54,5 +59,11 @@ public class Pause : MonoBehaviour
     public static bool isPausing()
     {
         return isPaused;
+    }
+
+    private void restart()
+    {
+        MainCamera.isGameStart = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
