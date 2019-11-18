@@ -15,7 +15,7 @@ public class MainCamera : MonoBehaviour
     public Button startBtn;
     public SliderHandler slider;
     private GameObject forceMan;
-    public static bool isGameStart = false;
+    public bool isGameStart = false;
     private int cnt = 0;
 
     private float interval = 20;
@@ -62,7 +62,7 @@ public class MainCamera : MonoBehaviour
         slider.SendMessage("show");
     }
 
-    public static bool isGameStarted()
+    public bool isGameStarted()
     {
         return isGameStart;
     }

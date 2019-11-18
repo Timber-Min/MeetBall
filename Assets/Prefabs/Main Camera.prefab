@@ -97,12 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b5e45a50304414ebf3e3be6c56d1e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pause: {fileID: 0}
-  MainCam: {fileID: 8779591063031136001}
   PanelControl: {fileID: 0}
   myCamera: {fileID: 8779591063031136012}
-  myTransform: {fileID: 0}
   startBtn: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!114 &8779591063031136010
 MonoBehaviour:
   m_ObjectHideFlags: 0
