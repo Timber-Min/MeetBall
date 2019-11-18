@@ -22,7 +22,7 @@ public class ButtonPanel : MonoBehaviour
 
     private void gotoMenu()
     {
-
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void restart()
