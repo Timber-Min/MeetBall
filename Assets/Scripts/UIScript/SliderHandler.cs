@@ -22,9 +22,4 @@ public class SliderHandler : AbstractUIHandler
         if (menuPanel.GetComponent<Pause>().isPaused) return;
         Time.timeScale = (float)System.Math.Pow(4, _value);
     }
-
-    public void show()
-    {
-        gameObject.transform.localScale = new Vector3(1, 1, 1); // restores the size
-    }
 }
