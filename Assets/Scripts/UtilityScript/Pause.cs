@@ -7,7 +7,7 @@ using UnityEngine.UI;
 // 게임 일시정지/재생
 public class Pause : MonoBehaviour
 {
-    private static bool isPaused = false;
+    public bool isPaused = false;
     private GameObject pauseMenu;
     private Button restartBtn;
 
@@ -51,12 +51,12 @@ public class Pause : MonoBehaviour
         print("Resumed");
     }
 
-    public static void triggerPause()
+    public void triggerPause()
     {
         isPaused = !isPaused;
     }
 
-    public static bool isPausing()
+    public bool isPausing()
     {
         return isPaused;
     }
