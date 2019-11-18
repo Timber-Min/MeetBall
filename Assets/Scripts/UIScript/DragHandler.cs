@@ -44,9 +44,4 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
         itemBeingDragged = null;
         transform.position = startPosition;
     }
-
-    private void hide() => transform.localScale = new Vector3(0, 0, 0);
-
-    private void show() => transform.localScale = new Vector3(1, 1, 1);
-
 }
