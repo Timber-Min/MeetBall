@@ -5,10 +5,12 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     private Transform myTransform;
+    private GameObject menuPanel;
 
     void Awake()
     {
         myTransform = gameObject.GetComponent<Transform>();
+        menuPanel = GameObject.Find("MenuPanel");
         hide();
     }
 
@@ -16,7 +18,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("Resume"))
         {
-            Pause.triggerPause();
+            // Pause.triggerPause();  
+            menuPanel.SendMessage("triggerPause");
             hide();
         }
     }

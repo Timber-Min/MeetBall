@@ -9,7 +9,7 @@ public abstract class AbstractUIHandler : MonoBehaviour
         gameObject.tag = "UI";
     }
 
-    protected void hide() => transform.localScale = new Vector3(0, 0, 0);
+    protected virtual void hide() => transform.localScale = new Vector3(0, 0, 0);
 
-    protected void show() => transform.localScale = new Vector3(1, 1, 1);
+    protected virtual void show() => transform.localScale = new Vector3(1, 1, 1);
 }
