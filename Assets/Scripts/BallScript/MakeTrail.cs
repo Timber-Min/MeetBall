@@ -19,7 +19,12 @@ public class MakeTrail : MonoBehaviour
     List<TrailClass> trails = new List<TrailClass>();
     float nextTrail = 0f;
 
-    void Update()
+    private void Start()
+    {
+        nextTrail = Time.fixedTime;
+    }
+
+    void FixedUpdate()
     {
         foreach (TrailClass tr in trails)
         {
@@ -27,11 +32,11 @@ public class MakeTrail : MonoBehaviour
         }
 
         // 복제될 시간이면 자취 객체를 공의 위치에 복제, trails에 추가.
-        if (Time.time > nextTrail)
+        if (Time.fixedTime > nextTrail)
         {
             nextTrail += trailRate;
             GameObject clone = Instantiate(Trail, transform.position, Quaternion.identity, Parent.transform);
-            trails.Add(new TrailClass(clone, Time.time, trailFadeTime));
+            trails.Add(new TrailClass(clone, Time.fixedTime, trailFadeTime));
         }
     }
 }
@@ -56,7 +61,7 @@ class TrailClass
     public void update()
     {
         // 자취의 투명도(alpha)는 시간이 지날수록 투명해진다.
-        float alpha = 1 - (Time.time - t) / fadingT;
+        float alpha = 1 - (Time.fixedTime - t) / fadingT;
         // 투명도가 0 이하이면 수명이 다 되었음을 의미.
         if (alpha <= 0f)
         {
