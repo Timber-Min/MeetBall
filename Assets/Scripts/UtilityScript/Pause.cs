@@ -12,13 +12,13 @@ public class Pause : MonoBehaviour
     private Button restartBtn;
     private GameObject mCamera;
 
+    void Awake() => mCamera = GameObject.Find("Main Camera");
     void Start()
     {
         pauseMenu = GameObject.Find("MenuPanel");
         gameObject.SetActive(true);
         restartBtn = GameObject.Find("Restart").GetComponent<Button>();
         restartBtn.onClick.AddListener(restart);
-        mCamera = GameObject.Find("Main Camera");
     }
 
     void Update()
