@@ -9,7 +9,7 @@ public class Pause : MonoBehaviour
 {
     public bool isPaused = false;
     private GameObject pauseMenu;
-    private Button restartBtn;
+    private Button restartBtn, menuBtn;
     private GameObject mCamera;
 
     void Awake() => mCamera = GameObject.Find("Main Camera");
@@ -18,7 +18,9 @@ public class Pause : MonoBehaviour
         pauseMenu = GameObject.Find("MenuPanel");
         gameObject.SetActive(true);
         restartBtn = GameObject.Find("Restart").GetComponent<Button>();
+        menuBtn = GameObject.Find("MainMenu").GetComponent<Button>();
         restartBtn.onClick.AddListener(restart);
+        menuBtn.onClick.AddListener(gotoMenu);
     }
 
     void Update()
@@ -53,19 +55,15 @@ public class Pause : MonoBehaviour
         print("Resumed");
     }
 
-    public void triggerPause()
-    {
-        isPaused = !isPaused;
-    }
+    public void triggerPause() => isPaused = !isPaused;
 
-    public bool isPausing()
-    {
-        return isPaused;
-    }
+    public bool isPausing() => isPaused;
 
     private void restart()
     {
         mCamera.GetComponent<MainCamera>().isGameStart = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    private void gotoMenu() => SceneManager.LoadScene("MainMenu");
 }
