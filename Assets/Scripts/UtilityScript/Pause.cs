@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static StageProcessor;
 
 // 게임 일시정지/재생
 public class Pause : MonoBehaviour
 {
-    public bool isPaused = false;
     private GameObject pauseMenu;
     private Button restartBtn, menuBtn;
-    private GameObject mCamera;
 
-    void Awake() => mCamera = GameObject.Find("Main Camera");
     void Start()
-    {
-        pauseMenu = GameObject.Find("MenuPanel");
+    {   
         gameObject.SetActive(true);
+        pauseMenu = GameObject.Find("MenuPanel");
         restartBtn = GameObject.Find("Restart").GetComponent<Button>();
         menuBtn = GameObject.Find("MainMenu").GetComponent<Button>();
         restartBtn.onClick.AddListener(restart);
@@ -29,7 +27,7 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // 게임 시작 전이면 리턴
-            if (!mCamera.GetComponent<MainCamera>().isGameStart) return;
+            if (!isStarted) return;
             // 아닐 시 일시정지/재생
             if (isPaused) resume();
             else pause();
@@ -41,7 +39,7 @@ public class Pause : MonoBehaviour
         if (isPaused) return; // already pausing
         isPaused = true;
         Time.timeScale = 0f;
-        if (mCamera.GetComponent<MainCamera>().isGameStart)
+        if (isStarted)
             pauseMenu.SendMessage("display"); // 메뉴 표시
         print("Paused");
     }
@@ -59,9 +57,9 @@ public class Pause : MonoBehaviour
 
     public bool isPausing() => isPaused;
 
-    private void restart()
+    public void restart()
     {
-        mCamera.GetComponent<MainCamera>().isGameStart = false;
+        isStarted = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

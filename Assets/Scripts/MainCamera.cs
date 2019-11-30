@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static StageProcessor;
 
 // 카메라 위치/크기 조정
 // 게임 시작
@@ -15,7 +16,6 @@ public class MainCamera : MonoBehaviour
     public Button startBtn;
     public SliderHandler slider;
     private GameObject forceMan;
-    public bool isGameStart = false;
     private int cnt = 0;
 
     private float interval = 20;
@@ -39,7 +39,7 @@ public class MainCamera : MonoBehaviour
         float Yinterval, SizeInterval;
         Yinterval = (targetY - startY) / interval;
         SizeInterval = (targetSize - startSize) / interval;
-        if (isGameStart) // start 버튼이 눌렸을 경우
+        if (isStarted) // start 버튼이 눌렸을 경우
         {
             if (cnt < interval) // 카메라가 완전히 커지지 않았다면 위치/크기 조정
             {
@@ -55,15 +55,10 @@ public class MainCamera : MonoBehaviour
     {
         startBtn.SendMessage("hide");
         print("Game Start");
-        isGameStart = true;
+        isStarted = true;
         Pause.SendMessage("resume");
         PanelControl.SendMessage("hide");
         forceMan.SendMessage("show");
         slider.SendMessage("show");
-    }
-
-    public bool isGameStarted()
-    {
-        return isGameStart;
     }
 }

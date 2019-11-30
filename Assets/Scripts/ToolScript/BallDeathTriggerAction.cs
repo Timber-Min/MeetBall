@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 public class BallDeathTriggerAction : AbstractToolAction
@@ -15,8 +14,7 @@ public class BallDeathTriggerAction : AbstractToolAction
     {
         if (_other.gameObject.tag.Equals("Ball"))
         {
-            mCamera.GetComponent<MainCamera>().isGameStart = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameObject.Find("MenuPanel").SendMessage("restart");
         }
     }
 }
