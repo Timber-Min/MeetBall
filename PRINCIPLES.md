@@ -4,10 +4,9 @@
 
 새 Scene을 만들 때는 다음과 같이 해 주세요.
 
-1. 맨 위부터 순서대로 Main Camera, Directional Light, Canvas
-1. 그 아래엔 MeatBalls, Walls
-1. 다시 그 아래엔 EventSystem
+1. 맨 위부터 순서대로 Main Camera, Canvas, MeatBalls, Walls, EventSystem
 1. 이후 Piston, Portal 등 _맵에 배치된_ 상호작용 객체. (여러 개가 존재하면 알파벳순으로 배열해주세요.)
+1. 맨 마지막에 StageProcessor
 
 ## Script 관련 안내
 
