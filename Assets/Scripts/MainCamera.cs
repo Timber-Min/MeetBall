@@ -8,7 +8,6 @@ using static StageProcessor;
 // 게임 시작
 public class MainCamera : MonoBehaviour
 {
-    private GameObject Pause;
     private GameObject MainCam;
     public GameObject PanelControl;
     public Camera myCamera;
@@ -27,8 +26,7 @@ public class MainCamera : MonoBehaviour
         slider = GameObject.Find("Slider").GetComponent<SliderHandler>();
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
         PanelControl = GameObject.Find("Panel");
-        Pause = GameObject.Find("MenuPanel");
-        Pause.SendMessage("pause");
+        getMenuPanel().SendMessage("pause");
         startBtn.onClick.AddListener(gameStart);
     }
 
@@ -56,7 +54,7 @@ public class MainCamera : MonoBehaviour
         startBtn.SendMessage("hide");
         print("Game Start");
         isStarted = true;
-        Pause.SendMessage("resume");
+        getMenuPanel().SendMessage("resume");
         PanelControl.SendMessage("hide");
         forceMan.SendMessage("show");
         slider.SendMessage("show");

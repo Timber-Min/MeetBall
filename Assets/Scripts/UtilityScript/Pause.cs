@@ -8,13 +8,11 @@ using static StageProcessor;
 // 게임 일시정지/재생
 public class Pause : MonoBehaviour
 {
-    private GameObject pauseMenu;
     private Button restartBtn, levelBtn;
 
     void Start()
-    {   
+    {
         gameObject.SetActive(true);
-        pauseMenu = GameObject.Find("MenuPanel");
         restartBtn = GameObject.Find("Restart").GetComponent<Button>();
         levelBtn = GameObject.Find("Levels").GetComponent<Button>();
         restartBtn.onClick.AddListener(restart);
@@ -40,7 +38,7 @@ public class Pause : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
         if (isStarted)
-            pauseMenu.SendMessage("display"); // 메뉴 표시
+            getMenuPanel().SendMessage("display"); // 메뉴 표시
         print("Paused");
     }
 
@@ -49,7 +47,7 @@ public class Pause : MonoBehaviour
         if (!isPaused) return; // already resumed(playing)
         isPaused = false;
         Time.timeScale = 1f;
-        pauseMenu.SendMessage("hide"); // 메뉴 숨기기
+        getMenuPanel().SendMessage("hide"); // 메뉴 숨기기
         print("Resumed");
     }
 

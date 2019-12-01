@@ -8,7 +8,6 @@ public class ButtonPanel : MonoBehaviour
 {
     private Button menuBtn, restartBtn, nextBtn;
     private Transform myTransform;
-    private GameObject mCamera;
     private string thisScene;
     void Start()
     {
@@ -20,8 +19,6 @@ public class ButtonPanel : MonoBehaviour
         menuBtn.onClick.AddListener(gotoMenu);
         restartBtn.onClick.AddListener(restart);
         nextBtn.onClick.AddListener(gotoNext);
-
-        mCamera = GameObject.Find("Main Camera");
 
         thisScene = SceneManager.GetActiveScene().name;
     }
@@ -44,7 +41,7 @@ public class ButtonPanel : MonoBehaviour
             stage = int.Parse(thisScene[2].ToString());
             if (stage == 8)
             {
-                nextScene = "L1";
+                nextScene = "L"+level.ToString();
             }
             else
             {
