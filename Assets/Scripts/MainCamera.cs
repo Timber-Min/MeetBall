@@ -8,7 +8,6 @@ using static StageProcessor;
 // 게임 시작
 public class MainCamera : MonoBehaviour
 {
-    private GameObject MainCam;
     public GameObject PanelControl;
     public Camera myCamera;
     private Transform myTransform;
@@ -20,8 +19,7 @@ public class MainCamera : MonoBehaviour
     private float interval = 20;
     void Start()
     {
-        MainCam = gameObject;
-        myTransform = MainCam.transform;
+        myTransform = getMainCamera().transform;
         forceMan = GameObject.Find("ForceManager");
         slider = GameObject.Find("Slider").GetComponent<SliderHandler>();
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
