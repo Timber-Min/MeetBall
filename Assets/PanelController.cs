@@ -44,7 +44,6 @@ public class PanelController : MonoBehaviour
         // 슬롯에 아이템 이미지 집어넣기
         for (int i = 0; i < itemCount; i++)
         {
-            Debug.Log(i);
             GameObject image = slotList[i].transform.GetChild(0).gameObject;
             image.GetComponent<Image>().sprite = demoSprite;
             image.GetComponent<DragHandler>().itemNum = i;

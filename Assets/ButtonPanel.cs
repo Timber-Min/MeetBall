@@ -26,7 +26,7 @@ public class ButtonPanel : MonoBehaviour
         thisScene = SceneManager.GetActiveScene().name;
     }
 
-    private void gotoMenu() => SceneManager.LoadScene("MainMenu");
+    private void gotoMenu() => SceneManager.LoadScene("L1");
 
     private void restart()
     {
@@ -44,7 +44,7 @@ public class ButtonPanel : MonoBehaviour
             stage = int.Parse(thisScene[2].ToString());
             if (stage == 8)
             {
-                nextScene = "MainMenu";
+                nextScene = "L1";
             }
             else
             {
@@ -53,7 +53,7 @@ public class ButtonPanel : MonoBehaviour
         }
         catch
         {
-            nextScene = "MainMenu";
+            nextScene = "L1";
         }
         finally
         {

@@ -9,16 +9,16 @@ using static StageProcessor;
 public class Pause : MonoBehaviour
 {
     private GameObject pauseMenu;
-    private Button restartBtn, menuBtn;
+    private Button restartBtn, levelBtn;
 
     void Start()
     {   
         gameObject.SetActive(true);
         pauseMenu = GameObject.Find("MenuPanel");
         restartBtn = GameObject.Find("Restart").GetComponent<Button>();
-        menuBtn = GameObject.Find("MainMenu").GetComponent<Button>();
+        levelBtn = GameObject.Find("Levels").GetComponent<Button>();
         restartBtn.onClick.AddListener(restart);
-        menuBtn.onClick.AddListener(gotoMenu);
+        levelBtn.onClick.AddListener(gotoMenu);
     }
 
     void Update()
@@ -63,5 +63,5 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void gotoMenu() => SceneManager.LoadScene("MainMenu");
+    private void gotoMenu() => SceneManager.LoadScene("L1");
 }
