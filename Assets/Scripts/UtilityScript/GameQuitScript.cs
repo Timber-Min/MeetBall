@@ -12,11 +12,12 @@ public class GameQuitScript : MonoBehaviour
 
     public static void Quit()
     {
-        #if UNITY_EDITOR
+        // 게임 종료
+        #if UNITY_EDITOR // 유니티 에디터 모드
             UnityEditor.EditorApplication.isPlaying = false;
-        #elif UNITY_WEBPLAYER
+        #elif UNITY_WEBPLAYER // 유니티 웹플레이어 모드
             Application.OpenURL("https://google.com");
-        #else
+        #else // 응용프로그램 모드
             Application.Quit();
         #endif
     }

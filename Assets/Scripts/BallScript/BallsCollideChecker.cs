@@ -8,6 +8,7 @@ public class BallsCollideChecker : MonoBehaviour
     public GameObject otherBall; // other ball
     private GameObject winPanel;
     private Text winText; // Text that notifies player won
+    public GameObject firework;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class BallsCollideChecker : MonoBehaviour
         {
             winText.text = "You Win!"; // Shows message
             winPanel.SendMessage("show"); //Hides WinPanel
+            firework.SetActive(true);
         }
     }
 }

@@ -27,7 +27,7 @@ public class PistonAction : AbstractToolAction
         // dir 벡터는 rot을 이용한 적당한 단위벡터
         Vector2 dir = new Vector2(-Mathf.Cos(rot), -Mathf.Sin(rot));
         // 피스톤이 정지해있을 때
-        if (Utility.vector2Equal(plate.velocity, Vector2.zero))
+        if (vector2Equal(plate.velocity, Vector2.zero))
             // dir 방향으로 척력이 작용
             plate.AddForce(dir * (int)3e8);
     }
@@ -39,5 +39,18 @@ public class PistonAction : AbstractToolAction
         Vector2 dir = new Vector2(-Mathf.Cos(rot), -Mathf.Sin(rot));
         // dir 반대 방향으로 인력이 작용
         plate.AddForce(-dir * (int)3e8);
+    }
+
+    private bool floatEqual(float _a, float _b)
+    {
+        // determine two float object is same; round off error is considered.
+        const double EPSILON = 0.00001;
+        return (Mathf.Abs(_a - _b) < EPSILON);
+    }
+
+    private bool vector2Equal(Vector2 _a, Vector2 _b)
+    {
+        // determine two Vector2 object is same.
+        return (floatEqual(_a.x, _b.x) && floatEqual(_a.y, _b.y));
     }
 }

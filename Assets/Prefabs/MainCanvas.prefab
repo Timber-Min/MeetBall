@@ -856,7 +856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d7e8ce1c973614bbdf47202f7ae4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPaused: 0
 --- !u!114 &446730640660169003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,7 +1180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MAIN MENU
+  m_Text: LEVELS
 --- !u!1 &446730640756383726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,7 +1754,7 @@ GameObject:
   - component: {fileID: 446730641004076242}
   - component: {fileID: 446730641004076253}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: Levels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
