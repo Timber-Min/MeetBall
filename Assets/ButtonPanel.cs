@@ -8,7 +8,6 @@ public class ButtonPanel : MonoBehaviour
 {
     private Button menuBtn, restartBtn, nextBtn;
     private Transform myTransform;
-    private GameObject mCamera;
     private string thisScene;
     void Start()
     {
@@ -21,38 +20,41 @@ public class ButtonPanel : MonoBehaviour
         restartBtn.onClick.AddListener(restart);
         nextBtn.onClick.AddListener(gotoNext);
 
-        mCamera = GameObject.Find("Main Camera");
-
         thisScene = SceneManager.GetActiveScene().name;
-        Debug.Log(thisScene[0]);
-        Debug.Log(thisScene[2]);
-
     }
 
-    private void gotoMenu() => SceneManager.LoadScene("MainMenu");
+    private void gotoMenu() => SceneManager.LoadScene("L1");
 
     private void restart()
     {
-        mCamera.GetComponent<MainCamera>().isGameStart = false;
+        StageProcessor.reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void gotoNext()
     {
-        string nextScene;
+        string nextScene = "";
         int level, stage;
-        level = int.Parse(thisScene[0].ToString());
-        stage = int.Parse(thisScene[2].ToString());
-        Debug.Log("asd" + level);
-        Debug.Log(stage);
-        if (stage == '8')
+        try
         {
-            nextScene = "MainMenu";
+            level = int.Parse(thisScene[0].ToString());
+            stage = int.Parse(thisScene[2].ToString());
+            if (stage == 8)
+            {
+                nextScene = "L"+level.ToString();
+            }
+            else
+            {
+                nextScene = string.Format("{0}-{1}", level, stage + 1);
+            }
         }
-        else
+        catch
         {
-            nextScene = string.Format("{0}-{1}", level, stage + 1);
+            nextScene = "L1";
         }
-        SceneManager.LoadScene(nextScene);
+        finally
+        {
+            SceneManager.LoadScene(nextScene);
+        }
     }
 }

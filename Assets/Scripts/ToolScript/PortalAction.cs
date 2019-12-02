@@ -32,7 +32,7 @@ public class PortalAction : AbstractToolAction
         foreach (BoxCollider2D i in allWalls)
         {
             Vector2 wallPos = i.transform.position;
-            if (Utility.vector2Equal(Utility.asVector2(wallPos - tempPos).normalized, new Vector2(dx, dy)))
+            if (vector2Equal(asVector2(wallPos - tempPos).normalized, new Vector2(dx, dy)))
             {
                 validWalls.Add(i);
             }
@@ -47,7 +47,7 @@ public class PortalAction : AbstractToolAction
             foreach (BoxCollider2D i in validWalls)
             {
                 Vector2 wallPos = i.transform.position;
-                if (Utility.vector2Equal(tempPos, wallPos))
+                if (vector2Equal(tempPos, wallPos))
                 {
                     flag = true;
                     break;
@@ -80,13 +80,32 @@ public class PortalAction : AbstractToolAction
 
         if (portal.Equals(portalOrange.GetComponent<Collider2D>()))
         {
-            teleportPos = Utility.asVector2(portalBlue.transform.position) + new Vector2(dx, dy) * 0.5f;
+            teleportPos = asVector2(portalBlue.transform.position) + new Vector2(dx, dy) * 0.5f;
             ball.GetComponent<Transform>().position = teleportPos;
         }
         else
         {
-            teleportPos = Utility.asVector2(portalOrange.transform.position) + new Vector2(-dx, -dy) * 0.5f;
+            teleportPos = asVector2(portalOrange.transform.position) + new Vector2(-dx, -dy) * 0.5f;
             ball.GetComponent<Transform>().position = teleportPos;
         }
+    }
+
+    private Vector2 asVector2(Vector3 _v)
+    {
+        // convert Vector3 to Vector2.
+        return new Vector2(_v.x, _v.y);
+    }
+
+    private bool floatEqual(float _a, float _b)
+    {
+        // determine two float object is same; round off error is considered.
+        const double EPSILON = 0.00001;
+        return (Mathf.Abs(_a - _b) < EPSILON);
+    }
+
+    private bool vector2Equal(Vector2 _a, Vector2 _b)
+    {
+        // determine two Vector2 object is same.
+        return (floatEqual(_a.x, _b.x) && floatEqual(_a.y, _b.y));
     }
 }

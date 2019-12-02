@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static StageProcessor;
 
 public class SpaghettiForce : AbstractForceCalculator
 {
@@ -35,6 +36,7 @@ public class SpaghettiForce : AbstractForceCalculator
 
     void FixedUpdate()
     {
+        if(!isStarted) return;
         for (int i = 0; i < objects.Length; i++)
         {
             // forceType이 0이면 힘이 작용하지 않음.
