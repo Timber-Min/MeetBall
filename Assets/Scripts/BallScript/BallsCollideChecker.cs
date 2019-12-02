@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static StageProcessor;
 
 public class BallsCollideChecker : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class BallsCollideChecker : MonoBehaviour
         {
             winText.text = "You Win!"; // Shows message
             winPanel.SendMessage("show"); //Hides WinPanel
+            Time.timeScale = 0f;
+            getMenuPanel().SendMessage("triggerPause");
             firework.SetActive(true);
         }
     }
