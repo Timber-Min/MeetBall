@@ -8,6 +8,6 @@ public class DiodeWallAction : AbstractToolAction
 
     protected override void triggerStayAction(Collider2D otherCollider)
     {
-        Physics2D.IgnoreCollision(invisibleWall, otherCollider);
+        Physics2D.IgnoreCollision(invisibleWall, otherCollider, true);
     }
 }
