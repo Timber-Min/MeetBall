@@ -14,6 +14,7 @@ public class MainCamera : MonoBehaviour
     public Button startBtn;
     public SliderHandler slider;
     private GameObject forceMan;
+    private GameObject timer;
     private int cnt = 0;
 
     private float interval = 20;
@@ -24,6 +25,7 @@ public class MainCamera : MonoBehaviour
         slider = GameObject.Find("Slider").GetComponent<SliderHandler>();
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
         PanelControl = GameObject.Find("Panel");
+        timer = GameObject.Find("Timer");
         getMenuPanel().SendMessage("pause");
         startBtn.onClick.AddListener(gameStart);
     }
@@ -56,5 +58,6 @@ public class MainCamera : MonoBehaviour
         PanelControl.SendMessage("hide");
         forceMan.SendMessage("show");
         slider.SendMessage("show");
+        timer.SendMessage("reset");
     }
 }
