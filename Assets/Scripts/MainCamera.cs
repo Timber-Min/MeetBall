@@ -20,7 +20,7 @@ public class MainCamera : MonoBehaviour
     private float interval = 20;
     void Start()
     {
-        myTransform = getMainCamera().transform;
+        myTransform = gameObject.transform;
         forceMan = GameObject.Find("ForceManager");
         slider = GameObject.Find("Slider").GetComponent<SliderHandler>();
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
