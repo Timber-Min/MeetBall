@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // 아이템 인벤토리 생성
 public class PanelController : MonoBehaviour
 {
-    public static int itemCount = 4;
+    public static int itemCount = 5;
     public GameObject panel;
     public GameObject slot;
     public static GameObject[] slotList;

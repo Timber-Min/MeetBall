@@ -4,11 +4,24 @@ using UnityEngine;
 
 public abstract class AbstractToolAction : MonoBehaviour
 {
-    private bool isTurnable;
-    
+    private bool isRotatable;
+
     void Awake()
     {
         gameObject.tag = "Tool";
+    }
+
+    void Start()
+    {
+        if(isRotatable)
+        {
+            makeHandle();
+        }
+    }
+
+    private void makeHandle()
+    {
+        
     }
 
     void OnTriggerEnter2D(Collider2D other) // Trigger Start
@@ -44,6 +57,8 @@ public abstract class AbstractToolAction : MonoBehaviour
         print("Collision Exited: " + other + " from " + this.name);
         collisionExitAction(other);
     }
+
+    private void toggleRotate() => isRotatable = !isRotatable;
 
     protected virtual void triggerEnterAction(Collider2D _other) { }
 
