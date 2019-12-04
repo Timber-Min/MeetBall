@@ -107,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9375, y: 1.5}
+  m_Size: {x: 0.9375, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &515067424708584392
 MonoBehaviour:
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df80681a46680c74dbc899e1283b5c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invisibleWall: {fileID: 515067425024353836}
+  invisibleWall: {fileID: 8178724645612768435}
 --- !u!1 &515067425024353838
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +131,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 515067425024353837}
-  - component: {fileID: 515067425024353836}
+  - component: {fileID: 8178724645612768435}
+  - component: {fileID: 827229164850384547}
   m_Layer: 0
   m_Name: Invisible Wall
   m_TagString: Untagged
@@ -153,7 +154,7 @@ Transform:
   m_Father: {fileID: 515067424708584393}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &515067425024353836
+--- !u!61 &8178724645612768435
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,3 +180,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0625, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &827229164850384547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515067425024353838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ea267ae596d904ebd9ef5e9786da69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
