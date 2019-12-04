@@ -120,6 +120,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &61306968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 446730642254322375, guid: b85c83c119094cc4c8657bcf2b5795ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 706122077}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &61306974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61306968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006aa9ac3841cee4686f339e9507cb61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &339851527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -595,7 +613,7 @@ PrefabInstance:
     - target: {fileID: 446730641210826855, guid: b85c83c119094cc4c8657bcf2b5795ac,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -49.99994
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 446730641004076253, guid: b85c83c119094cc4c8657bcf2b5795ac,
         type: 3}
@@ -622,6 +640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -56.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 568791666535220746, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Timer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b85c83c119094cc4c8657bcf2b5795ac, type: 3}
