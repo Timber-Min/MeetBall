@@ -13,7 +13,7 @@ public class SceneControllerForBtn : SceneController
         gameObject.GetComponent<Button>().onClick.AddListener(RequestScene);
     }
 
-    void RequestScene()
+    protected virtual void RequestScene()
     {
         SwitchScene(sceneName);
     }

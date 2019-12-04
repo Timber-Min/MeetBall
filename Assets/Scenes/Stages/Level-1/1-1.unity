@@ -661,6 +661,37 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7368984715014914550, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194252719519038367, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2f1fa3c63bd2e14ebc1b31b07785999,
+        type: 3}
+    - target: {fileID: 1194252719519038367, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194252719519038367, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194252719519038367, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946243956704834136, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: sceneName
+      value: L1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b85c83c119094cc4c8657bcf2b5795ac, type: 3}
 --- !u!1001 &1663708356

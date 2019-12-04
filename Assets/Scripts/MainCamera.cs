@@ -11,7 +11,7 @@ public class MainCamera : MonoBehaviour
     private GameObject PanelControl;
     public Camera myCamera;
     private Transform myTransform;
-    public Button startBtn, escapeMenuBtn;
+    public Button startBtn, escapeBtn;
     public SliderHandler slider;
     private GameObject forceMan;
     private GameObject timer;
@@ -24,7 +24,7 @@ public class MainCamera : MonoBehaviour
         forceMan = GameObject.Find("ForceManager");
         slider = GameObject.Find("Slider").GetComponent<SliderHandler>();
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
-        escapeMenuBtn = GameObject.Find("EscapeToMenu").GetComponent<Button>();
+        escapeBtn=GameObject.Find("EscapeToMenu").GetComponent<Button>();
         PanelControl = GameObject.Find("Panel");
         timer = GameObject.Find("Timer");
         getMenuPanel().SendMessage("pause");
@@ -53,7 +53,7 @@ public class MainCamera : MonoBehaviour
     public void gameStart()
     {
         startBtn.SendMessage("hide");
-        escapeMenuBtn.SendMessage("hide");
+        escapeBtn.SendMessage("hide");
         print("Game Start");
         isStarted = true;
         getMenuPanel().SendMessage("resume");
