@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartButton : MonoBehaviour
+public class GameStartButton : MonoBehaviour
 {
-    private GameObject startBtn;
     private Button myButton;
     private Transform myTransform;
 
     void Start()
     {
-        startBtn = GameObject.Find("GameStart");
-        myButton = startBtn.GetComponent<Button>();
-        myTransform = startBtn.GetComponent<Transform>();
+        myButton = gameObject.GetComponent<Button>();
+        myTransform = gameObject.GetComponent<Transform>();
     }
 
     public void hide()
