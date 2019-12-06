@@ -23,7 +23,7 @@ public class ButtonPanel : MonoBehaviour
         thisScene = SceneManager.GetActiveScene().name;
     }
 
-    private void gotoMenu() => SceneManager.LoadScene("L1");
+    private void gotoMenu() => SceneManager.LoadScene("L" + thisScene[0]);
 
     private void restart()
     {

@@ -30,6 +30,7 @@ Transform:
   m_Children:
   - {fileID: 6796822836590725991}
   - {fileID: 6466230615727804353}
+  - {fileID: 9177130902056465555}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6796822836590725991}
   - component: {fileID: 8477734832024112204}
-  - component: {fileID: 1465818103918293980}
+  - component: {fileID: 4821877947787994866}
   - component: {fileID: 2324873543778815885}
   m_Layer: 0
   m_Name: Body
@@ -74,8 +75,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928926708538895772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2117, y: 0, z: 0}
-  m_LocalScale: {x: 0.5767, y: 1, z: 1}
+  m_LocalPosition: {x: 0.15, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 628064088179355379}
   m_RootOrder: 0
@@ -129,7 +130,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1465818103918293980
+--- !u!61 &4821877947787994866
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,8 +178,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6466230615727804353}
   - component: {fileID: 6512106473776159727}
-  - component: {fileID: 8603511245093567136}
+  - component: {fileID: 1594626392725609520}
   - component: {fileID: 4836419449542021675}
+  - component: {fileID: 6298629122635770066}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Untagged
@@ -194,10 +196,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4023231819658145013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2215, y: 0, z: 0}
-  m_LocalScale: {x: 0.2526742, y: 1, z: 1}
-  m_Children:
-  - {fileID: 9177130902056465555}
+  m_LocalPosition: {x: -0.35, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 1, z: 1}
+  m_Children: []
   m_Father: {fileID: 628064088179355379}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,7 +251,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8603511245093567136
+--- !u!61 &1594626392725609520
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,7 +297,25 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
+--- !u!255 &6298629122635770066
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023231819658145013}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 4932943760715966460}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0.4375, y: 0}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1 &5329861107066169136
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,8 +326,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9177130902056465555}
   - component: {fileID: 2311228766386139524}
+  - component: {fileID: 4932943760715966460}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Rod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,12 +341,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5329861107066169136}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.21, y: 0, z: 1}
-  m_LocalScale: {x: 3.212, y: 0.2012, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 6466230615727804353}
-  m_RootOrder: 0
+  m_Father: {fileID: 628064088179355379}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2311228766386139524
 SpriteRenderer:
@@ -377,3 +397,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &4932943760715966460
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5329861107066169136}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
