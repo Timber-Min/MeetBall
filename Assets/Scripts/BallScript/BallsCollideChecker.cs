@@ -26,6 +26,7 @@ public class BallsCollideChecker : MonoBehaviour
             Time.timeScale = 0f;
             getMenuPanel().SendMessage("triggerPause");
             firework.SetActive(true);
+            gameObject.GetComponent<AudioSource>().Play();
         }
     }
 }

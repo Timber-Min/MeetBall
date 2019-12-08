@@ -53,8 +53,6 @@ public class Pause : MonoBehaviour
 
     public void triggerPause() => isPaused = !isPaused;
 
-    public bool isPausing() => isPaused;
-
     public void restart()
     {
         isStarted = false;

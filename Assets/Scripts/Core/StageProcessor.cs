@@ -16,7 +16,7 @@ public class StageProcessor : MonoBehaviour
 
     void Awake()
     {
-        Time.timeScale=0;
+        Time.timeScale = 0;
         try
         {
             string[] sceneNames = SceneManager.GetActiveScene().name.Split('-');
@@ -35,8 +35,8 @@ public class StageProcessor : MonoBehaviour
     {
         isStarted = isCleared = false;
         isPaused = true;
-        menuPanel=GameObject.Find("MenuPanel");
-        mainCamera=GameObject.Find("Main Camera");
+        menuPanel = GameObject.Find("MenuPanel");
+        mainCamera = GameObject.Find("Main Camera");
     }
 
     public static GameObject getMenuPanel() => menuPanel;

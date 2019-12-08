@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static StageProcessor;
 
 public class ButtonPanel : MonoBehaviour
 {
     private Button menuBtn, restartBtn, nextBtn;
     private Transform myTransform;
     private string thisScene;
+
     void Start()
     {
         myTransform = gameObject.transform;
@@ -27,7 +29,7 @@ public class ButtonPanel : MonoBehaviour
 
     private void restart()
     {
-        StageProcessor.reset();
+        reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

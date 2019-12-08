@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stages/Level-2/2-8.unity
     guid: bb012c3a600f560488ca85eded765d28
+  - enabled: 1
+    path: Assets/Scenes/Menu/Retry.unity
+    guid: 4e1bcf0999bb55445b2b1fc7ff3ee8fb
   m_configObjects: {}
