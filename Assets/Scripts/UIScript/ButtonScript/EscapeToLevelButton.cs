@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static StageProcessor;
 
-public class EscapeToMenuButton : SceneControllerForBtn
+public class EscapeToLevelButton : SceneControllerForBtn
 {
     protected override void RequestScene()
     {

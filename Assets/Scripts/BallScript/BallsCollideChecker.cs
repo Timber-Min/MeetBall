@@ -9,12 +9,14 @@ public class BallsCollideChecker : MonoBehaviour
     public GameObject otherBall; // other ball
     private GameObject winPanel;
     private Text winText; // Text that notifies player won
+    private AudioSource winSound;
     public GameObject firework;
 
     void Start()
     {
         winText = GameObject.Find("WinText").GetComponent<Text>();
         winPanel = GameObject.Find("WinPanel");
+        winSound = gameObject.GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -26,7 +28,8 @@ public class BallsCollideChecker : MonoBehaviour
             Time.timeScale = 0f;
             getMenuPanel().SendMessage("triggerPause");
             firework.SetActive(true);
-            gameObject.GetComponent<AudioSource>().Play();
+            winSound.volume=(float)SoundManager.SFXscale/100;
+            winSound.Play();
         }
     }
 }

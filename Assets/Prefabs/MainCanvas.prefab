@@ -3300,7 +3300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Menu
+  m_Text: Level
 --- !u!1 &2807187730274300101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3426,7 +3426,7 @@ GameObject:
   - component: {fileID: 70044257421162319}
   - component: {fileID: 4946243956704834136}
   m_Layer: 5
-  m_Name: EscapeToMenu
+  m_Name: EscapeToLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3544,7 +3544,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4484858923602207621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9975755e73ecb19469b495f8ff94c798, type: 3}
+  m_Script: {fileID: 11500000, guid: df7aaf55734c5d04387520c95144a671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
@@ -3682,7 +3682,7 @@ GameObject:
   - component: {fileID: 5460746770745651603}
   - component: {fileID: 1859748012279012476}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: TimeScaleSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3849,7 +3849,7 @@ PrefabInstance:
     - target: {fileID: 6298629122635770066, guid: 3cf27813852ec154386de7b03286872a,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.4000244
+      value: -0.43746948
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cf27813852ec154386de7b03286872a, type: 3}

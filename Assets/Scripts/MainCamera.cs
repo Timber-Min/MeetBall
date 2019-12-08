@@ -22,9 +22,9 @@ public class MainCamera : MonoBehaviour
     {
         myTransform = gameObject.transform;
         forceMan = GameObject.Find("ForceManager");
-        slider = GameObject.Find("Slider").GetComponent<SliderHandler>();
+        slider = GameObject.Find("TimeScaleSlider").GetComponent<SliderHandler>();
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
-        escapeBtn=GameObject.Find("EscapeToMenu").GetComponent<Button>();
+        escapeBtn=GameObject.Find("EscapeToLevel").GetComponent<Button>();
         PanelControl = GameObject.Find("Panel");
         timer = GameObject.Find("Timer");
         getMenuPanel().SendMessage("pause");
