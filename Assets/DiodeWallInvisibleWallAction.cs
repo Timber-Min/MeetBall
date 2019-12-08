@@ -6,6 +6,7 @@ public class DiodeWallInvisibleWallAction : AbstractToolAction
 {
     protected override void triggerExitAction(Collider2D otherCollider)
     {
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), otherCollider, false);
+        //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), otherCollider, false);
+        GetComponent<Collider2D>().isTrigger = false;
     }
 }
