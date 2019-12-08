@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static StageProcessor;
+using UnityEngine.SceneManagement;
 
 public class BallDeathTriggerAction : AbstractToolAction
 {
@@ -16,7 +16,7 @@ public class BallDeathTriggerAction : AbstractToolAction
     {
         if (_other.gameObject.tag.Equals("Ball"))
         {
-            getMenuPanel().SendMessage("restart");
+            SceneManager.LoadScene("RetryScene");
         }
     }
 }

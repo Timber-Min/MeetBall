@@ -24,8 +24,8 @@ public class Pause : MonoBehaviour
         // esc를 눌렀을 시
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // 게임 시작 전이면 리턴
-            if (!isStarted) return;
+            // 게임 시작 전이거나 클리어 후면 리턴
+            if (!isStarted || isCleared) return;
             // 아닐 시 일시정지/재생
             if (isPaused) resume();
             else pause();
