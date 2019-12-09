@@ -7,31 +7,24 @@ using static StageProcessor;
 public class SpaghettiForce : AbstractForceCalculator
 {
     // objects: 미트볼 Gameobject.
-    // forcemanagers: 힘을 제어하는 버튼들.
-    // ballsNetGravitationalForce: 미트볼에 작용하는 힘을 저장하는 public static 변수. ArrowNavigator에 힘을 전해주기 위함.
-    // forceType: 미트볼에 작용할 힘의 종류. 0 for nothing, 1 for attraction, 2 for repulsion
-    // forceManager: Canvas 안의 ForceManager GameObject.
+    // forceManagerBtn: Canvas 안의 ForceManagerBtn 버튼.
+    // forceManagerBtnToggle: 버튼의 토글 상태.
+    // forceType: 미트볼에 작용할 힘의 종류. 0 for attraction, 1 for repulsion
     public GameObject[] objects;
-    private Button[] forceManagers = new Button[3];
-    public static Vector2[] ballsNetGravitationalForce;
+    private GameObject forceManagerBtn;
+    private bool forceManagerBtnToggle = false;
     private int forceType = 0;
-    private GameObject forceManager;
+
+    // ballsNetGravitationalForce: 미트볼에 작용하는 힘을 저장하는 변수. ArrowNavigator에 힘을 전해주기 위해 존재.
+    public Vector2[] ballsNetGravitationalForce;
 
     void Start()
     {
         ballsNetGravitationalForce = new Vector2[objects.Length];
-        forceManager = GameObject.Find("ForceManager");
-
-        forceManagers[0] = forceManager.transform.GetChild(0).gameObject.GetComponent<Button>();
-        forceManagers[1] = forceManager.transform.GetChild(1).gameObject.GetComponent<Button>();
-        forceManagers[2] = forceManager.transform.GetChild(2).gameObject.GetComponent<Button>();
-
-        // 버튼들이 눌리면 실행될 함수 지정.
-        forceManagers[0].onClick.AddListener(changeForceTypeToNothing);
-        forceManagers[1].onClick.AddListener(changeForceTypeToAttract);
-        forceManagers[2].onClick.AddListener(changeForceTypeToRepel);
-
-        changeForceTypeToAttract();
+        forceManagerBtn = GameObject.Find("ForceManagerBtn");
+        forceManagerBtn.GetComponent<Button>().onClick.AddListener(ToggleForceBtn);
+        forceManagerBtnToggle = false;
+        ChangeForceType(0);
     }
 
     void FixedUpdate()
@@ -39,8 +32,8 @@ public class SpaghettiForce : AbstractForceCalculator
         if(!isStarted) return;
         for (int i = 0; i < objects.Length; i++)
         {
-            // forceType이 0이면 힘이 작용하지 않음.
-            if (forceType == 0)
+            // forceMangerBtnToggle이 false이면 힘이 작용하지 않음.
+            if (!forceManagerBtnToggle)
             {
                 ballsNetGravitationalForce[i] = Vector2.zero;
                 continue;
@@ -59,7 +52,7 @@ public class SpaghettiForce : AbstractForceCalculator
                 Vector2 newForce = offset;
                 newForce.Normalize();
                 newForce *= -gravitationalConstant * orb.mass * rb.mass / sqmag;
-                if (forceType == 2) newForce *= -1;
+                if (forceType == 1) newForce *= -1;
                 force += newForce;
             }
             rb.AddForce(force);
@@ -68,36 +61,69 @@ public class SpaghettiForce : AbstractForceCalculator
     }
 
     // 힘의 종류가 매개변수로 들어오면 지정.
-    void changeForceType(int type)
+    void ChangeForceType(int type)
     {
         forceType = type;
-        for (int i = 0; i < forceManagers.Length; i++)
+        Text btnText = forceManagerBtn.GetComponentInChildren<Text>();
+        if (forceType == 0)
         {
-            forceManagers[i].GetComponent<Button>().interactable = true;
+            btnText.text = "Attract";
         }
-        forceManagers[forceType].GetComponent<Button>().interactable = false;
+        else if (forceType == 1)
+        {
+            btnText.text = "Repel";
+        }
+        else
+        {
+            throw new System.ArgumentException("force type argument must be 0 or 1.");
+        }
+        UpdateForceBtnColor();
 
         print("Current Force Status: " + forceType.ToString());
     }
-
-    void changeForceType()
+    void CycleForceType()
     {
-        forceType = (forceType + 1) % 3;
-        changeForceType(forceType);
+        forceType = (forceType + 1) % 2;
+        ChangeForceType(forceType);
     }
 
-    void changeForceTypeToNothing()
+    void ToggleForceBtn()
     {
-        changeForceType(0);
+        forceManagerBtnToggle = !forceManagerBtnToggle;
+        UpdateForceBtnColor();
     }
 
-    void changeForceTypeToAttract()
+    void UpdateForceBtnColor()
     {
-        changeForceType(1);
-    }
-
-    void changeForceTypeToRepel()
-    {
-        changeForceType(2);
+        Image btnImage = forceManagerBtn.GetComponent<Image>();
+        if (forceType == 0)
+        {
+            print("asdf1");
+            if (forceManagerBtnToggle)
+            {
+                forceManagerBtn.GetComponent<Image>().color = new Color(189f / 255f, 188f / 255f, 167f / 255f);
+                print("asdf2");
+            }
+            else
+            {
+                forceManagerBtn.GetComponent<Image>().color = new Color(252f / 255f, 251f / 255f, 223f / 255f);
+                print("asdf3");
+            }
+        }
+        else if (forceType == 1)
+        {
+            if (forceManagerBtnToggle)
+            {
+                forceManagerBtn.GetComponent<Image>().color = new Color(175f / 255f, 59f / 255f, 19f / 255f);
+            }
+            else
+            {
+                forceManagerBtn.GetComponent<Image>().color = new Color(234f / 255f, 79f / 255f, 25f / 255f);
+            }
+        }
+        else
+        {
+            throw new System.ArgumentException("force type argument must be 0 or 1.");
+        }
     }
 }

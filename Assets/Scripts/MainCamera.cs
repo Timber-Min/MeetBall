@@ -13,7 +13,7 @@ public class MainCamera : MonoBehaviour
     private Transform myTransform;
     public Button startBtn, escapeBtn;
     public SliderHandler slider;
-    private GameObject forceMan;
+    private GameObject forceManBtn;
     private GameObject timer;
     private int cnt = 0;
 
@@ -21,7 +21,7 @@ public class MainCamera : MonoBehaviour
     void Start()
     {
         myTransform = gameObject.transform;
-        forceMan = GameObject.Find("ForceManager");
+        forceManBtn = GameObject.Find("ForceManagerBtn");
         slider = GameObject.Find("TimeScaleSlider").GetComponent<SliderHandler>();
         startBtn = GameObject.Find("GameStart").GetComponent<Button>();
         escapeBtn=GameObject.Find("EscapeToLevel").GetComponent<Button>();
@@ -58,7 +58,7 @@ public class MainCamera : MonoBehaviour
         isStarted = true;
         getMenuPanel().SendMessage("resume");
         PanelControl.SendMessage("hide");
-        forceMan.SendMessage("show");
+        forceManBtn.SendMessage("show");
         slider.SendMessage("show");
         timer.SendMessage("reset");
     }

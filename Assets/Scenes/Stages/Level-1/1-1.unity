@@ -636,6 +636,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4946243956704834136, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: sceneName
+      value: L1
+      objectReference: {fileID: 0}
     - target: {fileID: 4942261676030021129, guid: b85c83c119094cc4c8657bcf2b5795ac,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -660,6 +665,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130622013182294603, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130622013182294603, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 756666430539612052, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 756666430539612052, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 756666430539612052, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7368984715014914550, guid: b85c83c119094cc4c8657bcf2b5795ac,
         type: 3}
@@ -686,11 +716,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946243956704834136, guid: b85c83c119094cc4c8657bcf2b5795ac,
-        type: 3}
-      propertyPath: sceneName
-      value: L1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b85c83c119094cc4c8657bcf2b5795ac, type: 3}
