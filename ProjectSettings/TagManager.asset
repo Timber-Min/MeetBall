@@ -44,6 +44,15 @@ TagManager:
   - name: Backgrounds
     uniqueID: 3731151107
     locked: 0
+  - name: Walls
+    uniqueID: 620064315
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tools
+    uniqueID: 3314617053
+    locked: 0
+  - name: MeatBalls
+    uniqueID: 1033399247
     locked: 0

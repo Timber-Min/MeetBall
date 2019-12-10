@@ -2896,7 +2896,7 @@ PrefabInstance:
     - target: {fileID: 2209977369677492198, guid: 0f0839ad492f0d5409701814de255558,
         type: 3}
       propertyPath: m_Name
-      value: Meatballs
+      value: MeatBalls
       objectReference: {fileID: 0}
     - target: {fileID: 2209977369677492196, guid: 0f0839ad492f0d5409701814de255558,
         type: 3}

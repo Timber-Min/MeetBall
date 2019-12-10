@@ -12,18 +12,18 @@ public class SpaghettiForce : AbstractForceCalculator
     // forceType: 미트볼에 작용할 힘의 종류. 0 for attraction, 1 for repulsion
     public GameObject[] objects;
     private GameObject forceManagerBtn;
-    private bool forceManagerBtnToggle = false;
+    private bool forceManagerBtnToggle = true;
     private int forceType = 0;
 
     // ballsNetGravitationalForce: 미트볼에 작용하는 힘을 저장하는 변수. ArrowNavigator에 힘을 전해주기 위해 존재.
-    public Vector2[] ballsNetGravitationalForce;
+    private Vector2[] ballsNetGravitationalForce;
 
     void Start()
     {
         ballsNetGravitationalForce = new Vector2[objects.Length];
         forceManagerBtn = GameObject.Find("ForceManagerBtn");
         forceManagerBtn.GetComponent<Button>().onClick.AddListener(ToggleForceBtn);
-        forceManagerBtnToggle = false;
+        forceManagerBtnToggle = true;
         ChangeForceType(0);
     }
 
@@ -58,6 +58,11 @@ public class SpaghettiForce : AbstractForceCalculator
             rb.AddForce(force);
             ballsNetGravitationalForce[i] = force;
         }
+    }
+
+    public Vector2[] GetForces()
+    {
+        return ballsNetGravitationalForce;
     }
 
     // 힘의 종류가 매개변수로 들어오면 지정.
@@ -98,16 +103,13 @@ public class SpaghettiForce : AbstractForceCalculator
         Image btnImage = forceManagerBtn.GetComponent<Image>();
         if (forceType == 0)
         {
-            print("asdf1");
             if (forceManagerBtnToggle)
             {
                 forceManagerBtn.GetComponent<Image>().color = new Color(189f / 255f, 188f / 255f, 167f / 255f);
-                print("asdf2");
             }
             else
             {
                 forceManagerBtn.GetComponent<Image>().color = new Color(252f / 255f, 251f / 255f, 223f / 255f);
-                print("asdf3");
             }
         }
         else if (forceType == 1)

@@ -8,7 +8,7 @@ public class ForceInverterAction : AbstractToolAction
 
     private void Start()
     {
-        spaghettiForce = GameObject.Find("Meatballs").GetComponent<SpaghettiForce>();
+        spaghettiForce = GameObject.Find("MeatBalls").GetComponent<SpaghettiForce>();
     }
 
     protected override void triggerEnterAction(Collider2D _other)
