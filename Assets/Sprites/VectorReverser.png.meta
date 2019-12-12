@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 99495695bf1a626419684163cb7d0814
+guid: 53d31807fadc7a1449054a2c8064bc7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -31,9 +31,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
-    aniso: 1
-    mipBias: 0
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -45,12 +45,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
-  spriteTessellationDetail: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -85,30 +85,10 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline:
-    - - {x: 32, y: 32}
-      - {x: -32, y: 32}
-      - {x: -32, y: -32}
-      - {x: 32, y: -32}
-    physicsShape:
-    - - {x: 13.440407, y: 29.808704}
-      - {x: 0.9598923, y: 32}
-      - {x: -11.782318, y: 29.555302}
-      - {x: -21.58626, y: 22.586262}
-      - {x: -28.898924, y: 13.228432}
-      - {x: -32, y: 0.9598923}
-      - {x: -29.738016, y: -12.692574}
-      - {x: -22.10382, y: -22.10382}
-      - {x: -11.278856, y: -29.031147}
-      - {x: 0.9598465, y: -32}
-      - {x: 13.247299, y: -29.250431}
-      - {x: 22.810692, y: -22.810692}
-      - {x: 29.96539, y: -13.196854}
-      - {x: 31.999996, y: 0.9598465}
-      - {x: 29.359413, y: 13.745216}
-      - {x: 22.810692, y: 22.810692}
+    outline: []
+    physicsShape: []
     bones: []
-    spriteID: 22f02c2d2a45e74408dd96b0502d37ac
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
