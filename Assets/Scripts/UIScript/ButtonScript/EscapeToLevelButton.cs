@@ -10,6 +10,7 @@ public class EscapeToLevelButton : SceneControllerForBtn
         if(currentLevel>0) {
             sceneName="L"+currentLevel.ToString();
         }
+        else if(prevLevel>0) sceneName="L"+prevLevel.ToString();
         else sceneName="L1";
         SwitchScene(sceneName);
     }
