@@ -20,11 +20,11 @@ public class SceneControllerForBtn : SceneController
 
     protected void hide()
     {
-        gameObject.transform.localScale=new Vector3(0, 0, 0);
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
     }
 
     protected void show()
     {
-        gameObject.transform.localScale=new Vector3(1, 1, 1);
-    } 
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+    }
 }

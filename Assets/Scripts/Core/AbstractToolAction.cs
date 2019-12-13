@@ -13,7 +13,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     void Start()
     {
-        if(isRotatable)
+        if (isRotatable)
         {
             makeHandle();
         }
@@ -21,7 +21,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     private void makeHandle()
     {
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D other) // Trigger Start

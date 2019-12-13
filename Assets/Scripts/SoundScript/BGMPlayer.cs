@@ -5,24 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class BGMPlayer : MonoBehaviour
 {
-    private static BGMPlayer audioPlayer=null;
+    private static BGMPlayer audioPlayer = null;
 
     void Awake()
-    {    
-        if(audioPlayer!=null && audioPlayer!=this)
+    {
+        if (audioPlayer != null && audioPlayer != this)
         {
             Destroy(gameObject);
             return;
         }
         else
         {
-            audioPlayer=this;
+            audioPlayer = this;
         }
         DontDestroyOnLoad(gameObject);
     }
 
     void Update()
     {
-        gameObject.GetComponent<AudioSource>().volume=(float)SoundManager.BGMscale/100;
+        gameObject.GetComponent<AudioSource>().volume = (float)SoundManager.BGMscale / 100;
     }
 }

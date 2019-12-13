@@ -9,7 +9,7 @@ public class BackToPrevStageButton : SceneControllerForBtn
     {
         try
         {
-            if(prevLevel>0) sceneName = prevLevel.ToString() + "-" + prevStage.ToString();
+            if (prevLevel > 0) sceneName = prevLevel.ToString() + "-" + prevStage.ToString();
             else
             {
                 sceneName = "GameIntroScene";

@@ -29,7 +29,7 @@ public class SpaghettiForce : AbstractForceCalculator
 
     void FixedUpdate()
     {
-        if(!isStarted) return;
+        if (!isStarted) return;
         for (int i = 0; i < objects.Length; i++)
         {
             // forceMangerBtnToggle이 false이면 힘이 작용하지 않음.

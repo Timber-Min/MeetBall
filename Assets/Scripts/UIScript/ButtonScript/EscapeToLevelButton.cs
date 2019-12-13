@@ -7,11 +7,12 @@ public class EscapeToLevelButton : SceneControllerForBtn
 {
     protected override void RequestScene()
     {
-        if(currentLevel>0) {
-            sceneName="L"+currentLevel.ToString();
+        if (currentLevel > 0)
+        {
+            sceneName = "L" + currentLevel.ToString();
         }
-        else if(prevLevel>0) sceneName="L"+prevLevel.ToString();
-        else sceneName="L1";
+        else if (prevLevel > 0) sceneName = "L" + prevLevel.ToString();
+        else sceneName = "GameIntroScene";
         SwitchScene(sceneName);
     }
 }

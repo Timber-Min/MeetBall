@@ -28,7 +28,7 @@ public class BallsCollideChecker : MonoBehaviour
             Time.timeScale = 0f;
             getMenuPanel().SendMessage("triggerPause");
             firework.SetActive(true);
-            winSound.volume=(float)SoundManager.SFXscale/100;
+            winSound.volume = (float)SoundManager.SFXscale / 100;
             winSound.Play();
         }
     }

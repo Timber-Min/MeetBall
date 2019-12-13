@@ -8,7 +8,7 @@ public class BouncySoundManager : MonoBehaviour
 
     void Start()
     {
-        bouncySound=gameObject.GetComponent<AudioSource>();
+        bouncySound = gameObject.GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter2D(Collision2D other) // Collision Start

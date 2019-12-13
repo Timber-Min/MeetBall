@@ -59,5 +59,5 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void gotoMenu() => SceneManager.LoadScene("L1");
+    private void gotoMenu() => SceneManager.LoadScene("GameIntroScene");
 }
