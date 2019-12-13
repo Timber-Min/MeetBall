@@ -11,8 +11,9 @@ public class BouncySoundManager : MonoBehaviour
         bouncySound = gameObject.GetComponent<AudioSource>();
     }
 
-    void OnCollisionEnter2D(Collision2D other) // Collision Start
+    void OnCollisionEnter2D(Collision2D other)
     {
+        bouncySound.volume=(float)SoundManager.SFXscale / 100;
         bouncySound.Play();
     }
 }
