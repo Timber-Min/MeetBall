@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForceManager : MonoBehaviour
+public class ForceManagerBtn : MonoBehaviour
 {
     void Start()
     {

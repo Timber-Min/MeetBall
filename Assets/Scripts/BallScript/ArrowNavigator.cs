@@ -8,6 +8,7 @@ public class ArrowNavigator : MonoBehaviour
     private GameObject[] balls;
     public GameObject[] arrows;
     int cnt;
+    private SpaghettiForce spaghettiForce;
 
     void Start()
     {
@@ -16,14 +17,16 @@ public class ArrowNavigator : MonoBehaviour
         if (balls.Length != arrows.Length)
             throw new System.ArgumentException("Length of two arrays, 'balls' and 'arrows' must be same.");
         cnt = balls.Length;
+        spaghettiForce = GameObject.Find("MeatBalls").GetComponent<SpaghettiForce>();
     }
 
     void FixedUpdate()
     {
+        Vector2[] forces = spaghettiForce.GetForces();
         for (int i = 0; i < cnt; i++)
         {
             GameObject a = arrows[i];
-            Vector2 force = SpaghettiForce.ballsNetGravitationalForce[i];
+            Vector2 force = forces[i];
 
             if (force.magnitude > 1e-4)
             {

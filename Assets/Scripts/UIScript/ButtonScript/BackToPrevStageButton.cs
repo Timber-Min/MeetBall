@@ -15,7 +15,7 @@ public class BackToPrevStageButton : SceneControllerForBtn
                 sceneName = "GameIntroScene";
             }
         }
-        catch (MissingReferenceException e)
+        catch (MissingReferenceException)
         {
             sceneName = "GameIntroScene";
         }
