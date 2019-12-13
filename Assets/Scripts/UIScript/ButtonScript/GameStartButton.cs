@@ -22,6 +22,7 @@ public class GameStartButton : AbstractUIHandler
         GameObject.Find("EscapeToLevel").SendMessage("hide");
         GameObject.Find("ItemPanel").SendMessage("hide");
         GameObject.Find("Timer").SendMessage("reset");
+        Destroy(GameObject.Find("StageName"));
 
         getMenuPanel().SendMessage("resume");
         GameObject.Find("ForceManagerBtn").SendMessage("show");
