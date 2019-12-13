@@ -14,7 +14,7 @@ public class Pause : MonoBehaviour
     {
         gameObject.SetActive(true);
         restartBtn = GameObject.Find("Restart").GetComponent<Button>();
-        levelBtn = GameObject.Find("Levels").GetComponent<Button>();
+        levelBtn = GameObject.Find("Stages").GetComponent<Button>();
         restartBtn.onClick.AddListener(restart);
         levelBtn.onClick.AddListener(gotoMenu);
     }
