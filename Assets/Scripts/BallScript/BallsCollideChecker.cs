@@ -24,7 +24,7 @@ public class BallsCollideChecker : MonoBehaviour
         if (collision.gameObject.Equals(otherBall))
         {
             winText.text = "You Win!"; // Shows message
-            winPanel.SendMessage("show"); //Hides WinPanel
+            winPanel.SendMessage("show"); // Shows WinPanel
             Time.timeScale = 0f;
             getMenuPanel().SendMessage("triggerPause");
             firework.SetActive(true);

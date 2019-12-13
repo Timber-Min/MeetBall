@@ -10,7 +10,7 @@ public class SliderHandler : AbstractUIHandler
 
     void Start()
     {
-        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        hide();
         timeScaleGauge = gameObject.GetComponent<Slider>();
         timeScaleGauge.onValueChanged.AddListener(timeScaleSet);
     }

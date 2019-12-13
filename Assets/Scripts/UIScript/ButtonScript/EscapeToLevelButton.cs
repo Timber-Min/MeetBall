@@ -13,6 +13,4 @@ public class EscapeToLevelButton : SceneControllerForBtn
         else sceneName="L1";
         SwitchScene(sceneName);
     }
-
-    public void hide() => gameObject.GetComponent<Transform>().localScale = new Vector3(0, 0, 0);
 }

@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26bf6911952e1f449b0add1d4d1bc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: L2
+  sceneName: L3
 --- !u!114 &101913233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2131,6 +2131,7 @@ GameObject:
   - component: {fileID: 1588416767}
   - component: {fileID: 1588416766}
   - component: {fileID: 1588416765}
+  - component: {fileID: 1588416768}
   m_Layer: 5
   m_Name: PrevLevel
   m_TagString: Untagged
@@ -2240,6 +2241,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588416763}
   m_CullTransparentMesh: 0
+--- !u!114 &1588416768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588416763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26bf6911952e1f449b0add1d4d1bc75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: L1
 --- !u!1 &1722566014
 GameObject:
   m_ObjectHideFlags: 0

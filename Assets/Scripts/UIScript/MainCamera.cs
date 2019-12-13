@@ -7,29 +7,9 @@ using static StageProcessor;
 // 카메라 위치/크기 조정
 // 게임 시작
 public class MainCamera : MonoBehaviour
-{
-    private GameObject PanelControl;
-    public Camera myCamera;
-    private Transform myTransform;
-    public Button startBtn, escapeBtn;
-    public SliderHandler slider;
-    private GameObject forceManBtn;
-    private GameObject timer;
+{    
     private int cnt = 0;
-
     private float interval = 20;
-    void Start()
-    {
-        myTransform = gameObject.transform;
-        forceManBtn = GameObject.Find("ForceManagerBtn");
-        slider = GameObject.Find("TimeScaleSlider").GetComponent<SliderHandler>();
-        startBtn = GameObject.Find("GameStart").GetComponent<Button>();
-        escapeBtn=GameObject.Find("EscapeToLevel").GetComponent<Button>();
-        PanelControl = GameObject.Find("Panel");
-        timer = GameObject.Find("Timer");
-        getMenuPanel().SendMessage("pause");
-        startBtn.onClick.AddListener(gameStart);
-    }
 
     void Update()
     {
@@ -43,23 +23,10 @@ public class MainCamera : MonoBehaviour
             if (cnt < interval) // 카메라가 완전히 커지지 않았다면 위치/크기 조정
             {
                 Vector3 newPos = new Vector3(0, startY + Yinterval * cnt, -10);
-                myTransform.position = newPos;
-                myCamera.orthographicSize = startSize + SizeInterval * cnt;
+                gameObject.transform.position = newPos;
+                gameObject.GetComponent<Camera>().orthographicSize = startSize + SizeInterval * cnt;
                 cnt++;
             }
         }
-    }
-
-    public void gameStart()
-    {
-        startBtn.SendMessage("hide");
-        escapeBtn.SendMessage("hide");
-        print("Game Start");
-        isStarted = true;
-        getMenuPanel().SendMessage("resume");
-        PanelControl.SendMessage("hide");
-        forceManBtn.SendMessage("show");
-        slider.SendMessage("show");
-        timer.SendMessage("reset");
     }
 }

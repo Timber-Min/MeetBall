@@ -5,11 +5,8 @@ using static StageProcessor;
 
 public class PauseMenu : MonoBehaviour
 {
-    private Transform myTransform;
-
-    void Awake()
+    void Start()
     {
-        myTransform = gameObject.GetComponent<Transform>();
         hide();
     }
 
@@ -22,15 +19,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void display()
-    {
-        Vector3 newTransform = new Vector3(1, 1, 1);
-        myTransform.localScale = newTransform;
-    }
+    public void hide() => gameObject.transform.localScale = new Vector3(0, 1, 1);
 
-    public void hide()
-    {
-        Vector3 newTransform = new Vector3(0, 1, 1);
-        myTransform.localScale = newTransform;
-    }
+    public void show() => gameObject.transform.localScale = new Vector3(1, 1, 1);
 }

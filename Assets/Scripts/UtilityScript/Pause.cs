@@ -38,7 +38,7 @@ public class Pause : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
         if (isStarted)
-            getMenuPanel().SendMessage("display"); // 메뉴 표시
+            getMenuPanel().SendMessage("show"); // 메뉴 표시
         print("Paused");
     }
 

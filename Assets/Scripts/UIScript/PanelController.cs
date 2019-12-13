@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PanelController : MonoBehaviour
 {
     public static int itemCount = 5;
-    public GameObject panel;
     public GameObject slot;
     public static GameObject[] slotList;
     public static GameObject[] itemImageList;
@@ -16,15 +15,13 @@ public class PanelController : MonoBehaviour
     private SlotController slotCode;
     public Sprite demoSprite;
 
-
     void Start()
     {
         slotList = new GameObject[10];
-        panel = GameObject.Find("Panel");
         slot = GameObject.Find("Slot");
 
         // GridLayoutGroup 사용으로 자동 크기 조정
-        grid = panel.GetComponent<GridLayoutGroup>();
+        grid = gameObject.GetComponent<GridLayoutGroup>();
         grid.spacing = new Vector2(60, 60);
         autoLocalScale = new Vector3(1.0f, 1.0f, 1.0f);
 

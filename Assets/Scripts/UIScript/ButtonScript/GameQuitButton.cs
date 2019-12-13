@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class GameQuitButton : MonoBehaviour
+public class GameQuitButton : AbstractUIHandler
 {
     void Start()
     {
