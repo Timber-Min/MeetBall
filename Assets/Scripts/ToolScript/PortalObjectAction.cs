@@ -13,11 +13,11 @@ public class PortalObjectAction : AbstractToolAction
     }
 
     // 충돌이 발생하면 객체를 이동시킨다.
-    protected override void collisionEnterAction(Collision2D _collision)
+    protected override void triggerEnterAction(Collider2D _other)
     {
-        if (_collision.collider.tag == "Ball" && _collision.collider.isTrigger == false)
+        if (_other.tag == "Ball" && _other.isTrigger == false)
         {
-            manager.teleport(_collision.collider, _collision.otherCollider);
+            manager.teleport(_other, GetComponent<Collider2D>());
         }
     }
 }

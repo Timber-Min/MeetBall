@@ -44,7 +44,7 @@ public class SpaghettiForce : AbstractForceCalculator
             else
             {
                 pe.enabled = true;
-                if(forceType == 0)
+                if (forceType == 0)
                 {
                     pe.forceMagnitude = -200;
                 }
@@ -62,7 +62,7 @@ public class SpaghettiForce : AbstractForceCalculator
             {
                 if (obj.Equals(objects[i])) continue;
                 Rigidbody2D orb = obj.GetComponent<Rigidbody2D>();
-                Vector2 offset = Vector3to2(rb.transform.position) + rb.velocity*Time.fixedDeltaTime - Vector3to2(obj.transform.position) - obj.GetComponent<Rigidbody2D>().velocity*Time.fixedDeltaTime;
+                Vector2 offset = Vector3to2(rb.transform.position) + rb.velocity * Time.fixedDeltaTime - Vector3to2(obj.transform.position) - obj.GetComponent<Rigidbody2D>().velocity * Time.fixedDeltaTime;
                 float sqmag = offset.sqrMagnitude;
                 Vector2 newForce = offset;
                 newForce.Normalize();
