@@ -36,5 +36,6 @@ public class GameStartButton : AbstractUIHandler
         // UI 드러내기
         GameObject.Find("ForceManagerBtn").SendMessage("show");
         GameObject.Find("TimeScaleSlider").SendMessage("show");
+        GameObject.Find("ItemPanel").SendMessage("ifGameStart");
     }
 }

@@ -52,4 +52,13 @@ public class PanelController : MonoBehaviour
     {
         grid.transform.localScale = new Vector3(0, 0, 0);
     }
+
+    public void ifGameStart()
+    {
+        for (int i = 0; i < itemCount; i++)
+        {
+            GameObject itemImage = slotList[i].transform.GetChild(0).gameObject;
+            itemImage.SendMessage("ifGameStart");
+        }
+    }
 }
