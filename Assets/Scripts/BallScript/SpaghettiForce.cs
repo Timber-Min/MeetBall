@@ -32,11 +32,26 @@ public class SpaghettiForce : AbstractForceCalculator
         if (!isStarted) return;
         for (int i = 0; i < objects.Length; i++)
         {
+            PointEffector2D pe = objects[i].GetComponent<PointEffector2D>();
+
             // forceMangerBtnToggle이 false이면 힘이 작용하지 않음.
             if (!forceManagerBtnToggle)
             {
                 ballsNetGravitationalForce[i] = Vector2.zero;
+                pe.enabled = false;
                 continue;
+            }
+            else
+            {
+                pe.enabled = true;
+                if(forceType == 0)
+                {
+                    pe.forceMagnitude = -200;
+                }
+                else
+                {
+                    pe.forceMagnitude = 200;
+                }
             }
 
             Rigidbody2D rb = objects[i].GetComponent<Rigidbody2D>();
@@ -47,7 +62,7 @@ public class SpaghettiForce : AbstractForceCalculator
             {
                 if (obj.Equals(objects[i])) continue;
                 Rigidbody2D orb = obj.GetComponent<Rigidbody2D>();
-                Vector2 offset = rb.transform.position - obj.transform.position;
+                Vector2 offset = Vector3to2(rb.transform.position) + rb.velocity*Time.fixedDeltaTime - Vector3to2(obj.transform.position) - obj.GetComponent<Rigidbody2D>().velocity*Time.fixedDeltaTime;
                 float sqmag = offset.sqrMagnitude;
                 Vector2 newForce = offset;
                 newForce.Normalize();
@@ -55,9 +70,14 @@ public class SpaghettiForce : AbstractForceCalculator
                 if (forceType == 1) newForce *= -1;
                 force += newForce;
             }
-            rb.AddForce(force);
+            //rb.AddForce(force);
             ballsNetGravitationalForce[i] = force;
         }
+    }
+
+    Vector2 Vector3to2(Vector3 v)
+    {
+        return new Vector2(v.x, v.y);
     }
 
     public Vector2[] GetForces()
