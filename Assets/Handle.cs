@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Handle : MonoBehaviour
+public class Handle : AbstractUIHandler
 {
-    private void OnMouseDown()
+    private bool isVisible = true;
+    void Start()
     {
-        Debug.Log("down");
+        show();
     }
+    // private void OnMouseDown()
+    // {
+    //     Debug.Log("down");
+    // }
+
+
 }

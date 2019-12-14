@@ -5,7 +5,7 @@ using static HandleAction;
 
 public abstract class AbstractToolAction : MonoBehaviour
 {
-    private bool isRotatable;
+    private bool isRotatable = false;
     private HandleAction myHandle;
 
     void Awake()
@@ -13,17 +13,23 @@ public abstract class AbstractToolAction : MonoBehaviour
         gameObject.tag = "Tool";
     }
 
-    void Start()
+    public void makeHandle()
     {
-        if (isRotatable)
-        {
-            makeHandle();
-        }
+        Debug.Log("isRotatable" + isRotatable);
+        // Debug.Log(gameObject.transform.position);
+        myHandle = new HandleAction(gameObject.transform.position);
     }
 
-    private void makeHandle()
+    public void toggleHandle()
     {
-        myHandle = new HandleAction(gameObject.transform.position);
+        if (isRotatable) myHandle.toggleShow();
+    }
+
+    protected void toggleRotate()
+    {
+        // Debug.Log("toggleRotate");
+        isRotatable = !isRotatable;
+        // Debug.Log(isRotatable);
     }
 
     void OnTriggerEnter2D(Collider2D other) // Trigger Start
@@ -60,7 +66,6 @@ public abstract class AbstractToolAction : MonoBehaviour
         collisionExitAction(other);
     }
 
-    private void toggleRotate() => isRotatable = !isRotatable;
 
     protected virtual void triggerEnterAction(Collider2D _other) { }
 
