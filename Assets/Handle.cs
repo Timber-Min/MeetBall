@@ -30,17 +30,6 @@ public class Handle : AbstractUIHandler
         mouseOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition) - myPos;
     }
 
-    private void OnMouseOver()
-    {
-        if (isClick)
-        {
-            float angle = getAngle();
-            // Debug.Log("angle " + angle);
-            transform.Rotate(0.0f, 0.0f, angle, Space.Self);
-            // transform.rotation = new Vector3(0, 0, angle);
-        }
-    }
-
     private void OnMouseUp()
     {
         isClick = false;
@@ -54,8 +43,7 @@ public class Handle : AbstractUIHandler
         {
             direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - myPos;
             transform.up = direction;
+            transform.parent.up = direction;
         }
     }
-
-
 }

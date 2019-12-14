@@ -15,23 +15,14 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     public void makeHandle()
     {
-        myHandle = new HandleAction(gameObject.transform.position);
+        myHandle = new HandleAction(gameObject.transform.position, gameObject);
     }
 
-    public void toggleHandle()
-    {
-        myHandle.toggleShow();
-    }
+    public void toggleHandle() => myHandle.toggleShow();
 
-    public void destroyHandle()
-    {
-        myHandle.selfDestruct();
-    }
+    public void destroyHandle() => myHandle.selfDestruct();
 
-    protected void toggleRotate()
-    {
-        isRotatable = !isRotatable;
-    }
+    protected void toggleRotate() => isRotatable = !isRotatable;
 
     void OnTriggerEnter2D(Collider2D other) // Trigger Start
     {
