@@ -7,7 +7,7 @@ public class LauncherAction : AbstractToolAction
     // 발사 장치
     protected override void triggerEnterAction(Collider2D _other)
     {
-        if (_other.tag == "Ball")
+        if (_other.tag == "Ball" && _other.isTrigger == false)
         {
             Destroy(this.gameObject); // 충돌 후 Destroy
             float rot = this.transform.rotation.eulerAngles.z * Mathf.PI / 180 + Mathf.PI / 2;
