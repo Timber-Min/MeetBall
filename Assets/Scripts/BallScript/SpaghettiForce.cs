@@ -12,7 +12,7 @@ public class SpaghettiForce : AbstractForceCalculator
     // forceType: 미트볼에 작용할 힘의 종류. 0 for attraction, 1 for repulsion
     public GameObject[] objects;
     private GameObject forceManagerBtn;
-    private bool forceManagerBtnToggle = false;
+    private bool forceManagerBtnToggle = true;
     private int forceType = 0;
 
     // ballsNetGravitationalForce: 미트볼에 작용하는 힘을 저장하는 변수. ArrowNavigator에 힘을 전해주기 위해 존재.
@@ -23,7 +23,7 @@ public class SpaghettiForce : AbstractForceCalculator
         ballsNetGravitationalForce = new Vector2[objects.Length];
         forceManagerBtn = GameObject.Find("ForceManagerBtn");
         forceManagerBtn.GetComponent<Button>().onClick.AddListener(ToggleForceBtn);
-        forceManagerBtnToggle = false;
+        forceManagerBtnToggle = true;
         ChangeForceType(0);
     }
 
