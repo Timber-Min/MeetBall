@@ -20,37 +20,35 @@ public class HandleAction
     {
         GameObject me;
         me = MonoBehaviour.Instantiate(origin, pos, Quaternion.identity);
-        // Debug.Log("handle position");
-        // Debug.Log(me.transform.position);
         return me;
     }
 
     public void toggleShow()
     {
-        if(isVisible) me.SendMessage("hide");
+        if (isVisible) me.SendMessage("hide");
         else me.SendMessage("show");
         isVisible = !isVisible;
     }
 
-    private float getAngle()
-    {
-        Vector3 newMouse;
-        float angle;
+    // private float getAngle()
+    // {
+    //     Vector3 newMouse;
+    //     float angle;
 
-        newMouse = Input.mousePosition - pos;
-        angle = Vector3.Angle(newMouse, mouseOrigin);
-        return angle;
-    }
+    //     newMouse = Input.mousePosition - pos;
+    //     angle = Vector3.Angle(newMouse, mouseOrigin);
+    //     return angle;
+    // }
 
-    private void OnMouseDown()
-    {
-        mouseOrigin = Input.mousePosition - pos;
-        Debug.Log(mouseOrigin);
-    }
+    // private void OnMouseDown()
+    // {
+    //     mouseOrigin = Input.mousePosition - pos;
+    //     Debug.Log(mouseOrigin);
+    // }
 
-    private void OnMouseDrag()
-    {
-        float angle = getAngle();
-        me.transform.Rotate(0.0f, 0.0f, angle, Space.Self);
-    }
+    // private void OnMouseDrag()
+    // {
+    //     float angle = getAngle();
+    //     me.transform.Rotate(0.0f, 0.0f, angle, Space.Self);
+    // }
 }

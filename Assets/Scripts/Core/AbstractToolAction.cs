@@ -15,8 +15,6 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     public void makeHandle()
     {
-        Debug.Log("isRotatable" + isRotatable);
-        // Debug.Log(gameObject.transform.position);
         myHandle = new HandleAction(gameObject.transform.position);
     }
 
@@ -27,9 +25,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     protected void toggleRotate()
     {
-        // Debug.Log("toggleRotate");
         isRotatable = !isRotatable;
-        // Debug.Log(isRotatable);
     }
 
     void OnTriggerEnter2D(Collider2D other) // Trigger Start
