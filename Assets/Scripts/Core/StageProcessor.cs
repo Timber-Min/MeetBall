@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StageProcessor : MonoBehaviour
@@ -39,6 +40,8 @@ public class StageProcessor : MonoBehaviour
         isPaused = true;
         menuPanel = GameObject.Find("MenuPanel");
         mainCamera = GameObject.Find("Main Camera");
+        GameObject stageName = GameObject.Find("StageName");
+        if (stageName != null) stageName.GetComponent<Text>().text = SceneManager.GetActiveScene().name;
     }
 
     public static GameObject getMenuPanel() => menuPanel;

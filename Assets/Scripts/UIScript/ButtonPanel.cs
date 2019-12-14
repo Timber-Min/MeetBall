@@ -43,7 +43,7 @@ public class ButtonPanel : MonoBehaviour
             stage = int.Parse(thisScene[2].ToString());
             if (stage == 8)
             {
-                nextScene = "L"+level.ToString();
+                nextScene = "L" + level.ToString();
             }
             else
             {
@@ -52,7 +52,7 @@ public class ButtonPanel : MonoBehaviour
         }
         catch
         {
-            nextScene = "L1";
+            nextScene = "GameIntroScene";
         }
         finally
         {

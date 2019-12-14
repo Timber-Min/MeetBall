@@ -10,7 +10,7 @@ public class BGMScaleManager : MonoBehaviour
     void Start()
     {
         BGMScaleGauge = gameObject.GetComponent<Slider>();
-        BGMScaleGauge.value=SoundManager.BGMscale;
+        BGMScaleGauge.value = SoundManager.BGMscale;
         BGMScaleGauge.onValueChanged.AddListener(BGMScaleSet);
     }
 

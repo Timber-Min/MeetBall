@@ -7,7 +7,7 @@ using static StageProcessor;
 // 카메라 위치/크기 조정
 // 게임 시작
 public class MainCamera : MonoBehaviour
-{    
+{
     private int cnt = 0;
     private float interval = 20;
 

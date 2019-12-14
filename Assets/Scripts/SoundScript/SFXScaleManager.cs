@@ -10,7 +10,7 @@ public class SFXScaleManager : MonoBehaviour
     void Start()
     {
         SFXScaleGauge = gameObject.GetComponent<Slider>();
-        SFXScaleGauge.value=SoundManager.SFXscale;
+        SFXScaleGauge.value = SoundManager.SFXscale;
         SFXScaleGauge.onValueChanged.AddListener(SFXScaleSet);
     }
 

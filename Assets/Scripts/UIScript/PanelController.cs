@@ -50,7 +50,6 @@ public class PanelController : MonoBehaviour
 
     public void hide()
     {
-        Transform myTransform = grid.GetComponent<Transform>();
-        myTransform.localScale = new Vector3(0, 0, 0);
+        grid.transform.localScale = new Vector3(0, 0, 0);
     }
 }
