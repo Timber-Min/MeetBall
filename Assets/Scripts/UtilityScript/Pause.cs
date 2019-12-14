@@ -61,5 +61,5 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void gotoMenu() => SceneManager.LoadScene("GameIntroScene");
+    private void gotoMenu() => GameObject.Find("EscapeToLevel").SendMessage("RequestScene");
 }

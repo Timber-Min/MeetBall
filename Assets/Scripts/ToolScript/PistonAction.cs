@@ -7,6 +7,7 @@ public class PistonAction : AbstractToolAction
     // body는 본체, plate는 미는 부분
     public GameObject body;
     public Rigidbody2D plate;
+    
     void FixedUpdate()
     {
         // dist는 piston의 미는 부분과 본체 부분 사이의 거리

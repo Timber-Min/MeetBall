@@ -20,6 +20,11 @@ public class GameStartButton : AbstractUIHandler
         isStarted = true;
         Time.timeScale = 1.0f;
 
+        // 콜라이더 활성화
+        GameObject[] balls=GameObject.FindGameObjectsWithTag("Ball");
+        balls[0].GetComponent<Collider2D>().enabled=true;
+        balls[1].GetComponent<Collider2D>().enabled=true;
+
         // 왼쪽 옆면 버튼 숨기기
         hide();
         GameObject.Find("ResetStage").SendMessage("hide");
