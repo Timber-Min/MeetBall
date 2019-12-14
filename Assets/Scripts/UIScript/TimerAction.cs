@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class TimerAction : AbstractUIHandler
 {
-    // Start is called before the first frame update
     private Text timerText;
     private float time;
 
@@ -13,7 +12,6 @@ public class TimerAction : AbstractUIHandler
     {
         hide();
         timerText = gameObject.GetComponent<Text>();
-
     }
 
     void Update()

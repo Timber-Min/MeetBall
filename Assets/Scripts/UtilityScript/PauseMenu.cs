@@ -7,15 +7,14 @@ public class PauseMenu : MonoBehaviour
 {
     void Start()
     {
-        hide();
+        hide(); // 우선 숨기고 시작
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Resume"))
+        if (Input.GetButtonDown("Resume")) // Resume 버튼이 눌렸으면
         {
-            getMenuPanel().SendMessage("triggerPause");
-            hide();
+            gameObject.SendMessage("resume"); // resume함수 호출
         }
     }
 
