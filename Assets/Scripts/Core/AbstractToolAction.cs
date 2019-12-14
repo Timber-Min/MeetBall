@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static HandleAction;
 
 public abstract class AbstractToolAction : MonoBehaviour
 {
     private bool isRotatable;
+    private HandleAction myHandle;
 
     void Awake()
     {
@@ -13,7 +15,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     void Start()
     {
-        if(isRotatable)
+        if (isRotatable)
         {
             makeHandle();
         }
@@ -21,7 +23,7 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     private void makeHandle()
     {
-        
+        myHandle = new HandleAction(gameObject.transform.position);
     }
 
     void OnTriggerEnter2D(Collider2D other) // Trigger Start
