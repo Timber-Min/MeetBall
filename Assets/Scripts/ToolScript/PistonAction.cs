@@ -25,7 +25,7 @@ public class PistonAction : AbstractToolAction
         // rot은 피스톤이 회전한 각을 의미, DEGREE 사용
         float rot = plate.transform.rotation.eulerAngles.z * Mathf.PI / 180;
         // dir 벡터는 rot을 이용한 적당한 단위벡터
-        Vector2 dir = new Vector2(-Mathf.Cos(rot), -Mathf.Sin(rot));
+        Vector2 dir = new Vector2(-Mathf.Sin(rot), Mathf.Sin(rot));
         // 피스톤이 정지해있을 때
         if (vector2Equal(plate.velocity, Vector2.zero))
             // dir 방향으로 척력이 작용
@@ -36,7 +36,7 @@ public class PistonAction : AbstractToolAction
     private void undoPlate()
     {
         float rot = plate.transform.rotation.eulerAngles.z * Mathf.PI / 180;
-        Vector2 dir = new Vector2(-Mathf.Cos(rot), -Mathf.Sin(rot));
+        Vector2 dir = new Vector2(-Mathf.Sin(rot), Mathf.Cos(rot));
         // dir 반대 방향으로 인력이 작용
         plate.AddForce(-dir * (int)3e8);
     }
