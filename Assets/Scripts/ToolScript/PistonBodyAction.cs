@@ -17,6 +17,7 @@ public class PistonBodyAction : AbstractToolAction
     void OnMouseDown()
     {
         // 피스톤 작동
+        print("piston mouse down");
         pistonM.SendMessage("movePlate");
     }
 }
