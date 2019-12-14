@@ -77,6 +77,13 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
             {
                 objects[i].SendMessage("destroyHandle");
             }
+            if (string.Equals(name, rotatables[0]))
+            {
+                objects[i].transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = true;
+                objects[i].transform.GetChild(1).gameObject.GetComponent<Collider2D>().enabled = true;
+
+            }
+            else objects[i].GetComponent<Collider2D>().enabled = true;
         }
     }
 }
