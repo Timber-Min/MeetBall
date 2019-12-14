@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static StageProcessor;
 
+// 게임 이기고 나서 뜨는 세 개의 버튼 관련 스크립트
 public class ButtonPanel : MonoBehaviour
 {
     private Button menuBtn, restartBtn, nextBtn;

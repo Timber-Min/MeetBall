@@ -946,6 +946,7 @@ GameObject:
   - component: {fileID: 446730640848136408}
   - component: {fileID: 446730640848136411}
   - component: {fileID: 446730640848136410}
+  - component: {fileID: 5498945907839994396}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -1053,20 +1054,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 446730640848136411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 446730640660169002}
-        m_MethodName: resume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5498945907839994396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446730640848136388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4b092658b8d2647a5ab66c6e08c6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &446730640852935952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,6 +1216,7 @@ GameObject:
   - component: {fileID: 446730641004076243}
   - component: {fileID: 446730641004076242}
   - component: {fileID: 446730641004076253}
+  - component: {fileID: 7754404413723035732}
   m_Layer: 5
   m_Name: Stages
   m_TagString: Untagged
@@ -1324,6 +1327,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7754404413723035732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446730641004076255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7aaf55734c5d04387520c95144a671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!1 &446730641008915147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1770,7 @@ GameObject:
   - component: {fileID: 446730641375779041}
   - component: {fileID: 446730641375779040}
   - component: {fileID: 446730641375779043}
+  - component: {fileID: 4571930842731797156}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -1864,6 +1881,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &4571930842731797156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446730641375779053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dfd1fd8f3532bb4fa954b9dbff2abb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &446730641800806521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,18 +3339,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7912325612681747047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: toggleForceBtn
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &623673721181605602

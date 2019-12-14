@@ -6,10 +6,9 @@ using static StageProcessor;
 
 public class GameStartButton : AbstractUIHandler
 {
-    // 게임 시작과 직접적으로 연관된 버튼
+    // 스테이지 플레이 시작 버튼
     void Start()
     {
-        getPausePanel().SendMessage("pause"); // 우선 일시정지
         gameObject.GetComponent<Button>().onClick.AddListener(gameStart);
     }
 
@@ -35,8 +34,8 @@ public class GameStartButton : AbstractUIHandler
         GameObject.Find("Timer").SendMessage("reset");
         Destroy(GameObject.Find("StageName"));
 
-        // 게임 시작
-        getPausePanel().SendMessage("resume");
+        // 게임 시작 - resume 버튼 누르기
+        getPausePanel().transform.GetChild(1).gameObject.SendMessage("resume");
 
         // UI 드러내기
         GameObject.Find("ForceManagerBtn").SendMessage("show");

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static StageProcessor;
+using UnityEngine.SceneManagement;
 
 public class ResetStageButton : AbstractUIHandler
 {
+    // 스테이지를 다시 시작하는 버튼
     void Start()
     {
         gameObject.GetComponent<Button>().onClick.AddListener(restartStage);
@@ -13,6 +14,7 @@ public class ResetStageButton : AbstractUIHandler
 
     void restartStage()
     {
-        getPausePanel().SendMessage("restart");
+        // Scene 다시 로드
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

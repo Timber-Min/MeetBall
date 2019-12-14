@@ -6,18 +6,15 @@ using static StageProcessor;
 
 public class SliderHandler : AbstractUIHandler
 {
-    private Slider timeScaleGauge;
-
     void Start()
     {
         hide();
-        timeScaleGauge = gameObject.GetComponent<Slider>();
-        timeScaleGauge.onValueChanged.AddListener(timeScaleSet);
+        gameObject.GetComponent<Slider>().onValueChanged.AddListener(timeScaleSet);
     }
 
     void timeScaleSet(float _value)
     {
-        if (isPaused) return;
+        if (!isStarted || isCleared || isPaused) return;
         Time.timeScale = (float)System.Math.Pow(4, _value);
     }
 }
