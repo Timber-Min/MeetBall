@@ -14,6 +14,8 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
     public int itemNum;
     public static GameObject myItem;
     private string[] rotatables = new string[10];
+    private GameObject[] objects = new GameObject[100];
+    private int objectCnt = 0;
 
     void Start()
     {
@@ -30,6 +32,8 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
         newPos.z = 0;
         // 아이템 생성
         currentItem = ItemGenerator.itemFactory(itemNum, newPos);
+        objects[objectCnt] = currentItem;
+        objectCnt += 1;
         currentTransform = currentItem.GetComponent<Transform>();
     }
 
@@ -57,10 +61,22 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
     private void makeHandle(GameObject tool)
     {
         string name = tool.name;
-        Debug.Log(name);
         if (string.Equals(name, rotatables[0]) || string.Equals(name, rotatables[1]))
         {
             tool.SendMessage("makeHandle");
+        }
+    }
+
+    public void ifGameStart()
+    {
+        print(objectCnt);
+        for (int i = 0; i < objectCnt; i++)
+        {
+            string name = objects[i].name;
+            if (string.Equals(name, rotatables[0]) || string.Equals(name, rotatables[1]))
+            {
+                objects[i].SendMessage("destroyHandle");
+            }
         }
     }
 }

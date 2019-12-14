@@ -27,6 +27,7 @@ public class GameStartButton : AbstractUIHandler
         getMenuPanel().SendMessage("resume");
         GameObject.Find("ForceManagerBtn").SendMessage("show");
         GameObject.Find("TimeScaleSlider").SendMessage("show");
+        GameObject.Find("ItemPanel").SendMessage("ifGameStart");
     }
 
 }

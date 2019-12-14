@@ -29,4 +29,9 @@ public class HandleAction
         else me.SendMessage("show");
         isVisible = !isVisible;
     }
+
+    public void selfDestruct()
+    {
+        Object.Destroy(me);
+    }
 }

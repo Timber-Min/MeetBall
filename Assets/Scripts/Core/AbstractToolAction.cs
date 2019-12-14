@@ -20,7 +20,12 @@ public abstract class AbstractToolAction : MonoBehaviour
 
     public void toggleHandle()
     {
-        if (isRotatable) myHandle.toggleShow();
+        myHandle.toggleShow();
+    }
+
+    public void destroyHandle()
+    {
+        myHandle.selfDestruct();
     }
 
     protected void toggleRotate()
