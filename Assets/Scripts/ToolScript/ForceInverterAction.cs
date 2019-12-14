@@ -13,7 +13,10 @@ public class ForceInverterAction : AbstractToolAction
 
     protected override void triggerEnterAction(Collider2D _other)
     {
-        Destroy(this.gameObject);
-        spaghettiForce.SendMessage("CycleForceType");
+        if(_other.tag == "Ball" && _other.isTrigger == false)
+        {
+            Destroy(this.gameObject);
+            spaghettiForce.SendMessage("CycleForceType");
+        }
     }
 }
