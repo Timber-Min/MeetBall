@@ -13,6 +13,13 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
     private Transform currentTransform;
     public int itemNum;
     public static GameObject myItem;
+    private string[] rotatables = new string[10];
+
+    void Start()
+    {
+        rotatables[0] = "Piston";
+        rotatables[1] = "Launcher";
+    }
 
     // 드래그 시작시 호출
     public void OnBeginDrag(PointerEventData eventData)
@@ -41,7 +48,19 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
     {
         // 이미지 보이기
         show();
+        makeHandle(currentItem);
+        // currentItem.SendMessage("makeHandle");
         itemBeingDragged = null;
         transform.position = startPosition;
+    }
+
+    private void makeHandle(GameObject tool)
+    {
+        string name = tool.name;
+        Debug.Log(name);
+        if (string.Equals(name, rotatables[0]) || string.Equals(name, rotatables[1]))
+        {
+            tool.SendMessage("makeHandle");
+        }
     }
 }

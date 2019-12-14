@@ -24,6 +24,7 @@ public class ItemGenerator : MonoBehaviour
         // returns instantiated GameObject.
         GameObject retObject;
         retObject = Instantiate(itemList[itemNum], startPos, Quaternion.identity);
+        retObject.name = itemList[itemNum].name;
         return retObject;
     }
 }
