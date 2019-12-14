@@ -87,9 +87,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Stages/Level-3/3-3.unity
     guid: 2d6a2d36ea611fc48af0660146fff7f6
   - enabled: 1
-    path: Assets/Scenes/Stages/Level-3/3-4.unity
-    guid: aa44a15100302ea48baccffc7dac160c
-  - enabled: 1
     path: Assets/Scenes/Stages/Level-3/3-5.unity
     guid: f035d745eea153b47813d708f1c96bfd
   - enabled: 1
@@ -99,6 +96,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Stages/Level-3/3-7.unity
     guid: 6bdfacd8a71bfc649b8ae4225f630f03
   - enabled: 1
-    path: Assets/Scenes/Stages/Level-3/3-8.unity
-    guid: a26ae51833e95bc42874ee0a8d20790a
+    path: Assets/Scenes/Stages/Level-4/4-1.unity
+    guid: 37ef3d771419f414eacbad3c5bfdac55
   m_configObjects: {}
