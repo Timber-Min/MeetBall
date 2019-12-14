@@ -7,7 +7,7 @@ public class BallDeathTriggerAction : AbstractToolAction
 {
     protected override void triggerEnterAction(Collider2D _other)
     {
-        if (_other.gameObject.tag.Equals("Ball"))
+        if (_other.tag == "Ball" && _other.isTrigger == false)
         {
             SceneManager.LoadScene("RetryScene");
         }
