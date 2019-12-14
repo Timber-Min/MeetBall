@@ -13,6 +13,6 @@ public class ResetStageButton : AbstractUIHandler
 
     void restartStage()
     {
-        getMenuPanel().SendMessage("restart");
+        getPausePanel().SendMessage("restart");
     }
 }
