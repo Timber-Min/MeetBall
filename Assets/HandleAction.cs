@@ -29,26 +29,4 @@ public class HandleAction
         else me.SendMessage("show");
         isVisible = !isVisible;
     }
-
-    // private float getAngle()
-    // {
-    //     Vector3 newMouse;
-    //     float angle;
-
-    //     newMouse = Input.mousePosition - pos;
-    //     angle = Vector3.Angle(newMouse, mouseOrigin);
-    //     return angle;
-    // }
-
-    // private void OnMouseDown()
-    // {
-    //     mouseOrigin = Input.mousePosition - pos;
-    //     Debug.Log(mouseOrigin);
-    // }
-
-    // private void OnMouseDrag()
-    // {
-    //     float angle = getAngle();
-    //     me.transform.Rotate(0.0f, 0.0f, angle, Space.Self);
-    // }
 }

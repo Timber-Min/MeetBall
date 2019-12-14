@@ -8,7 +8,7 @@ public class StageProcessor : MonoBehaviour
 {
     // 변수 모음
     public static bool isStarted;
-    public static bool isPaused;
+    public static bool isPaused = false;
     public static bool isCleared;
     public static int currentLevel = 0, prevLevel;
     public static int currentStage = 0, prevStage;
@@ -17,7 +17,7 @@ public class StageProcessor : MonoBehaviour
 
     void Awake()
     {
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
         if (currentLevel > 0) prevLevel = currentLevel;
         if (currentStage > 0) prevStage = currentStage;
         try
