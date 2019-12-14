@@ -80,12 +80,12 @@ public class PortalAction : AbstractToolAction
 
         if (portal.Equals(portalOrange.GetComponent<Collider2D>()))
         {
-            teleportPos = asVector2(portalBlue.transform.position) + new Vector2(dx, dy) * 0.5f;
+            teleportPos = asVector2(portalBlue.transform.position) + new Vector2(dx, dy) * 0.25f;
             ball.GetComponent<Transform>().position = teleportPos;
         }
         else
         {
-            teleportPos = asVector2(portalOrange.transform.position) + new Vector2(-dx, -dy) * 0.5f;
+            teleportPos = asVector2(portalOrange.transform.position) + new Vector2(-dx, -dy) * 0.25f;
             ball.GetComponent<Transform>().position = teleportPos;
         }
     }
