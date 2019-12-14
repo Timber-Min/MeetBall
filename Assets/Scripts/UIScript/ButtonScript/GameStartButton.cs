@@ -29,10 +29,11 @@ public class GameStartButton : AbstractUIHandler
         getRestartBtn().SendMessage("hide");
         getLevelBtn().SendMessage("hide");
 
-        // 아이템 슬롯 숨기기, 타이머 초기화, 현재 스테이지 없애기
+        // 아이템 슬롯 숨기기, 타이머 초기화, 현재 스테이지/도전과제 없애기
         GameObject.Find("ItemPanel").SendMessage("hide");
         GameObject.Find("Timer").SendMessage("reset");
         Destroy(GameObject.Find("StageName"));
+        Destroy(GameObject.Find("Achievements"));
 
         // 게임 시작 - resume 버튼 누르기
         GameObject.Find("Resume").SendMessage("resume");

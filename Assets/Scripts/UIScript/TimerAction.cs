@@ -26,4 +26,9 @@ public class TimerAction : AbstractUIHandler
         time=0;
         timerText = gameObject.GetComponent<Text>();
     }
+
+    public float getTime()
+    {
+        return time;
+    } 
 }

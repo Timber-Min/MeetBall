@@ -79,4 +79,9 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
             }
         }
     }
+
+    public int getObjectCnt()
+    {
+        return objectCnt;
+    }
 }
