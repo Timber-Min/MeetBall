@@ -35,7 +35,7 @@ public class GameStartButton : AbstractUIHandler
         Destroy(GameObject.Find("StageName"));
 
         // 게임 시작 - resume 버튼 누르기
-        getPausePanel().transform.GetChild(1).gameObject.SendMessage("resume");
+        GameObject.Find("Resume").SendMessage("resume");
 
         // UI 드러내기
         GameObject.Find("ForceManagerBtn").SendMessage("show");

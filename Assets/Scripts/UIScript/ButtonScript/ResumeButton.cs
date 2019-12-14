@@ -21,7 +21,7 @@ public class ResumeButton : MonoBehaviour
         isPaused = false; // 변수 업데이트
         Time.timeScale = (float)System.Math.Pow(4, timeScaleSlider.value); // 시간을 다시 흐르게 한다
 
-        getPausePanel().SendMessage("hide"); // 메뉴 숨기기
+        gameObject.transform.parent.gameObject.SendMessage("hide"); // 메뉴 숨기기
         print("Resumed"); 
     }
 }

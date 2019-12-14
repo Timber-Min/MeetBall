@@ -26,7 +26,10 @@ public class ButtonPanel : MonoBehaviour
         thisScene = SceneManager.GetActiveScene().name;
     }
 
-    private void gotoMenu() => SceneManager.LoadScene("L" + thisScene[0]);
+    private void gotoMenu()
+    {
+        getLevelBtn().SendMessage("RequestScene");
+    }
 
     private void restart()
     {
