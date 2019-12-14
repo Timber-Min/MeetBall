@@ -33,8 +33,7 @@ public class ButtonPanel : MonoBehaviour
 
     private void restart()
     {
-        reset();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        getRestartBtn().SendMessage("restartStage");
     }
 
     private void gotoNext()

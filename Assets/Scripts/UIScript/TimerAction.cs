@@ -23,6 +23,7 @@ public class TimerAction : AbstractUIHandler
     void reset()
     {
         show();
+        time=0;
         timerText = gameObject.GetComponent<Text>();
     }
 }

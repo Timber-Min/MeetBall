@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static StageProcessor;
 
 public class PistonBodyAction : AbstractToolAction
 {
@@ -16,7 +17,8 @@ public class PistonBodyAction : AbstractToolAction
     // 마우스 클릭 감지
     void OnMouseDown()
     {
-        // 피스톤 작동
+        // 피스톤 작동 - 시작 전 or 클리어 후 작동 X
+        if(!isStarted || isCleared) return;
         print("piston mouse down");
         pistonM.SendMessage("movePlate");
     }

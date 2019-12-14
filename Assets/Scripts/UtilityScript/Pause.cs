@@ -41,6 +41,6 @@ public class Pause : MonoBehaviour
 
     public void restart() // 재시작
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        getRestartBtn().SendMessage("restartStage");
     }
 }

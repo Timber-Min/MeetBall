@@ -19,15 +19,15 @@ public class GameStartButton : AbstractUIHandler
         isStarted = true;
         Time.timeScale = 1.0f;
 
-        // 콜라이더 활성화
+        // 공 콜라이더 활성화
         GameObject[] balls=GameObject.FindGameObjectsWithTag("Ball");
         balls[0].GetComponent<Collider2D>().enabled=true;
         balls[1].GetComponent<Collider2D>().enabled=true;
 
         // 왼쪽 옆면 버튼 숨기기
         hide();
-        GameObject.Find("ResetStage").SendMessage("hide");
-        GameObject.Find("EscapeToLevel").SendMessage("hide");
+        getRestartBtn().SendMessage("hide");
+        getLevelBtn().SendMessage("hide");
 
         // 아이템 슬롯 숨기기, 타이머 초기화, 현재 스테이지 없애기
         GameObject.Find("ItemPanel").SendMessage("hide");
