@@ -1,0 +1,63 @@
+1-1
+
+1-2
+
+1-3
+
+1-4
+
+1-5
+
+1-6
+
+1-7
+
+1-8
+
+2-1
+
+2-2
+Launcher
+2-3
+Launcher
+2-4
+Launcher
+2-5
+Launcher
+2-6
+Launcher
+2-7
+Launcher
+2-8
+Launcher
+3-1
+Launcher
+3-2
+Launcher, VectorResetter, VectorReverser
+3-3
+몰라(연우한테 물어봐)
+3-4
+VectorResetter, VectorReverser
+3-5
+몰라(연우한테 물어봐)
+3-6
+Accelerator
+3-7
+Launcher, VectorResetter, VectorReverser, Accelerator
+3-8
+VectorResetter, VectorReverser, Accelerator
+4-1
+몰라(연우한테 물어봐)
+4-2
+Launcher, VectorResetter, VectorReverser, Accelerator
+4-3
+몰라(연우한테 물어봐)
+4-4
+Launcher, VectorResetter, VectorReverser, Accelerator
+4-5
+제한 시간 30s
+도구 1개 이하 사용
+4-7
+제한 시간 30s
+도구 3개 이하 사용
+
