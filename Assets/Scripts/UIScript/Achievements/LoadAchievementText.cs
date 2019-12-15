@@ -17,6 +17,7 @@ public class LoadAchievementText : MonoBehaviour
             if(list[i].Equals(SceneManager.GetActiveScene().name))
             {
                 t.text+=list[i+1]+"\n\n"+list[i+2];
+                break;
             }
         }
     }
