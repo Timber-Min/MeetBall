@@ -60,4 +60,5 @@ Piston
 Piston,Accelerator
 4-7
 Piston,VelocityResetter,Launcher
-
+4-8
+Launcher,VelocityResetter,VectorReverser,Accelerator
