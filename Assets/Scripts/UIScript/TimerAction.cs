@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static StageProcessor;
 
 public class TimerAction : AbstractUIHandler
 {
@@ -16,19 +17,22 @@ public class TimerAction : AbstractUIHandler
 
     void Update()
     {
-        time += Time.deltaTime;
-        timerText.text = string.Format("{0:N2}", time);
+        if (!isCleared)
+        {
+            timerText.text = string.Format("{0:N2}", time);
+            time += Time.deltaTime;
+        }
     }
 
     void reset()
     {
         show();
-        time=0;
+        time = 0;
         timerText = gameObject.GetComponent<Text>();
     }
 
     public float getTime()
     {
         return time;
-    } 
+    }
 }
