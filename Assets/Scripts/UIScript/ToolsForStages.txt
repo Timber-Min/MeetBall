@@ -15,45 +15,45 @@
 1-8
 
 2-1
-
+Launcher,VelocityResetter
 2-2
-Launcher
+Launcher,VelocityResetter
 2-3
-Launcher
+Launcher,VelocityResetter
 2-4
-Launcher
+Launcher,VelocityResetter
 2-5
-Launcher
+Launcher,VelocityResetter
 2-6
-Launcher
+Launcher,VelocityResetter
 2-7
-Launcher
+Launcher,VelocityResetter
 2-8
-Launcher
+Launcher,VelocityResetter
 3-1
-Launcher
+Launcher,VelocityResetter
 3-2
-Launcher,VelocityResetter,VectorReverser
+Launcher,VelocityResetter,VectorReverser,Accelerator
 3-3
 몰라(연우한테 물어봐)
 3-4
-VelocityResetter,VectorReverser
+Launcher,VelocityResetter,VectorReverser,Accelerator
 3-5
 몰라(연우한테 물어봐)
 3-6
-Accelerator
+Launcher,VelocityResetter,VectorReverser,Accelerator
 3-7
 Launcher,VelocityResetter,VectorReverser,Accelerator
 3-8
-VelocityResetter,VectorReverser,Accelerator
+Launcher,VelocityResetter,VectorReverser,Accelerator
 4-1
 몰라(연우한테 물어봐)
 4-2
-Launcher,VelocityResetter,VectorReverser,Accelerator
+Launcher,VelocityResetter,VectorReverser,Accelerator,Piston
 4-3
 몰라(연우한테 물어봐)
 4-4
-Launcher,VelocityResetter,VectorReverser,Accelerator
+Launcher,VelocityResetter,VectorReverser,Accelerator,Piston
 4-5
 제한 시간 30s
 도구 1개 이하 사용
