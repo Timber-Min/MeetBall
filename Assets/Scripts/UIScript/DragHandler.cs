@@ -86,4 +86,9 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
             else objects[i].GetComponent<Collider2D>().enabled = true;
         }
     }
+
+    public int getObjectCnt()
+    {
+        return objectCnt;
+    }
 }

@@ -6,10 +6,9 @@ using static StageProcessor;
 
 public class GameStartButton : AbstractUIHandler
 {
-    // 게임 시작과 직접적으로 연관된 버튼
+    // 스테이지 플레이 시작 버튼
     void Start()
     {
-        getPausePanel().SendMessage("pause"); // 우선 일시정지
         gameObject.GetComponent<Button>().onClick.AddListener(gameStart);
     }
 
@@ -20,18 +19,24 @@ public class GameStartButton : AbstractUIHandler
         isStarted = true;
         Time.timeScale = 1.0f;
 
+        // 공 콜라이더 활성화
+        GameObject[] balls=GameObject.FindGameObjectsWithTag("Ball");
+        balls[0].GetComponent<Collider2D>().enabled=true;
+        balls[1].GetComponent<Collider2D>().enabled=true;
+
         // 왼쪽 옆면 버튼 숨기기
         hide();
-        GameObject.Find("ResetStage").SendMessage("hide");
-        GameObject.Find("EscapeToLevel").SendMessage("hide");
+        getRestartBtn().SendMessage("hide");
+        getLevelBtn().SendMessage("hide");
 
-        // 아이템 슬롯 숨기기, 타이머 초기화, 현재 스테이지 없애기
+        // 아이템 슬롯 숨기기, 타이머 초기화, 현재 스테이지/도전과제 없애기
         GameObject.Find("ItemPanel").SendMessage("hide");
         GameObject.Find("Timer").SendMessage("reset");
         Destroy(GameObject.Find("StageName"));
+        Destroy(GameObject.Find("Achievements"));
 
-        // 게임 시작
-        getPausePanel().SendMessage("resume");
+        // 게임 시작 - resume 버튼 누르기
+        GameObject.Find("Resume").SendMessage("resume");
 
         // UI 드러내기
         GameObject.Find("ForceManagerBtn").SendMessage("show");

@@ -38,6 +38,9 @@ public class BallsCollideChecker : MonoBehaviour
             isCleared=true;
             isPaused=false;
             Time.timeScale = 0f; // 시간 멈추기
+
+            // 별 띄우기
+            GameObject.Find("StarPanel").SendMessage("checkScore");
         }
     }
 }

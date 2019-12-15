@@ -12,8 +12,9 @@ public class StageProcessor : MonoBehaviour
     public static bool isCleared; // 두 공이 맞닿았는지 여부 (isPaused보다 우선순위 높음)
     public static int currentLevel = 0, prevLevel; // 레벨 관련 변수
     public static int currentStage = 0, prevStage; // 스테이지 관련 변수
-    private static GameObject pausePanel; // 해당 스테이지의 pausePanel
-    private static GameObject mainCamera; // 해당 스테이지의 mainCamera
+    private static GameObject restartButton; // 해당 스테이지의 resetButton
+    private static GameObject levelButton; // 해당 스테이지의 resetButton
+
 
     void Awake()
     {
@@ -38,14 +39,21 @@ public class StageProcessor : MonoBehaviour
     public static void reset()
     {
         // 게임 진행에 필요한 변수 초기화
+        Time.timeScale = 1.0f;
         isStarted = isCleared = isPaused = false; // 전부 false
-        pausePanel = GameObject.Find("PausePanel"); // 해당 스테이지의 pausePanel을 저장
-        mainCamera = GameObject.Find("Main Camera"); // 해당 스테이지의 mainCamera를 저장
+        restartButton = GameObject.Find("ResetStage");
+        levelButton = GameObject.Find("EscapeToLevel");
         GameObject stageName = GameObject.Find("StageName"); // 해당 Scene의 이름을 저장
         if (stageName != null) stageName.GetComponent<Text>().text = SceneManager.GetActiveScene().name;
     }
 
-    public static GameObject getPausePanel() => pausePanel;
+    public static GameObject getRestartBtn()
+    {
+        return restartButton;
+    }
 
-    public static GameObject getMainCamera() => mainCamera;
+    public static GameObject getLevelBtn()
+    {
+        return levelButton;
+    }
 }

@@ -12,7 +12,6 @@ public class PanelController : MonoBehaviour
     public static GameObject[] itemImageList;
     private GridLayoutGroup grid;
     private Vector3 autoLocalScale;
-    private SlotController slotCode;
     public Sprite demoSprite;
 
     void Start()

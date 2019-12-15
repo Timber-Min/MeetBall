@@ -5,6 +5,7 @@ using static StageProcessor;
 
 public class EscapeToLevelButton : SceneControllerForBtn
 {
+    // 해당 스테이지가 속한 레벨로 이동
     protected override void RequestScene()
     {
         if (currentLevel > 0)
