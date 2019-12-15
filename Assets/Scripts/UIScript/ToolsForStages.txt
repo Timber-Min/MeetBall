@@ -35,11 +35,11 @@ Launcher,VelocityResetter
 3-2
 Launcher,VelocityResetter,VectorReverser,Accelerator
 3-3
-몰라(연우한테 물어봐)
+Launcher
 3-4
 Launcher,VelocityResetter,VectorReverser,Accelerator
 3-5
-몰라(연우한테 물어봐)
+Launcher
 3-6
 Launcher,VelocityResetter,VectorReverser,Accelerator
 3-7
@@ -47,17 +47,15 @@ Launcher,VelocityResetter,VectorReverser,Accelerator
 3-8
 Launcher,VelocityResetter,VectorReverser,Accelerator
 4-1
-몰라(연우한테 물어봐)
+
 4-2
 Launcher,VelocityResetter,VectorReverser,Accelerator,Piston
 4-3
-몰라(연우한테 물어봐)
+Launcher
 4-4
 Launcher,VelocityResetter,VectorReverser,Accelerator,Piston
 4-5
-제한 시간 30s
-도구 1개 이하 사용
+Piston
 4-7
-제한 시간 30s
-도구 3개 이하 사용
+Piston,VelocityResetter,Launcher
 
