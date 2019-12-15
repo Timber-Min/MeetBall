@@ -15,10 +15,12 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
     public static GameObject myItem;
     private string[] rotatables = new string[10];
     private GameObject[] objects = new GameObject[100];
-    private int objectCnt = 0;
+    private int objectCnt;
+    private static int totalObjectCnt;
 
     void Start()
     {
+        objectCnt = totalObjectCnt = 0;
         rotatables[0] = "Piston";
         rotatables[1] = "Launcher";
     }
@@ -34,6 +36,7 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
         currentItem = ItemGenerator.itemFactory(itemName, newPos);
         objects[objectCnt] = currentItem;
         objectCnt += 1;
+        totalObjectCnt += 1;
         currentTransform = currentItem.GetComponent<Transform>();
     }
 
@@ -81,14 +84,13 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
             {
                 objects[i].transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = true;
                 objects[i].transform.GetChild(1).gameObject.GetComponent<Collider2D>().enabled = true;
-
             }
             else objects[i].GetComponent<Collider2D>().enabled = true;
         }
     }
 
-    public int getObjectCnt()
+    public int getTotalObjectCnt()
     {
-        return objectCnt;
+        return totalObjectCnt;
     }
 }
