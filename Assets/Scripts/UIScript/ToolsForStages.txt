@@ -56,6 +56,8 @@ Launcher
 Launcher,VelocityResetter,VectorReverser,Accelerator
 4-5
 Piston
+4-6
+Piston,Accelerator
 4-7
 Piston,VelocityResetter,Launcher
 
