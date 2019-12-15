@@ -1246,6 +1246,28 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 1954568790724212280, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: condition1
+      value: 
+      objectReference: {fileID: 3418206541819778152, guid: 29703cbdc8918e040b1daa087a90784d,
+        type: 3}
+    - target: {fileID: 1954568790724212280, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: amt1
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954568790724212280, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: condition2
+      value: 
+      objectReference: {fileID: 6011631890077511302, guid: fc5ae68fe87842047a1d88cf44d70f49,
+        type: 3}
+    - target: {fileID: 1954568790724212280, guid: b85c83c119094cc4c8657bcf2b5795ac,
+        type: 3}
+      propertyPath: amt2
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b85c83c119094cc4c8657bcf2b5795ac, type: 3}
 --- !u!4 &669751603 stripped

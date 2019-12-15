@@ -18,8 +18,9 @@ public class CheckScore : MonoBehaviour
         {
             score += (condition1.check(amt1) ? 1 : 0);
             score += (condition2.check(amt2) ? 1 : 0);
+            print(condition2.check(amt2));
         }
-        catch (MissingReferenceException)
+        catch (System.NullReferenceException)
         {
             score = 0;
         }
