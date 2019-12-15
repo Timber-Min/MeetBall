@@ -5,26 +5,26 @@ using UnityEngine.EventSystems;
 
 public class ItemGenerator : MonoBehaviour
 {
-    public static GameObject[] itemList = new GameObject[10];
+    public static Dictionary<string, GameObject> itemList = new Dictionary<string, GameObject>();
 
     void Awake()
     {
-        itemList[0] = GameObject.Find("Piston");
-        itemList[1] = GameObject.Find("Accelerator");
-        itemList[2] = GameObject.Find("VectorReverser");
-        itemList[3] = GameObject.Find("VelocityResetter");
-        itemList[4] = GameObject.Find("Launcher");
+        itemList["Launcher"] = GameObject.Find("Launcher");
+        itemList["VelocityResetter"] = GameObject.Find("VelocityResetter");
+        itemList["VectorReverser"] = GameObject.Find("VectorReverser");
+        itemList["Accelerator"] = GameObject.Find("Accelerator");
+        itemList["Piston"] = GameObject.Find("Piston");
 
-        itemList[0].SendMessage("toggleRotate");
-        itemList[4].SendMessage("toggleRotate");
+        itemList["Launcher"].SendMessage("toggleRotate");
+        itemList["Piston"].SendMessage("toggleRotate");
     }
 
-    public static GameObject itemFactory(int itemNum, Vector3 startPos)
+    public static GameObject itemFactory(string itemName, Vector3 startPos)
     {
         // returns instantiated GameObject.
         GameObject retObject;
-        retObject = Instantiate(itemList[itemNum], startPos, Quaternion.identity);
-        retObject.name = itemList[itemNum].name;
+        retObject = Instantiate(itemList[itemName], startPos, Quaternion.identity);
+        retObject.name = itemList[itemName].name;
         return retObject;
     }
 }

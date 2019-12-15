@@ -33,27 +33,27 @@ Launcher
 3-1
 Launcher
 3-2
-Launcher, VectorResetter, VectorReverser
+Launcher,VelocityResetter,VectorReverser
 3-3
 몰라(연우한테 물어봐)
 3-4
-VectorResetter, VectorReverser
+VelocityResetter,VectorReverser
 3-5
 몰라(연우한테 물어봐)
 3-6
 Accelerator
 3-7
-Launcher, VectorResetter, VectorReverser, Accelerator
+Launcher,VelocityResetter,VectorReverser,Accelerator
 3-8
-VectorResetter, VectorReverser, Accelerator
+VelocityResetter,VectorReverser,Accelerator
 4-1
 몰라(연우한테 물어봐)
 4-2
-Launcher, VectorResetter, VectorReverser, Accelerator
+Launcher,VelocityResetter,VectorReverser,Accelerator
 4-3
 몰라(연우한테 물어봐)
 4-4
-Launcher, VectorResetter, VectorReverser, Accelerator
+Launcher,VelocityResetter,VectorReverser,Accelerator
 4-5
 제한 시간 30s
 도구 1개 이하 사용

@@ -11,7 +11,7 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
     Transform startParent;
     private static GameObject currentItem;
     private Transform currentTransform;
-    public int itemNum;
+    public string itemName;
     public static GameObject myItem;
     private string[] rotatables = new string[10];
     private GameObject[] objects = new GameObject[100];
@@ -31,7 +31,7 @@ public class DragHandler : AbstractUIHandler, IBeginDragHandler, IDragHandler, I
         Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         newPos.z = 0;
         // 아이템 생성
-        currentItem = ItemGenerator.itemFactory(itemNum, newPos);
+        currentItem = ItemGenerator.itemFactory(itemName, newPos);
         objects[objectCnt] = currentItem;
         objectCnt += 1;
         currentTransform = currentItem.GetComponent<Transform>();

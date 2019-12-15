@@ -2,20 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // 아이템 인벤토리 생성
 public class PanelController : MonoBehaviour
 {
-    public static int itemCount = 5;
+    public static int itemCount;
     public GameObject slot;
     public static GameObject[] slotList;
     public static GameObject[] itemImageList;
     private GridLayoutGroup grid;
     private Vector3 autoLocalScale;
-    public Sprite demoSprite;
+    private string[] toolsList;
 
     void Start()
     {
+        string path = @"Assets\Scripts\UIScript\ToolsForStages.txt";
+        string[] list = System.IO.File.ReadAllLines(path);
+        for (int i = 0; i < list.Length; i += 1)
+        {
+            if (list[i].Equals(SceneManager.GetActiveScene().name))
+            {
+                string tools = list[i + 1];
+                toolsList = tools.Split(',');
+                itemCount = toolsList[0] == "" ? 0 : toolsList.Length;
+                break;
+            }
+        }
+
         slotList = new GameObject[10];
         slot = GameObject.Find("Slot");
 
@@ -23,6 +37,12 @@ public class PanelController : MonoBehaviour
         grid = gameObject.GetComponent<GridLayoutGroup>();
         grid.spacing = new Vector2(60, 60);
         autoLocalScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+        if (itemCount == 0)
+        {
+            slot.SetActive(false);
+            return;
+        }
 
         slotList[0] = slot;
         slotList[0].name = "Slot1";
@@ -41,8 +61,8 @@ public class PanelController : MonoBehaviour
         for (int i = 0; i < itemCount; i++)
         {
             GameObject image = slotList[i].transform.GetChild(0).gameObject;
-            image.GetComponent<Image>().sprite = demoSprite;
-            image.GetComponent<DragHandler>().itemNum = i;
+            image.GetComponent<Image>().sprite = ItemGenerator.itemList[toolsList[i]].GetComponent<SpriteRenderer>().sprite;
+            image.GetComponent<DragHandler>().itemName = toolsList[i];
         }
 
     }
