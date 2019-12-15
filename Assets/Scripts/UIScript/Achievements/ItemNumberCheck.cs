@@ -6,6 +6,13 @@ public class ItemNumberCheck : AbstractScoreChecker
 {
     public override bool check(float _f)
     {
-        return GameObject.Find("ItemImage").GetComponent<DragHandler>().getTotalObjectCnt() <= (int)_f;
+        try
+        {
+            return GameObject.Find("ItemImage").GetComponent<DragHandler>().getTotalObjectCnt() <= (int)_f;
+        }
+        catch(System.NullReferenceException)
+        {
+            return true;
+        }
     }
 }

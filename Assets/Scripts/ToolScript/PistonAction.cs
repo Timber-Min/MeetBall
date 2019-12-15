@@ -30,7 +30,7 @@ public class PistonAction : AbstractToolAction
     {
         SpringJoint2D spring = GetComponentInChildren<SpringJoint2D>();
         print(spring.distance);
-        if (isStarted && spring.distance < 0.01)
+        if (isStarted)
         {
             // rot은 피스톤이 회전한 각을 의미, DEGREE 사용
             float rot = plate.transform.rotation.eulerAngles.z * Mathf.PI / 180;
