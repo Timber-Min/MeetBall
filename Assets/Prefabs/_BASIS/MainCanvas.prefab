@@ -3627,7 +3627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9019608, g: 0.9019608, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3793,9 +3793,19 @@ PrefabInstance:
     - target: {fileID: 6298629122635770066, guid: 3cf27813852ec154386de7b03286872a,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.43739316
+      value: -0.43746948
       objectReference: {fileID: 0}
     - target: {fileID: 5067804681814507220, guid: 3cf27813852ec154386de7b03286872a,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.2143206
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110171226120607370, guid: 3cf27813852ec154386de7b03286872a,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.2143206
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290790949187369907, guid: 3cf27813852ec154386de7b03286872a,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.2143206
