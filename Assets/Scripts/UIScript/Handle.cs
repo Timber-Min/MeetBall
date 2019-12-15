@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Handle : AbstractUIHandler
 {
-    private bool isVisible = true;
     private Vector3 mouseOrigin;
     private Vector3 myPos;
     private bool isClick = false;
