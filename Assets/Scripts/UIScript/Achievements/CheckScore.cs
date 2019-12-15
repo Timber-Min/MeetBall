@@ -14,15 +14,15 @@ public class CheckScore : MonoBehaviour
         Text t = gameObject.GetComponentInChildren<Text>();
         int score = 1;
 
-        try
+        //try
         {
             score += (condition1.check(amt1) ? 1 : 0);
             score += (condition2.check(amt2) ? 1 : 0);
             print(condition2.check(amt2));
         }
-        catch (System.NullReferenceException)
+        //catch (System.NullReferenceException)
         {
-            score = 0;
+            //score = 0;
         }
 
         t.text = Stars[score];
