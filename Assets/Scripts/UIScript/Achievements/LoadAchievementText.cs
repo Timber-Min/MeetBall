@@ -10,8 +10,7 @@ public class LoadAchievementText : MonoBehaviour
     {
         Text t=gameObject.GetComponent<Text>();
         t.text="[도전 과제]\n\n";
-        string path=@"Assets\Scripts\UIScript\Achievements\Achievements_text.txt";
-        string[] list=System.IO.File.ReadAllLines(path);
+        string[] list = GetComponent<Achievements_text>().getAchievementsText();
         for(int i=0;i<list.Length;i+=1)
         {
             if(list[i].Equals(SceneManager.GetActiveScene().name))

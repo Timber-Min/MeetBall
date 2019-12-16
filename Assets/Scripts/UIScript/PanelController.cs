@@ -17,8 +17,7 @@ public class PanelController : MonoBehaviour
 
     void Start()
     {
-        string path = @"Assets\Scripts\UIScript\ToolsForStages.txt";
-        string[] list = System.IO.File.ReadAllLines(path);
+        string[] list = GetComponent<ToolsForStages>().getToolsForStages();
         for (int i = 0; i < list.Length; i += 1)
         {
             if (list[i].Equals(SceneManager.GetActiveScene().name))
