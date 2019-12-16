@@ -5,15 +5,14 @@ using UnityEngine;
 // 화살표가 미트볼이 받는 힘의 방향을 가리키게 한다.
 public class ArrowNavigator : MonoBehaviour
 {
-    private GameObject[] balls;
+    public GameObject[] balls;
     public GameObject[] arrows;
     int cnt;
     private SpaghettiForce spaghettiForce;
 
     void Start()
     {
-        // 미트볼 GameObject들을 찾고 arrows와 배열의 크기를 비교하여 크기가 다르면 오류를 발생시킨다.
-        balls = GameObject.FindGameObjectsWithTag("Ball");
+        // 미트볼 GameObject와 arrows와 배열의 크기를 비교하여 크기가 다르면 오류를 발생시킨다.
         if (balls.Length != arrows.Length)
             throw new System.ArgumentException("Length of two arrays, 'balls' and 'arrows' must be same.");
         cnt = balls.Length;

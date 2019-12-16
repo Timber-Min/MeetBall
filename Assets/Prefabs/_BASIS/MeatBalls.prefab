@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fe22c69e1524e4ca02dc7fa12fd1a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  balls:
+  - {fileID: 2209977368801839440}
+  - {fileID: 2209977368095371451}
   arrows:
   - {fileID: 2209977369066940657}
   - {fileID: 2209977369497378071}
